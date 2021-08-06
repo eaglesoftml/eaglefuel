@@ -8,5 +8,5 @@ class ilo(models.Model):
     nom  =fields.Char("Reference Ilo", required=True)
     number = fields.Integer("Réference Ilo")
     description = fields.Text()
-    pompe_ids = fields.One2many("eaglefuel.pompe", string="Pompe Parent")
+    #pompe_ids = fields.One2many("eaglefuel.pompe", string="Pompe Parent")
     
