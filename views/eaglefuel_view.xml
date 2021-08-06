@@ -123,7 +123,7 @@
 
                                     <field name="number"/>
                                     <field name="counter_index"/>
-                                    <field name="pomp_id"/>
+                                    <field name="pompe_id"/>
 
                                    <!-- <field name="image" widget='image' />-->
                                     <field name="date_releve" string="Date de rélevé"/>
