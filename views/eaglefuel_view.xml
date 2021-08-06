@@ -1,0 +1,294 @@
+<odoo>
+    <record model="ir.ui.view" id="station_form_view">
+            <field name="name">eaglefuel.station.form</field>
+            <field name="model">eaglefuel.station</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Sation">
+                    <header>
+                    </header>
+                    <sheet>
+                        <!--<field name="image" widget="imag" class="oe_avatar"/> -->
+                        <div class="oe_title oe_left">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Nom"/>
+                            </div>
+                            <h1>
+                                <field name="name" readonly="0" placeholder="Station"/>
+                            </h1>
+                        </div>
+                            <group>
+                                <group>
+                                    <field name="code" invisible="1"/>
+                                    <field name="description"/>
+                                </group>
+                                <group>
+                                   <!-- <field name="image" widget='image' />-->
+                                    <field name="location" string="Lieu"/>
+                                    <field name="gps" string="Location MAP"/>
+                                    <field name="manager_id"/>
+                                </group>
+                            </group>
+
+                            <notebook>
+                                <page string="Produits">
+                                    <field name="product_ids">
+                                        <tree editable="bottom">
+                                            <field name="name"/>
+                                            <field name="description"/>
+                                            <field name="price"  force_save="1" readonly="1"/>
+                                        </tree>
+                                    </field>
+                                </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+
+
+		<record model='ir.actions.act_window' id='station_action'>
+			<field name="name">Stations</field>
+			<field name="res_model">eaglefuel.station</field>
+			<field name="view_mode">tree,form,kanban</field>
+            <field name="help" type ="html">
+                 <p class="o_view_nocontent_smiling_face"></p>
+              </field>
+		</record>
+        
+<menuitem name="Gas Station" id="station_root" sequence="7"/>
+
+<menuitem name="Stations" id="sub_station_root" parent="station_root"/>
+
+<menuitem name="Station" 
+          id="sub_sub_station_root" 
+        parent="sub_station_root"
+          action="station_action"/>
+
+    
+<!-- Pistole Views -->
+    <record model='ir.actions.act_window' id='pistole_action'>
+			<field name="name">Pistoles</field>
+			<field name="res_model">eaglefuel.pistole</field>
+			<field name="view_mode">tree,form,kanban</field>
+            <field name="help" type ="html">
+                 <p class="o_view_nocontent_smiling_face"></p>
+              </field>
+    </record>
+    
+    
+        <record model="ir.ui.view" id="pistole_form_view">
+            <field name="name">eaglefuel.pistole.form</field>
+            <field name="model">eaglefuel.pistole</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Pistolé">
+                    <header>
+                    </header>
+                    <sheet>
+                        <!--<field name="image" widget="imag" class="oe_avatar"/> -->
+                        <div class="oe_title oe_left">
+                            <div class="oe_edit_only">
+                                <label for="number" string="Réference"/>
+                            </div>
+                            <h1>
+                                <field name="number" readonly="0" placeholder="Pistole"/>
+                            </h1>
+                        </div>
+                            <group>
+                                <group>
+                                    <field name="counter_index"/>
+                                    <field name="description"/>
+                                </group>
+                                <group>
+                                   <!-- <field name="image" widget='image' />-->
+                                    <field name="date_releve" string="Date de rélevé"/>
+                                    <field name="produit_servi_id" string="Produit Servi"/>
+
+                                </group>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+          <record model="ir.ui.view" id="pistole_tree_view">
+            <field name="name">eaglefuel.pistole.tree</field>
+            <field name="model">eaglefuel.pistole</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                                    <field name="number"/>
+                                    <field name="counter_index"/>
+                                    <field name="pomp_id"/>
+
+                                   <!-- <field name="image" widget='image' />-->
+                                    <field name="date_releve" string="Date de rélevé"/>
+                                    <field name="produit_servi_id" string="Produit Servi"/>
+
+     
+                </tree>
+            </field>
+        </record>  
+
+
+<menuitem name="Pistoles" id="sub_pistole_root" parent="station_root"/>
+
+<menuitem name="Pistoles" 
+          id="sub_sub_pistole_root" 
+        parent="sub_pistole_root"
+          action="pistole_action"/>
+    
+        <record model='ir.actions.act_window' id='pompe_action'>
+			<field name="name">Pompes</field>
+			<field name="res_model">eaglefuel.pompe</field>
+			<field name="view_mode">tree,form,kanban</field>
+            <field name="help" type ="html">
+                 <p class="o_view_nocontent_smiling_face"></p>
+              </field>
+    </record>
+    <!-- Pompe Views -->
+    
+        
+        <record model="ir.ui.view" id="pompe_form_view">
+            <field name="name">eaglefuel.pompe.form</field>
+            <field name="model">eaglefuel.pompe</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Pompes">
+                    <header>
+                    </header>
+                    <sheet>
+                        <!--<field name="image" widget="imag" class="oe_avatar"/> -->
+                        <div class="oe_title oe_left">
+                            <div class="oe_edit_only">
+                                <label for="nom" string="Réference"/>
+                            </div>
+                            <h1>
+                                <field name="pompe_number" readonly="0" placeholder="N° de Pompe"/>
+                            </h1>
+                        </div>
+                        <group>
+                                <group>
+                                    <field name="pompe_number"/>
+                                    <field name="description"/>
+                                </group>
+                         </group>
+                          <notebook>
+                                <page string="Pistoles">
+                                    <field name="pistole_ids">
+                                        <tree editable="bottom">
+                                            <field name="number"/>
+                                            <field name="product_id"/>
+                                            <field name="description"/>
+                                        </tree>
+                                    </field>
+
+                                </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+    
+        <record model="ir.ui.view" id="pompe_tree_view">
+            <field name="name">eaglefuel.pompe.tree</field>
+            <field name="model">eaglefuel.pompe</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                    <field name="pompe_number"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>  
+    
+<menuitem name="Pompes" id="sub_pompe_root" parent="station_root"/>
+
+<menuitem name="Pompes" 
+          id="sub_sub_pompe_root" 
+        parent="sub_pompe_root"
+          action="pompe_action"/>
+    
+        <!-- Pompe Views -->
+    <record model='ir.actions.act_window' id='ilo_action'>
+			<field name="name">Ilo</field>
+			<field name="res_model">eaglefuel.ilo</field>
+			<field name="view_mode">tree,form,kanban</field>
+            <field name="help" type ="html">
+                 <p class="o_view_nocontent_smiling_face"></p>
+              </field>
+    </record> 
+    
+    
+       <record model="ir.ui.view" id="ilo_form_view">
+            <field name="name">eaglefuel.ilo.form</field>
+            <field name="model">eaglefuel.ilo</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Ilos">
+                    <header>
+                    </header>
+                    <sheet>
+                        <!--<field name="image" widget="imag" class="oe_avatar"/> -->
+                        <div class="oe_title oe_left">
+                            <div class="oe_edit_only">
+                                <label for="nom" string="Réference"/>
+                            </div>
+                            <h1>
+                                <field name="nom" readonly="0" placeholder="N° de Pompe"/>
+                            </h1>
+                        </div>
+                        <group>
+                                <group>
+                                    <field name="nom"/>
+                                </group>
+                                <group>
+                                    <field name="number"/>
+                                    <field name="description"/>
+                                </group>
+                         </group>
+                          <notebook>
+                                <page string="Pompes">
+                                    <field name="pompe_ids">
+                                        <tree editable="bottom">
+                                            <field name="nom"/>
+                                            <field name="pompe_number"/>
+                                            <field name="description"/>
+                                        </tree>
+                                    </field>
+
+                                </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+    
+        <record model="ir.ui.view" id="ilo_tree_view">
+            <field name="name">eaglefuel.ilo.tree</field>
+            <field name="model">eaglefuel.ilo</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    
+                    <field name="nom"/>
+                    <field name="number"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>  
+    
+<menuitem name="Ilos" id="sub_ilos_root" parent="station_root"/>
+
+<menuitem name="Ilos" 
+          id="sub_sub_ilo_root" 
+        parent="sub_station_root"
+          action="ilo_action"/>    
+</odoo>
