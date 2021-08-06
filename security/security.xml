@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="module_eaglefuel_station_category" model="ir.module.category">
+            <field name="name">Gas Fuel Station</field>
+            <field name="description">Category for Gas Station</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <!-- service_station User Group -->
+        <record id="eaglefuel_group_user" model="res.groups">
+            <field name="name"> Eaglefuel / User</field>
+            <field name="category_id" ref="module_eaglefuel_station_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- service_station Manager Group -->
+        <record id="eaglefuel_group_manager" model="res.groups">
+            <field name="name">  Eaglefuel / Manager</field>
+            <field name="category_id" ref="module_eaglefuel_station_category"/>
+            <field name="implied_ids" eval="[(4, ref('eaglefuel_group_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+    </data>
+</odoo>
