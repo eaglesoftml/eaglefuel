@@ -11,7 +11,14 @@ from odoo import models, fields, api
 #     #ilo_id = fields.Many2one("eaglefuel.ilo", string="Pompe Parent")
 #     pistole_ids= fields.One2many("eaglefuel.pistole","pompe_id",  string= "Pistole")
 
+class pompe(models.Model):
+    _name = "eaglefuel.pompe"
+    _description = "pompe"
 
-    #def get_produit_list(self):
+    pompe_number = fields.Integer("Numero de pompe", required=True)
+    nom = fields.Char("Reference de la pompe")
+    description = fields.Text()
+
+    ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo parent")
         
     

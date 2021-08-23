@@ -19,5 +19,6 @@ class ilo(models.Model):
     number = fields.Integer("Reference Ilo")
     descrcription = fields.Text()
 
-    station_id =  fields.Many2one("eaglefuel.station", string="station parent")
+    station_id = fields.Many2one("eaglefuel.station", string="station parent")
+    pompe_id = fields.One2many("eaglefuel.pompe", "ilo_id", string="pompe")
     
