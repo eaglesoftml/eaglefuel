@@ -6,7 +6,7 @@ class compteur(models.Model):
     _name = "eaglefuel.compteur"
     _description = "compteur"
 
-    id = fields.Char()
+    ref = fields.Char()
     index = fields.Integer("Index Compteur",  required=True)
     previous_index = fields.Integer()
     pompe_id = fields.Many2one("eaglefuel.pompe", "pompe parent")
