@@ -1,0 +1,230 @@
+Index: models/station.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#-*- coding: utf-8 -*-\n\nfrom odoo import models, fields, api\n\n\n# class station(models.Model):\n#  _name = 'eaglefuel.station'\n#  _description = 'Gas station'\n#\n#  name = fields.Char()\n#  image = fields.Binary(string=\"Image\", help=\"Sectionner une image\"),\n#  location = fields.Char()\n#  description = fields.Text()\n#  gps = fields.Char()\n#  code = fields.Integer()\n\n#  manager_id = fields.Many2one(\"res.users\", \"Responsable\")\n#  employee_ids=fields.One2many(\"hr.employee\", \"station_id\", string=\"Pompistes\")\n#  cuve_ids=fields.One2many(\"eaglefuel.cuve\", \"station_id\", string=\"Cuves\")\n#  product_ids=fields.One2many(\"product.product\", \"station_id\", string=\"Produits\")\n#\n#\n# class HrEmployee(models.Model):\n#     _inherit = \"hr.employee\"\n#     station_id = fields.Many2one(\"eaglefuel.station\", string=\"Station\")\n#\n#\n# class ProductFuel(models.Model):\n#     _inherit = \"product.product\"\n#     station_id = fields.Many2one(\"eaglefuel.station\", string=\"Station\")\n#\n\nclass station(models.Model):\n    _name = 'eaglefuel.station'\n    _description = 'Gas station'\n\n    name = fields.Char(\"Nom de la station\")\n    adress = fields.Char(\"Adress de la station\")\n    description = fields.Text(\"description breve de station\")\n    image = fields.Binary(string=\"Image\", help=\"Sectionner une image\")\n    gps = fields.Char()\n    code = fields.Integer()\n\n    ilo_id = fields.One2many(\"eaglefuel.ilo\", \"station_id\", string=\"ilo\")\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/models/station.py b/models/station.py
+--- a/models/station.py	(revision 9f8dfca2a3f3f6e23e55c1cf671ab1e086b217b2)
++++ b/models/station.py	(date 1629806592075)
+@@ -42,4 +42,4 @@
+     code = fields.Integer()
+ 
+     ilo_id = fields.One2many("eaglefuel.ilo", "station_id", string="ilo")
+-
++    cuve_id = fields.One2many("eaglefuel.cuve", "station_id", string="ilo")
+Index: security/ir.model.access.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink\naccess_eaglefuel_station,Gas Station Access Sales,model_eaglefuel_station,eaglefuel_group_user,1,1,1,0\naccess_eaglefuel_station,Gas Station Access Sales,model_eaglefuel_station,eaglefuel_group_manager,1,1,1,1\n\naccess_eaglefuel_ilo,Gas ilo Access Sales,model_eaglefuel_ilo,eaglefuel_group_user,1,1,1,0\naccess_eaglefuel_ilo,Gas ilo Access Sales,model_eaglefuel_ilo,eaglefuel_group_manager,1,1,1,1\n\naccess_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_group_user,1,1,1,0\naccess_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_group_manager,1,1,1,1\n\naccess_eaglefuel_pistole,Gas Pistole Access Sales,model_eaglefuel_pistole,eaglefuel_group_user,1,1,1,0\naccess_eaglefuel_pistole,Gas Pistole Access Sales,model_eaglefuel_pistole,eaglefuel_group_manager,1,1,1,1\n\naccess_eaglefuel_compteur,Gas Compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_user,1,1,1,0\naccess_eaglefuel_compteur,Gas compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_manager,1,1,1,1\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/security/ir.model.access.csv b/security/ir.model.access.csv
+--- a/security/ir.model.access.csv	(revision 9f8dfca2a3f3f6e23e55c1cf671ab1e086b217b2)
++++ b/security/ir.model.access.csv	(date 1629804563407)
+@@ -15,3 +15,5 @@
+ access_eaglefuel_compteur,Gas compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_manager,1,1,1,1
+ 
+ 
++access_eaglefuel_cuve,Gas cuve Access Sales,model_eaglefuel_cuve,eaglefuel_group_user,1,1,1,0
++access_eaglefuel_cuve,Gas cuve Access Sales,model_eaglefuel_cuve,eaglefuel_group_manager,1,1,1,1
+\ No newline at end of file
+Index: views/eaglefuel_view.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><odoo>\n<!--    <record model=\"ir.ui.view\" id=\"station_form_view\">-->\n<!--            <field name=\"name\">eaglefuel.station.form</field>-->\n<!--            <field name=\"model\">eaglefuel.station</field>-->\n<!--            <field name=\"type\">form</field>-->\n<!--            <field name=\"arch\" type=\"xml\">-->\n<!--                <form string=\"Sation\">-->\n<!--                    <header>-->\n<!--                    </header>-->\n<!--                    <sheet>-->\n<!--                        &lt;!&ndash;<field name=\"image\" widget=\"imag\" class=\"oe_avatar\"/> &ndash;&gt;-->\n<!--                        <div class=\"oe_title oe_left\">-->\n<!--                            <div class=\"oe_edit_only\">-->\n<!--                                <label for=\"name\" string=\"Nom\"/>-->\n<!--                            </div>-->\n<!--                            <h1>-->\n<!--                                <field name=\"name\" readonly=\"0\" placeholder=\"Station\"/>-->\n<!--                            </h1>-->\n<!--                        </div>-->\n<!--                            <group>-->\n<!--                                <group>-->\n<!--                                    <field name=\"code\" invisible=\"1\"/>-->\n<!--                                    <field name=\"description\"/>-->\n<!--                                </group>-->\n<!--                                <group>-->\n<!--                                   &lt;!&ndash; <field name=\"image\" widget='image' />&ndash;&gt;-->\n<!--                                    <field name=\"location\" string=\"Lieu\"/>-->\n<!--                                    <field name=\"gps\" string=\"Location MAP\"/>-->\n<!--                                    <field name=\"manager_id\"/>-->\n<!--                                </group>-->\n<!--                            </group>-->\n<!--                        <notebook>-->\n<!--                                <page string=\"Employés\">-->\n<!--                                    <field name=\"employee_ids\">-->\n<!--                                        <tree editable=\"bottom\">-->\n<!--                                            <field name=\"name\"/>-->\n<!--                                            <field name=\"phone\"/>-->\n<!--                                             <field name=\"gender\"/>-->\n<!--                                             <field name=\"job_title\"/>-->\n\n<!--                                        </tree>-->\n<!--                                    </field>-->\n<!--                                </page>-->\n\n<!--                                <page string=\"Produits\">-->\n<!--                                    <field name=\"product_ids\">-->\n<!--                                        <tree editable=\"bottom\">-->\n<!--                                            <field name=\"name\"/>-->\n<!--                                            <field name=\"description\"/>-->\n<!--                                            <field name=\"price\"  force_save=\"1\" readonly=\"1\"/>-->\n<!--                                        </tree>-->\n<!--                                    </field>-->\n<!--                                </page>-->\n\n<!--                        </notebook>-->\n<!--                    </sheet>-->\n<!--                </form>-->\n<!--            </field>-->\n<!--        </record>-->\n<!--        -->\n\n\n<!--\t\t<record model='ir.actions.act_window' id='station_action'>-->\n<!--\t\t\t<field name=\"name\">Stations</field>-->\n<!--\t\t\t<field name=\"res_model\">eaglefuel.station</field>-->\n<!--\t\t\t<field name=\"view_mode\">tree,form,kanban</field>-->\n<!--            <field name=\"help\" type =\"html\">-->\n<!--                 <p class=\"o_view_nocontent_smiling_face\"></p>-->\n<!--              </field>-->\n<!--\t\t</record>-->\n<!--        -->\n<!--<menuitem name=\"Gas Station\" id=\"station_root\" sequence=\"7\"/>-->\n\n<!--<menuitem name=\"Stations\" id=\"sub_station_root\" parent=\"station_root\"/>-->\n\n<!--<menuitem name=\"Station\" -->\n<!--          id=\"sub_sub_station_root\" -->\n<!--        parent=\"sub_station_root\"-->\n<!--          action=\"station_action\"/>-->\n\n<!--    -->\n<!--&lt;!&ndash; Pistole Views &ndash;&gt;-->\n<!--    <record model='ir.actions.act_window' id='pistole_action'>-->\n<!--\t\t\t<field name=\"name\">Pistoles</field>-->\n<!--\t\t\t<field name=\"res_model\">eaglefuel.pistole</field>-->\n<!--\t\t\t<field name=\"view_mode\">tree,form,kanban</field>-->\n<!--            <field name=\"help\" type =\"html\">-->\n<!--                 <p class=\"o_view_nocontent_smiling_face\"></p>-->\n<!--              </field>-->\n<!--    </record>-->\n<!--    -->\n<!--    -->\n<!--        <record model=\"ir.ui.view\" id=\"pistole_form_view\">-->\n<!--            <field name=\"name\">eaglefuel.pistole.form</field>-->\n<!--            <field name=\"model\">eaglefuel.pistole</field>-->\n<!--            <field name=\"type\">form</field>-->\n<!--            <field name=\"arch\" type=\"xml\">-->\n<!--                <form string=\"Pistolé\">-->\n<!--                    <header>-->\n<!--                    </header>-->\n<!--                    <sheet>-->\n<!--                        &lt;!&ndash;<field name=\"image\" widget=\"imag\" class=\"oe_avatar\"/> &ndash;&gt;-->\n<!--                        <div class=\"oe_title oe_left\">-->\n<!--                            <div class=\"oe_edit_only\">-->\n<!--                                <label for=\"number\" string=\"Réference\"/>-->\n<!--                            </div>-->\n<!--                            <h1>-->\n<!--                                <field name=\"number\" readonly=\"0\" placeholder=\"Pistole\"/>-->\n<!--                            </h1>-->\n<!--                        </div>-->\n<!--                            <group>-->\n<!--                                <group>-->\n<!--                                    <field name=\"counter_index\"/>-->\n<!--                                    <field name=\"description\"/>-->\n<!--                                </group>-->\n<!--                                <group>-->\n<!--                                   &lt;!&ndash; <field name=\"image\" widget='image' />&ndash;&gt;-->\n<!--                                    <field name=\"date_releve\" string=\"Date de rélevé\"/>-->\n<!--                                    <field name=\"produit_servi_id\" string=\"Produit Servi\"/>-->\n\n<!--                                </group>-->\n<!--                            </group>-->\n<!--                    </sheet>-->\n<!--                </form>-->\n<!--            </field>-->\n<!--        </record>-->\n<!--    -->\n<!--          <record model=\"ir.ui.view\" id=\"pistole_tree_view\">-->\n<!--            <field name=\"name\">eaglefuel.pistole.tree</field>-->\n<!--            <field name=\"model\">eaglefuel.pistole</field>-->\n<!--            <field name=\"type\">tree</field>-->\n<!--            <field name=\"arch\" type=\"xml\">-->\n<!--                <tree>-->\n\n<!--                                    <field name=\"number\"/>-->\n<!--                                    <field name=\"counter_index\"/>-->\n<!--                                    <field name=\"pompe_id\"/>-->\n\n<!--                                   &lt;!&ndash; <field name=\"image\" widget='image' />&ndash;&gt;-->\n<!--                                    <field name=\"date_releve\" string=\"Date de rélevé\"/>-->\n<!--                                    <field name=\"produit_servi_id\" string=\"Produit Servi\"/>-->\n\n<!--     -->\n<!--                </tree>-->\n<!--            </field>-->\n<!--        </record>  -->\n\n\n<!--<menuitem name=\"Pistoles\" id=\"sub_pistole_root\" parent=\"station_root\"/>-->\n\n<!--<menuitem name=\"Pistoles\" -->\n<!--          id=\"sub_sub_pistole_root\" -->\n<!--        parent=\"sub_pistole_root\"-->\n<!--          action=\"pistole_action\"/>-->\n<!--    -->\n<!--        <record model='ir.actions.act_window' id='pompe_action'>-->\n<!--\t\t\t<field name=\"name\">Pompes</field>-->\n<!--\t\t\t<field name=\"res_model\">eaglefuel.pompe</field>-->\n<!--\t\t\t<field name=\"view_mode\">tree,form,kanban</field>-->\n<!--            <field name=\"help\" type =\"html\">-->\n<!--                 <p class=\"o_view_nocontent_smiling_face\"></p>-->\n<!--              </field>-->\n<!--    </record>-->\n<!--    &lt;!&ndash; Pompe Views &ndash;&gt;-->\n<!--    -->\n<!--        -->\n<!--        <record model=\"ir.ui.view\" id=\"pompe_form_view\">-->\n<!--            <field name=\"name\">eaglefuel.pompe.form</field>-->\n<!--            <field name=\"model\">eaglefuel.pompe</field>-->\n<!--            <field name=\"type\">form</field>-->\n<!--            <field name=\"arch\" type=\"xml\">-->\n<!--                <form string=\"Pompes\">-->\n<!--                    <header>-->\n<!--                    </header>-->\n<!--                    <sheet>-->\n<!--                        &lt;!&ndash;<field name=\"image\" widget=\"imag\" class=\"oe_avatar\"/> &ndash;&gt;-->\n<!--                        <div class=\"oe_title oe_left\">-->\n<!--                            <div class=\"oe_edit_only\">-->\n<!--                                <label for=\"nom\" string=\"Réference\"/>-->\n<!--                            </div>-->\n<!--                            <h1>-->\n<!--                                <field name=\"pompe_number\" readonly=\"0\" placeholder=\"N° de Pompe\"/>-->\n<!--                            </h1>-->\n<!--                        </div>-->\n<!--                        <group>-->\n<!--                                <group>-->\n<!--                                    <field name=\"pompe_number\"/>-->\n<!--                                    <field name=\"description\"/>-->\n<!--                                </group>-->\n<!--                         </group>-->\n<!--                          <notebook>-->\n<!--                                <page string=\"Pistoles\">-->\n<!--                                    <field name=\"pistole_ids\">-->\n<!--                                        <tree editable=\"bottom\">-->\n<!--                                            <field name=\"number\"/>-->\n<!--                                            &lt;!&ndash;<field name=\"product_id\"/>&ndash;&gt;-->\n<!--                                            <field name=\"description\"/>-->\n<!--                                        </tree>-->\n<!--                                    </field>-->\n\n<!--                                </page>-->\n<!--                        </notebook>-->\n<!--                    </sheet>-->\n<!--                </form>-->\n<!--            </field>-->\n<!--        </record>-->\n<!--    -->\n<!--    -->\n<!--        <record model=\"ir.ui.view\" id=\"pompe_tree_view\">-->\n<!--            <field name=\"name\">eaglefuel.pompe.tree</field>-->\n<!--            <field name=\"model\">eaglefuel.pompe</field>-->\n<!--            <field name=\"type\">tree</field>-->\n<!--            <field name=\"arch\" type=\"xml\">-->\n<!--                <tree>-->\n<!--                    <field name=\"nom\"/>-->\n<!--                    <field name=\"pompe_number\"/>-->\n<!--                    <field name=\"description\"/>-->\n<!--                </tree>-->\n<!--            </field>-->\n<!--        </record>  -->\n<!--    -->\n<!--<menuitem name=\"Pompes\" id=\"sub_pompe_root\" parent=\"station_root\"/>-->\n\n<!--<menuitem name=\"Pompes\" -->\n<!--          id=\"sub_sub_pompe_root\" -->\n<!--        parent=\"sub_pompe_root\"-->\n<!--          action=\"pompe_action\"/>-->\n<!--    -->\n<!--        &lt;!&ndash; Pompe Views &ndash;&gt;-->\n<!--    <record model='ir.actions.act_window' id='ilo_action'>-->\n<!--\t\t\t<field name=\"name\">Ilo</field>-->\n<!--\t\t\t<field name=\"res_model\">eaglefuel.ilo</field>-->\n<!--\t\t\t<field name=\"view_mode\">tree,form,kanban</field>-->\n<!--            <field name=\"help\" type =\"html\">-->\n<!--                 <p class=\"o_view_nocontent_smiling_face\"></p>-->\n<!--              </field>-->\n<!--    </record> -->\n<!--    -->\n<!--    -->\n<!--       <record model=\"ir.ui.view\" id=\"ilo_form_view\">-->\n<!--            <field name=\"name\">eaglefuel.ilo.form</field>-->\n<!--            <field name=\"model\">eaglefuel.ilo</field>-->\n<!--            <field name=\"type\">form</field>-->\n<!--            <field name=\"arch\" type=\"xml\">-->\n<!--                <form string=\"Ilos\">-->\n<!--                    <header>-->\n<!--                    </header>-->\n<!--                    <sheet>-->\n<!--                        &lt;!&ndash;<field name=\"image\" widget=\"imag\" class=\"oe_avatar\"/> &ndash;&gt;-->\n<!--                        <div class=\"oe_title oe_left\">-->\n<!--                            <div class=\"oe_edit_only\">-->\n<!--                                <label for=\"nom\" string=\"Réference\"/>-->\n<!--                            </div>-->\n<!--                            <h1>-->\n<!--                                <field name=\"nom\" readonly=\"0\" placeholder=\"N° de Pompe\"/>-->\n<!--                            </h1>-->\n<!--                        </div>-->\n<!--                        <group>-->\n<!--                                <group>-->\n<!--                                    <field name=\"nom\"/>-->\n<!--                                </group>-->\n<!--                                <group>-->\n<!--                                    <field name=\"number\"/>-->\n<!--                                    <field name=\"description\"/>-->\n<!--                                </group>-->\n<!--                         </group>-->\n<!--                          <notebook>-->\n<!--                           &lt;!&ndash;     <page string=\"Pompes\">-->\n<!--                                    <field name=\"pompe_ids\">-->\n<!--                                        <tree editable=\"bottom\">-->\n<!--                                            <field name=\"nom\"/>-->\n<!--                                            <field name=\"pompe_number\"/>-->\n<!--                                            <field name=\"description\"/>-->\n<!--                                        </tree>-->\n<!--                                    </field>-->\n\n<!--                                </page> &ndash;&gt;-->\n<!--                        </notebook>-->\n<!--                    </sheet>-->\n<!--                </form>-->\n<!--            </field>-->\n<!--        </record>-->\n<!--    -->\n<!--    -->\n<!--        <record model=\"ir.ui.view\" id=\"ilo_tree_view\">-->\n<!--            <field name=\"name\">eaglefuel.ilo.tree</field>-->\n<!--            <field name=\"model\">eaglefuel.ilo</field>-->\n<!--            <field name=\"type\">tree</field>-->\n<!--            <field name=\"arch\" type=\"xml\">-->\n<!--                <tree>-->\n<!--                    -->\n<!--                    <field name=\"nom\"/>-->\n<!--                    <field name=\"number\"/>-->\n<!--                    <field name=\"description\"/>-->\n<!--                </tree>-->\n<!--            </field>-->\n<!--        </record>  -->\n<!--    -->\n<!--<menuitem name=\"Ilos\" id=\"sub_ilos_root\" parent=\"station_root\"/>-->\n\n<!--<menuitem name=\"Ilos\" -->\n<!--          id=\"sub_sub_ilo_root\" -->\n<!--        parent=\"sub_station_root\"-->\n<!--          action=\"ilo_action\"/>    -->\n\n<record model=\"ir.ui.view\" id=\"station_form_view\">\n     <field name=\"name\">eaglefuel.station.form</field>\n     <field name=\"model\">eaglefuel.station</field>\n     <field name=\"arch\" type=\"xml\">\n             <form string=\"Station\">\n                  <header>\n                  </header>\n                  <sheet>\n                       <div class=\"oe_title oe_left\">\n                            <div class=\"oe_edit_only\">\n                                 <label for=\"name\" string=\"Nom\"/>\n                            </div>\n                            <h1>\n                                 <field name=\"name\" readonly=\"0\" placeholder=\"Station\"/>\n                            </h1>\n                       </div>\n                            <group>\n                                 <group>\n                                      <field name=\"name\" />\n                                      <field name=\"adress\" />\n                                      <field name=\"description\" />\n                                      <field name=\"ilo_id\" />\n                                 </group>\n                            </group>\n                      <group>\n                                    <notebook>\n                                  <page string=\"Pompes\">\n                                      <field name=\"description\"/>\n                                  </page>\n                                 </notebook>\n                                </group>\n                  </sheet>\n             </form>\n     </field>\n</record>\n\n<record model=\"ir.ui.view\" id=\"station_tree_view\">\n     <field name=\"name\">eaglefuel.station.form</field>\n     <field name=\"model\">eaglefuel.station</field>\n     <field name=\"arch\" type=\"xml\">\n         <tree string=\"station\">\n            <field name=\"name\" />\n            <field name=\"adress\" />\n            <field name=\"description\" />\n            <field name=\"ilo_id\" />\n        </tree>\n     </field>\n</record>\n\n<record model='ir.actions.act_window' id='station_action'>\n       <field name=\"name\">Stations</field>\n       <field name=\"res_model\">eaglefuel.station</field>\n       <field name=\"view_mode\">tree,form,kanban</field>\n       <field name=\"help\" type =\"html\">\n            <p class=\"o_view_nocontent_smiling_face\"></p>\n       </field>\n</record>\n\n<menuitem name=\"Gas Station\" id=\"station_root\" sequence=\"7\"/>\n<menuitem name=\"Stations\" id=\"sub_station_root\" parent=\"station_root\"/>\n<menuitem name=\"Station\" id=\"sub_sub_station_root\" parent=\"sub_station_root\" action=\"station_action\"/>\n\n\n<record model=\"ir.ui.view\" id=\"ilo_form_view\">\n     <field name=\"name\">eaglefuel.ilo.form</field>\n     <field name=\"model\">eaglefuel.ilo</field>\n     <field name=\"arch\" type=\"xml\">\n             <form string=\"ilo\">\n                  <header>\n                  </header>\n                 <sheet>\n                     <group>\n                      <group>\n                           <field name=\"nom\"/>\n                           <field name=\"number\"/>\n<!--                           <field name=\"description\"/>-->\n                           <field name=\"station_id\"/>\n                           <field name=\"pompe_id\"/>\n                      </group>\n                  </group>\n                 </sheet>\n             </form>\n     </field>\n</record>\n\n<record model=\"ir.ui.view\" id=\"ilo_tree_view\">\n     <field name=\"name\">eaglefuel.ilo.form</field>\n     <field name=\"model\">eaglefuel.ilo</field>\n     <field name=\"arch\" type=\"xml\">\n             <tree string=\"ilo\">\n                   <field name=\"nom\"/>\n                   <field name=\"number\"/>\n<!--                   <field name=\"description\"/>-->\n                   <field name=\"station_id\"/>\n                   <field name=\"pompe_id\"/>\n             </tree>\n     </field>\n</record>\n\n<record model='ir.actions.act_window' id='ilo_action'>\n       <field name=\"name\">ilo</field>\n       <field name=\"res_model\">eaglefuel.ilo</field>\n       <field name=\"view_mode\">tree,form,kanban</field>\n       <field name=\"help\" type =\"html\">\n            <p class=\"o_view_nocontent_smiling_face\"></p>\n       </field>\n</record>\n\n\n<menuitem name=\"ilo\" id=\"sub_ilo_root\" parent=\"station_root\"/>\n\n<menuitem name=\"ilo\" id=\"sub_sub_ilo_root\" parent=\"sub_ilo_root\" action=\"ilo_action\"/>\n\n<record model=\"ir.ui.view\" id=\"pompe_form_view\">\n    <field name=\"name\">eaglefuel.pompe.form</field>\n    <field name=\"model\">eaglefuel.pompe</field>\n    <field name=\"arch\" type=\"xml\">\n        <form string=\"Pompe\">\n            <header></header>\n            <sheet>\n                <group>\n                    <group>\n                    <field name=\"pompe_number\"/>\n                    <field name=\"description\"/>\n                    <field name=\"ilo_id\"/>\n                    <field name=\"pistole_id\"/>\n                    <field name=\"compteur_id\"/>\n                </group>\n                </group>\n            </sheet>\n        </form>\n    </field>\n</record>\n\n<record model=\"ir.ui.view\" id=\"pompe_tree_view\">\n    <field name=\"name\">eaglefuel.pompe.form</field>\n    <field name=\"model\">eaglefuel.pompe</field>\n    <field name=\"arch\" type=\"xml\">\n        <tree string=\"Pompe\">\n                    <field name=\"pompe_number\"/>\n                    <field name=\"description\"/>\n                    <field name=\"ilo_id\"/>\n                    <field name=\"pistole_id\"/>\n                    <field name=\"compteur_id\"/>\n        </tree>\n    </field>\n</record>\n\n<record model=\"ir.actions.act_window\" id=\"pompe_action\">\n    <field name=\"name\">Pompe</field>\n    <field name=\"res_model\">eaglefuel.pompe</field>\n    <field name=\"view_mode\">tree,form</field>\n</record>\n\n<menuitem name=\"Pompes\" id=\"sub_pompe_root\" parent=\"station_root\"/>\n<menuitem name=\"Pompes\" id=\"sub_sub_pompe_root\" parent=\"sub_pompe_root\" action=\"pompe_action\"/>\n\n<record model=\"ir.ui.view\" id=\"pistole_form_view\">\n    <field name=\"name\">eaglefuel.pistole.form</field>\n    <field name=\"model\">eaglefuel.pistole</field>\n    <field name=\"arch\" type=\"xml\">\n        <form string=\"Pistole\">\n            <header></header>\n            <sheet>\n                <group>\n                    <group>\n                    <field name=\"number\"/>\n                    <field name=\"produit_servi_id\"/>\n                    <field name=\"description\"/>\n                    <field name=\"pompe_id\"/>\n                </group>\n                </group>\n            </sheet>\n        </form>\n    </field>\n</record>\n\n<record model=\"ir.ui.view\" id=\"pistole_tree_view\">\n    <field name=\"name\">eaglefuel.pistole.form</field>\n    <field name=\"model\">eaglefuel.pistole</field>\n    <field name=\"arch\" type=\"xml\">\n        <tree string=\"Pistole\">\n            <field name=\"number\"/>\n            <field name=\"produit_servi_id\"/>\n            <field name=\"description\"/>\n            <field name=\"pompe_id\"/>\n        </tree>\n    </field>\n</record>\n\n<record model=\"ir.actions.act_window\" id=\"pistole_action\">\n    <field name=\"name\">Pistole</field>\n    <field name=\"res_model\">eaglefuel.pistole</field>\n    <field name=\"view_mode\">tree,form</field>\n</record>\n\n<menuitem name=\"Pistole\" id=\"sub_pistole_root\" parent=\"station_root\"/>\n<menuitem name=\"Pistole\" id=\"sub_sub_pistole_root\" parent=\"sub_pistole_root\" action=\"pistole_action\"/>\n\n\n<record model=\"ir.ui.view\" id=\"compteur_form_view\">\n    <field name=\"name\">eaglefuel.compteur.form</field>\n    <field name=\"model\">eaglefuel.compteur</field>\n    <field name=\"arch\" type=\"xml\">\n        <form string=\"Compteur\">\n            <header></header>\n            <sheet>\n                <group>\n                    <group>\n                        <field name=\"id\"/>\n                        <field name=\"index\"/>\n                        <field name=\"previous_index\"/>\n                        <field name=\"pompe_id\"/>\n                    </group>\n                </group>\n            </sheet>\n        </form>\n    </field>\n</record>\n\n<record model=\"ir.ui.view\" id=\"compteur_tree_view\">\n    <field name=\"name\">eaglefuel.compteur.form</field>\n    <field name=\"model\">eaglefuel.compteur</field>\n    <field name=\"arch\" type=\"xml\">\n        <tree string=\"Compteur\">\n            <field name=\"id\"/>\n            <field name=\"index\"/>\n            <field name=\"previous_index\"/>\n            <field name=\"pompe_id\"/>\n        </tree>\n    </field>\n</record>\n\n<record model=\"ir.actions.act_window\" id=\"compteur_action\">\n    <field name=\"name\">Pompe</field>\n    <field name=\"res_model\">eaglefuel.compteur</field>\n    <field name=\"view_mode\">tree,form</field>\n</record>\n\n<menuitem name=\"Compteur\" id=\"sub_compteur_root\" parent=\"station_root\"/>\n<menuitem name=\"Compteur\" id=\"sub_sub_compteur_root\" parent=\"sub_compteur_root\" action=\"compteur_action\"/>\n\n\n\n</odoo>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/views/eaglefuel_view.xml b/views/eaglefuel_view.xml
+--- a/views/eaglefuel_view.xml	(revision 9f8dfca2a3f3f6e23e55c1cf671ab1e086b217b2)
++++ b/views/eaglefuel_view.xml	(date 1629805924699)
+@@ -302,7 +302,7 @@
+ <!--          id="sub_sub_ilo_root" -->
+ <!--        parent="sub_station_root"-->
+ <!--          action="ilo_action"/>    -->
+-
++<!--view station-->
+ <record model="ir.ui.view" id="station_form_view">
+      <field name="name">eaglefuel.station.form</field>
+      <field name="model">eaglefuel.station</field>
+@@ -364,8 +364,49 @@
+ <menuitem name="Gas Station" id="station_root" sequence="7"/>
+ <menuitem name="Stations" id="sub_station_root" parent="station_root"/>
+ <menuitem name="Station" id="sub_sub_station_root" parent="sub_station_root" action="station_action"/>
++<!--    view cuve-->
++<record model="ir.ui.view" id="cuve_list_view">
++    <field name="name">eaglefuel.cuve.list</field>
++    <field name="model">eaglefuel.cuve</field>
++    <field name="arch" type="xml">
++        <tree>
++            <field name="station_id"/>
++            <field name="longeur_regle"/>
++<!--            <field name="width"/>-->
++<!--            <field name="length"/>-->
++<!--            <field name="height"/>-->
++            <field name="volume"/>
++        </tree>
++    </field>
++</record>
++<record model="ir.ui.view" id="cuve_form_view">
++    <field name="name">eaglefuel.cuve.form</field>
++    <field name="model">eaglefuel.cuve</field>
++    <field name="arch" type="xml">
++        <form>
++            <field name="station_id"/>
++            <field name="longeur_regle"/>
++            <field name="width"/>
++            <field name="length"/>
++            <field name="height"/>
++            <field name="volume"/>
++        </form>
++    </field>
++</record>
++<record model='ir.actions.act_window' id='cuve_action'>
++       <field name="name">cuve</field>
++       <field name="res_model">eaglefuel.cuve</field>
++       <field name="view_mode">tree,form,kanban</field>
++       <field name="help" type ="html">
++            <p class="o_view_nocontent_smiling_face"></p>
++       </field>
++</record>
++<menuitem name="cuve" id="sub_cuve_root" parent="station_root"/>
+ 
++<menuitem name="cuve" id="sub_sub_cuve_root" parent="sub_cuve_root" action="cuve_action"/>
+ 
++
++<!--view ilo-->
+ <record model="ir.ui.view" id="ilo_form_view">
+      <field name="name">eaglefuel.ilo.form</field>
+      <field name="model">eaglefuel.ilo</field>
+@@ -416,6 +457,7 @@
+ 
+ <menuitem name="ilo" id="sub_sub_ilo_root" parent="sub_ilo_root" action="ilo_action"/>
+ 
++<!--    view pompe-->
+ <record model="ir.ui.view" id="pompe_form_view">
+     <field name="name">eaglefuel.pompe.form</field>
+     <field name="model">eaglefuel.pompe</field>
+@@ -460,6 +502,7 @@
+ <menuitem name="Pompes" id="sub_pompe_root" parent="station_root"/>
+ <menuitem name="Pompes" id="sub_sub_pompe_root" parent="sub_pompe_root" action="pompe_action"/>
+ 
++<!--    view pistole-->
+ <record model="ir.ui.view" id="pistole_form_view">
+     <field name="name">eaglefuel.pistole.form</field>
+     <field name="model">eaglefuel.pistole</field>
+@@ -502,7 +545,7 @@
+ <menuitem name="Pistole" id="sub_pistole_root" parent="station_root"/>
+ <menuitem name="Pistole" id="sub_sub_pistole_root" parent="sub_pistole_root" action="pistole_action"/>
+ 
+-
++<!--view compteur-->
+ <record model="ir.ui.view" id="compteur_form_view">
+     <field name="name">eaglefuel.compteur.form</field>
+     <field name="model">eaglefuel.compteur</field>
+Index: models/__init__.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># -*- coding: utf-8 -*-\n\nfrom . import station\nfrom . import ilo\nfrom . import pompe\nfrom . import pistole\nfrom . import compteur\n# from . import cuve\n# from . import jauge\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/models/__init__.py b/models/__init__.py
+--- a/models/__init__.py	(revision 9f8dfca2a3f3f6e23e55c1cf671ab1e086b217b2)
++++ b/models/__init__.py	(date 1629801095051)
+@@ -5,7 +5,7 @@
+ from . import pompe
+ from . import pistole
+ from . import compteur
+-# from . import cuve
++from . import cuve
+ # from . import jauge
+ 
+ 
+Index: models/cuve.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from odoo import models, fields, api\n\n# class cuve(models.Model):\n#     _name = \"eaglefuel.cuve\"\n#     _description = \"cuve\"\n#\n#     station_id = fields.Many2one(\"eaglefuel.station\", string=\"Station\")\n#     container_ref = fields.Char(\"Ref citerne\", required=True, index=True)\n#     capacite_volume = fields.Char(\"Capacite\")\n#     longeur_regle = fields.Char(\"Taille max régle\")\n#     ratioRV = fields.Float(\"Ratio Régle/Volume\", required=True)\n#     position = fields.Char(\"Position\", required=True)\n#     product_id = fields.Many2one(\"product.template\", \"Produit Stocké\")\n#     weight = fields.Float(\"Weight\", required=True)\n#     volume = fields.Float(\"Volume\", required=True)\n\n    \n    
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/models/cuve.py b/models/cuve.py
+--- a/models/cuve.py	(revision 9f8dfca2a3f3f6e23e55c1cf671ab1e086b217b2)
++++ b/models/cuve.py	(date 1629805342419)
+@@ -13,6 +13,17 @@
+ #     product_id = fields.Many2one("product.template", "Produit Stocké")
+ #     weight = fields.Float("Weight", required=True)
+ #     volume = fields.Float("Volume", required=True)
++class cuve(models.Model):
++    _name = 'eaglefuel.cuve'
++    _description = "cuve"
+ 
+-    
+-    
+\ No newline at end of file
++    station_id = fields.Many2one("eaglefuel.station", string="station parent")
++    longeur_regle = fields.Char("Taille max régle")
++    # product_id = fields.Many2one("product.template", "Produit Stocké")
++    volume = fields.Float("Volume")
++    width = fields.Float("Largeur", required=True)
++    length = fields.Float("Longueur", required=True)
++    height = fields.Float("Hauteur", required=True)
++    # ratioRV = fields.Float("Ratio Régle/Volume", required=True)
++    # position = fields.Char("Position", required=True)
++    # weight = fields.Float("Weight", required=True)
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5\" name=\"Changes\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1xARklShKZ7pL5aqCefANWu3jZL\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"/opt/odoo14/odoo/odoo-bin\" />\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"odoo-bin\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"/usr/bin/python3.9\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"/opt/odoo14/odoo\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <module name=\"\" />\n      <option name=\"SCRIPT_NAME\" value=\"/opt/odoo14/odoo/odoo-bin\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5\" name=\"Changes\" comment=\"\" />\n      <created>1629796052387</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1629796052387</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9f8dfca2a3f3f6e23e55c1cf671ab1e086b217b2)
++++ b/.idea/workspace.xml	(date 1629801733239)
+@@ -1,7 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="" />
++    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="h">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/models/cuve.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cuve.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/views/eaglefuel_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/eaglefuel_view.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -53,6 +60,14 @@
+       <option name="presentableId" value="Default" />
+       <updated>1629796052387</updated>
+     </task>
++    <task id="LOCAL-00001" summary="h">
++      <created>1629796604124</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1629796604124</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -65,5 +80,10 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="h" />
++    <option name="LAST_COMMIT_MESSAGE" value="h" />
+   </component>
+ </project>
+\ No newline at end of file

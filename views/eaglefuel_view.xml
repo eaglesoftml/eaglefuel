@@ -303,6 +303,7 @@
 <!--        parent="sub_station_root"-->
 <!--          action="ilo_action"/>    -->
 
+<!--  vue formulaire de la classe station  -->
 <record model="ir.ui.view" id="station_form_view">
      <field name="name">eaglefuel.station.form</field>
      <field name="model">eaglefuel.station</field>
@@ -321,19 +322,21 @@
                        </div>
                             <group>
                                  <group>
-                                      <field name="name" />
                                       <field name="adress" />
                                       <field name="description" />
-                                      <field name="ilo_id" />
                                  </group>
                             </group>
-                      <group>
-                                    <notebook>
-                                  <page string="Pompes">
-                                      <field name="description"/>
-                                  </page>
+                                <notebook>
+                                    <page string="La liste des ilos">
+                                        <field name="ilo_id" />
+                                    </page>
+                                    <page string="La liste des cuves">
+                                        <field name="cuve_id" />
+                                    </page>
+                                    <page string="La liste des employes">
+                                        <field name="employe_id" />
+                                    </page>
                                  </notebook>
-                                </group>
                   </sheet>
              </form>
      </field>
@@ -376,13 +379,19 @@
                  <sheet>
                      <group>
                       <group>
-                           <field name="nom"/>
-                           <field name="number"/>
-<!--                           <field name="description"/>-->
-                           <field name="station_id"/>
-                           <field name="pompe_id"/>
+                          <field name="number"/>
+                          <field name="nom"/>
+                          <field name="description"/>
                       </group>
                   </group>
+                     <notebook>
+                         <page string="Station parent">
+                           <field name="station_id"/>
+                         </page>
+                         <page string="Liste des pompes">
+                             <field name="pompe_id"/>
+                         </page>
+                     </notebook>
                  </sheet>
              </form>
      </field>
@@ -392,12 +401,13 @@
      <field name="name">eaglefuel.ilo.form</field>
      <field name="model">eaglefuel.ilo</field>
      <field name="arch" type="xml">
-             <tree string="ilo">
-                   <field name="nom"/>
-                   <field name="number"/>
-<!--                   <field name="description"/>-->
-                   <field name="station_id"/>
-                   <field name="pompe_id"/>
+             <tree string="Ilo">
+                 <field name="number"/>
+                 <field name="nom"/>
+                 <field name="description"/>
+                 <field name="description"/>
+                 <field name="station_id"/>
+                 <field name="pompe_id"/>
              </tree>
      </field>
 </record>
@@ -427,11 +437,19 @@
                     <group>
                     <field name="pompe_number"/>
                     <field name="description"/>
-                    <field name="ilo_id"/>
-                    <field name="pistole_id"/>
-                    <field name="compteur_id"/>
                 </group>
                 </group>
+                <notebook>
+                    <page string="Liste des pistoles">
+                        <field name="pistole_id"/>
+                    </page>
+                    <page string="Ilo parent">
+                        <field name="ilo_id"/>
+                    </page>
+                    <page string="Liste des compteurs">
+                        <field name="compteur_id"/>
+                    </page>
+                </notebook>
             </sheet>
         </form>
     </field>
@@ -472,9 +490,13 @@
                     <field name="number"/>
                     <field name="produit_servi_id"/>
                     <field name="description"/>
-                    <field name="pompe_id"/>
                 </group>
                 </group>
+                <notebook>
+                    <page string="Pompe parent">
+                        <field name="pompe_id"/>
+                    </page>
+                </notebook>
             </sheet>
         </form>
     </field>
@@ -512,12 +534,16 @@
             <sheet>
                 <group>
                     <group>
-                        <field name="id"/>
+                        <field name="ref"/>
                         <field name="index"/>
                         <field name="previous_index"/>
-                        <field name="pompe_id"/>
                     </group>
                 </group>
+                <notebook>
+                    <page string="pompe parent">
+                        <field name="pompe_id"/>
+                    </page>
+                </notebook>
             </sheet>
         </form>
     </field>
@@ -528,7 +554,7 @@
     <field name="model">eaglefuel.compteur</field>
     <field name="arch" type="xml">
         <tree string="Compteur">
-            <field name="id"/>
+            <field name="ref"/>
             <field name="index"/>
             <field name="previous_index"/>
             <field name="pompe_id"/>
@@ -546,5 +572,57 @@
 <menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>
 
 
+
+
+<record model="ir.ui.view" id="cuve_list_view">
+    <field name="name">eaglefuel.cuve.list</field>
+    <field name="model">eaglefuel.cuve</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="longeur_regle"/>
+            <field name="width"/>
+            <field name="length"/>
+            <field name="height"/>
+            <field name="volume"/>
+            <field name="station_id"/>
+        </tree>
+    </field>
+</record>
+<record model="ir.ui.view" id="cuve_form_view">
+    <field name="name">eaglefuel.cuve.form</field>
+    <field name="model">eaglefuel.cuve</field>
+    <field name="arch" type="xml">
+        <form>
+            <header></header>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="longeur_regle"/>
+                        <field name="width"/>
+                        <field name="length"/>
+                        <field name="height"/>
+                        <field name="volume"/>
+                    </group>
+                </group>
+                <notebook>
+                <page string="Station parent">
+                    <field name="station_id"/>
+                </page>
+            </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+<record model='ir.actions.act_window' id='cuve_action'>
+       <field name="name">cuve</field>
+       <field name="res_model">eaglefuel.cuve</field>
+       <field name="view_mode">tree,form,kanban</field>
+       <field name="help" type ="html">
+            <p class="o_view_nocontent_smiling_face"></p>
+       </field>
+</record>
+
+<menuitem name="Cuves" id="sub_cuve_root" parent="station_root"/>
+<menuitem name="Cuve" id="sub_sub_compteur_root" parent="sub_cuve_root" action="cuve_action"/>
 
 </odoo>
