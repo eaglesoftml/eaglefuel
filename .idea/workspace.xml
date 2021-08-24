@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="" />
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="branchb">
+      <change beforePath="$PROJECT_DIR$/views/eaglefuel_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/eaglefuel_view.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,5 +67,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="branc" />
+    <MESSAGE value="branchb" />
+    <option name="LAST_COMMIT_MESSAGE" value="branchb" />
   </component>
 </project>
