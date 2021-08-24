@@ -1,0 +1,47 @@
+<odoo>
+    <record model="ir.ui.view" id="compteur_form_view">
+        <field name="name">eaglefuel.compteur.form</field>
+        <field name="model">eaglefuel.compteur</field>
+        <field name="arch" type="xml">
+            <form string="Compteur">
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ref"/>
+                            <field name="index"/>
+                            <field name="previous_index"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="pompe parent">
+                            <field name="pompe_id"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="compteur_tree_view">
+        <field name="name">eaglefuel.compteur.form</field>
+        <field name="model">eaglefuel.compteur</field>
+        <field name="arch" type="xml">
+            <tree string="Compteur">
+                <field name="ref"/>
+                <field name="index"/>
+                <field name="previous_index"/>
+                <field name="pompe_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="compteur_action">
+        <field name="name">Pompe</field>
+        <field name="res_model">eaglefuel.compteur</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Compteur" id="sub_compteur_root" parent="station_root"/>
+    <menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>
+</odoo>

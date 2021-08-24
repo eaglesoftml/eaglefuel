@@ -1,0 +1,57 @@
+<odoo>
+    <record model="ir.ui.view" id="ilo_form_view">
+         <field name="name">eaglefuel.ilo.form</field>
+         <field name="model">eaglefuel.ilo</field>
+         <field name="arch" type="xml">
+                 <form string="ilo">
+                      <header>
+                      </header>
+                     <sheet>
+                         <group>
+                          <group>
+                              <field name="number"/>
+                              <field name="nom"/>
+                              <field name="description"/>
+                          </group>
+                      </group>
+                         <notebook>
+                             <page string="Station parent">
+                               <field name="station_id"/>
+                             </page>
+                             <page string="Liste des pompes">
+                                 <field name="pompe_id"/>
+                             </page>
+                         </notebook>
+                     </sheet>
+                 </form>
+         </field>
+    </record>
+
+    <record model="ir.ui.view" id="ilo_tree_view">
+         <field name="name">eaglefuel.ilo.form</field>
+         <field name="model">eaglefuel.ilo</field>
+         <field name="arch" type="xml">
+                 <tree string="Ilo">
+                     <field name="number"/>
+                     <field name="nom"/>
+                     <field name="description"/>
+                     <field name="station_id"/>
+                     <field name="pompe_id"/>
+                 </tree>
+         </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='ilo_action'>
+           <field name="name">ilo</field>
+           <field name="res_model">eaglefuel.ilo</field>
+           <field name="view_mode">tree,form,kanban</field>
+           <field name="help" type ="html">
+                <p class="o_view_nocontent_smiling_face"></p>
+           </field>
+    </record>
+
+
+    <menuitem name="ilo" id="sub_ilo_root" parent="station_root"/>
+
+    <menuitem name="ilo" id="sub_sub_ilo_root" parent="sub_ilo_root" action="ilo_action"/>
+</odoo>

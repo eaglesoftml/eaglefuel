@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0853d7fb-08ba-4c60-ac39-7dd36e3bc012" name="Changes" comment="ajout des vues listes">
+    <list default="true" id="0853d7fb-08ba-4c60-ac39-7dd36e3bc012" name="Changes" comment="edit employe and cuve">
+      <change afterPath="$PROJECT_DIR$/views/compteur_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/cuve_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/ilo_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pistole_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/station_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/compteur.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/compteur.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/cuve.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cuve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/eaglefuel_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/eaglefuel_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629796423377</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="edit employe and cuve">
+      <created>1629808901362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629808901362</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +129,7 @@
     <MESSAGE value="reprise du project par zero" />
     <MESSAGE value="ajout de la classe pompe(pompe.py)" />
     <MESSAGE value="ajout des vues listes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout des vues listes" />
+    <MESSAGE value="edit employe and cuve" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit employe and cuve" />
   </component>
 </project>
