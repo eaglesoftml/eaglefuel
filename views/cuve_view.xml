@@ -1,0 +1,52 @@
+<odoo>
+    <record model="ir.ui.view" id="cuve_list_view">
+        <field name="name">eaglefuel.cuve.list</field>
+        <field name="model">eaglefuel.cuve</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="longeur_regle"/>
+                <field name="width"/>
+                <field name="length"/>
+                <field name="height"/>
+                <field name="volume"/>
+                <field name="station_id"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="cuve_form_view">
+        <field name="name">eaglefuel.cuve.form</field>
+        <field name="model">eaglefuel.cuve</field>
+        <field name="arch" type="xml">
+            <form>
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="longeur_regle"/>
+                            <field name="width"/>
+                            <field name="length"/>
+                            <field name="height"/>
+                            <field name="volume"/>
+                        </group>
+                    </group>
+                    <notebook>
+                    <page string="Station parent">
+                        <field name="station_id"/>
+                    </page>
+                </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model='ir.actions.act_window' id='cuve_action'>
+           <field name="name">cuve</field>
+           <field name="res_model">eaglefuel.cuve</field>
+           <field name="view_mode">tree,form,kanban</field>
+           <field name="help" type ="html">
+                <p class="o_view_nocontent_smiling_face"></p>
+           </field>
+    </record>
+
+    <menuitem name="Cuves" id="sub_cuve_root" parent="station_root"/>
+    <menuitem name="Cuve" id="sub_sub_compteur_root" parent="sub_cuve_root" action="cuve_action"/>
+</odoo>

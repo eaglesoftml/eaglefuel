@@ -1,0 +1,66 @@
+<odoo>
+    <!--  vue formulaire de la classe station  -->
+    <record model="ir.ui.view" id="station_form_view">
+         <field name="name">eaglefuel.station.form</field>
+         <field name="model">eaglefuel.station</field>
+         <field name="arch" type="xml">
+                 <form string="Station">
+                      <header>
+                      </header>
+                      <sheet>
+                           <div class="oe_title oe_left">
+                                <div class="oe_edit_only">
+                                     <label for="name" string="Nom"/>
+                                </div>
+                                <h1>
+                                     <field name="name" readonly="0" placeholder="Station"/>
+                                </h1>
+                           </div>
+                                <group>
+                                     <group>
+                                          <field name="adress" />
+                                          <field name="description" />
+                                     </group>
+                                </group>
+                                    <notebook>
+                                        <page string="La liste des ilos">
+                                            <field name="ilo_id" />
+                                        </page>
+                                        <page string="La liste des cuves">
+                                            <field name="cuve_id" />
+                                        </page>
+                                        <page string="La liste des employes">
+                                            <field name="employe_id" />
+                                        </page>
+                                     </notebook>
+                      </sheet>
+                 </form>
+         </field>
+    </record>
+
+    <record model="ir.ui.view" id="station_tree_view">
+         <field name="name">eaglefuel.station.form</field>
+         <field name="model">eaglefuel.station</field>
+         <field name="arch" type="xml">
+             <tree string="station">
+                <field name="name" />
+                <field name="adress" />
+                <field name="description" />
+                <field name="ilo_id" />
+            </tree>
+         </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='station_action'>
+           <field name="name">Stations</field>
+           <field name="res_model">eaglefuel.station</field>
+           <field name="view_mode">tree,form,kanban</field>
+           <field name="help" type ="html">
+                <p class="o_view_nocontent_smiling_face"></p>
+           </field>
+    </record>
+
+    <menuitem name="Gas Station" id="station_root" sequence="7"/>
+    <menuitem name="Stations" id="sub_station_root" parent="station_root"/>
+    <menuitem name="Station" id="sub_sub_station_root" parent="sub_station_root" action="station_action"/>
+</odoo>

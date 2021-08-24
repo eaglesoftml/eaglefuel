@@ -1,0 +1,53 @@
+<odoo>
+    <record model="ir.ui.view" id="pompe_form_view">
+        <field name="name">eaglefuel.pompe.form</field>
+        <field name="model">eaglefuel.pompe</field>
+        <field name="arch" type="xml">
+            <form string="Pompe">
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+                        <field name="pompe_number"/>
+                        <field name="description"/>
+                    </group>
+                    </group>
+                    <notebook>
+                        <page string="Liste des pistoles">
+                            <field name="pistole_id"/>
+                        </page>
+                        <page string="Ilo parent">
+                            <field name="ilo_id"/>
+                        </page>
+                        <page string="Liste des compteurs">
+                            <field name="compteur_id"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="pompe_tree_view">
+        <field name="name">eaglefuel.pompe.form</field>
+        <field name="model">eaglefuel.pompe</field>
+        <field name="arch" type="xml">
+            <tree string="Pompe">
+                        <field name="pompe_number"/>
+                        <field name="description"/>
+                        <field name="ilo_id"/>
+                        <field name="pistole_id"/>
+                        <field name="compteur_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="pompe_action">
+        <field name="name">Pompe</field>
+        <field name="res_model">eaglefuel.pompe</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Pompes" id="sub_pompe_root" parent="station_root"/>
+    <menuitem name="Pompes" id="sub_sub_pompe_root" parent="sub_pompe_root" action="pompe_action"/>
+</odoo>

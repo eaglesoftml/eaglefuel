@@ -1,0 +1,47 @@
+<odoo>
+    <record model="ir.ui.view" id="pistole_form_view">
+        <field name="name">eaglefuel.pistole.form</field>
+        <field name="model">eaglefuel.pistole</field>
+        <field name="arch" type="xml">
+            <form string="Pistole">
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+                        <field name="number"/>
+                        <field name="produit_servi_id"/>
+                        <field name="description"/>
+                    </group>
+                    </group>
+                    <notebook>
+                        <page string="Pompe parent">
+                            <field name="pompe_id"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="pistole_tree_view">
+        <field name="name">eaglefuel.pistole.form</field>
+        <field name="model">eaglefuel.pistole</field>
+        <field name="arch" type="xml">
+            <tree string="Pistole">
+                <field name="number"/>
+                <field name="produit_servi_id"/>
+                <field name="description"/>
+                <field name="pompe_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="pistole_action">
+        <field name="name">Pistole</field>
+        <field name="res_model">eaglefuel.pistole</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Pistole" id="sub_pistole_root" parent="station_root"/>
+    <menuitem name="Pistole" id="sub_sub_pistole_root" parent="sub_pistole_root" action="pistole_action"/>
+</odoo>
