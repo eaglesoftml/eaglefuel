@@ -20,5 +20,7 @@ class pompe(models.Model):
     description = fields.Text()
 
     ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo parent")
+    pistole_id = fields.One2many("eaglefuel.pistole", "pompe_id", string="pistole")
+    compteur_id = fields.One2many("eaglefuel.compteur", "pompe_id", string="compteur")
         
     

@@ -3,8 +3,8 @@
 from . import station
 from . import ilo
 from . import pompe
-# from . import pistole
-# from . import releveindex
+from . import pistole
+from . import compteur
 # from . import cuve
 # from . import jauge
 
