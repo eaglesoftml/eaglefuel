@@ -327,39 +327,30 @@
                                       <field name="ilo_id" />
                                  </group>
                             </group>
+                      <group>
+                                    <notebook>
+                                  <page string="Pompes">
+                                      <field name="description"/>
+                                  </page>
+                                 </notebook>
+                                </group>
                   </sheet>
              </form>
      </field>
 </record>
 
-<record model="ir.ui.view" id="pompe_form_view">
-    <field name="name">eaglefuel.pompe.form</field>
-    <field name="model">eaglefuel.pompe</field>
-    <field name="arch" type="xml">
-        <form string="Ilo">
-            <header></header>
-            <sheet>
-                <group>
-                    <field name="pompe_number"/>
-                    <field name="description"/>
-                    <field name="ilo_id"/>
-                </group>
-            </sheet>
-        </form>
-    </field>
+<record model="ir.ui.view" id="station_tree_view">
+     <field name="name">eaglefuel.station.form</field>
+     <field name="model">eaglefuel.station</field>
+     <field name="arch" type="xml">
+         <tree string="station">
+            <field name="name" />
+            <field name="adress" />
+            <field name="description" />
+            <field name="ilo_id" />
+        </tree>
+     </field>
 </record>
-
-<!--<record model="ir.actions.act_window" id="pompe_action">-->
-<!--    <field name="pompe_number"></field>-->
-<!--    <field name="name">Pompe</field>-->
-<!--    <field name="res_model">eaglefuel.pompe</field>-->
-<!--    <field name="view_mode">tree,form</field>-->
-<!--</record>-->
-<!--<menuitem name="pompe" id="pompe_root" sequence="7"/>-->
-<!--<menuitem name="pompes" id="sub_pompe_root" parent="pompe_root"/>-->
-<!--<menuitem name="pompe" id="sub_pompe_root" parent="sub_pombe_root" action="pompe_action"/>-->
-
-
 
 <record model='ir.actions.act_window' id='station_action'>
        <field name="name">Stations</field>
@@ -371,8 +362,189 @@
 </record>
 
 <menuitem name="Gas Station" id="station_root" sequence="7"/>
-
 <menuitem name="Stations" id="sub_station_root" parent="station_root"/>
-
 <menuitem name="Station" id="sub_sub_station_root" parent="sub_station_root" action="station_action"/>
+
+
+<record model="ir.ui.view" id="ilo_form_view">
+     <field name="name">eaglefuel.ilo.form</field>
+     <field name="model">eaglefuel.ilo</field>
+     <field name="arch" type="xml">
+             <form string="ilo">
+                  <header>
+                  </header>
+                 <sheet>
+                     <group>
+                      <group>
+                           <field name="nom"/>
+                           <field name="number"/>
+<!--                           <field name="description"/>-->
+                           <field name="station_id"/>
+                           <field name="pompe_id"/>
+                      </group>
+                  </group>
+                 </sheet>
+             </form>
+     </field>
+</record>
+
+<record model="ir.ui.view" id="ilo_tree_view">
+     <field name="name">eaglefuel.ilo.form</field>
+     <field name="model">eaglefuel.ilo</field>
+     <field name="arch" type="xml">
+             <tree string="ilo">
+                   <field name="nom"/>
+                   <field name="number"/>
+<!--                   <field name="description"/>-->
+                   <field name="station_id"/>
+                   <field name="pompe_id"/>
+             </tree>
+     </field>
+</record>
+
+<record model='ir.actions.act_window' id='ilo_action'>
+       <field name="name">ilo</field>
+       <field name="res_model">eaglefuel.ilo</field>
+       <field name="view_mode">tree,form,kanban</field>
+       <field name="help" type ="html">
+            <p class="o_view_nocontent_smiling_face"></p>
+       </field>
+</record>
+
+
+<menuitem name="ilo" id="sub_ilo_root" parent="station_root"/>
+
+<menuitem name="ilo" id="sub_sub_ilo_root" parent="sub_ilo_root" action="ilo_action"/>
+
+<record model="ir.ui.view" id="pompe_form_view">
+    <field name="name">eaglefuel.pompe.form</field>
+    <field name="model">eaglefuel.pompe</field>
+    <field name="arch" type="xml">
+        <form string="Pompe">
+            <header></header>
+            <sheet>
+                <group>
+                    <group>
+                    <field name="pompe_number"/>
+                    <field name="description"/>
+                    <field name="ilo_id"/>
+                    <field name="pistole_id"/>
+                    <field name="compteur_id"/>
+                </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="pompe_tree_view">
+    <field name="name">eaglefuel.pompe.form</field>
+    <field name="model">eaglefuel.pompe</field>
+    <field name="arch" type="xml">
+        <tree string="Pompe">
+                    <field name="pompe_number"/>
+                    <field name="description"/>
+                    <field name="ilo_id"/>
+                    <field name="pistole_id"/>
+                    <field name="compteur_id"/>
+        </tree>
+    </field>
+</record>
+
+<record model="ir.actions.act_window" id="pompe_action">
+    <field name="name">Pompe</field>
+    <field name="res_model">eaglefuel.pompe</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem name="Pompes" id="sub_pompe_root" parent="station_root"/>
+<menuitem name="Pompes" id="sub_sub_pompe_root" parent="sub_pompe_root" action="pompe_action"/>
+
+<record model="ir.ui.view" id="pistole_form_view">
+    <field name="name">eaglefuel.pistole.form</field>
+    <field name="model">eaglefuel.pistole</field>
+    <field name="arch" type="xml">
+        <form string="Pistole">
+            <header></header>
+            <sheet>
+                <group>
+                    <group>
+                    <field name="number"/>
+                    <field name="produit_servi_id"/>
+                    <field name="description"/>
+                    <field name="pompe_id"/>
+                </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="pistole_tree_view">
+    <field name="name">eaglefuel.pistole.form</field>
+    <field name="model">eaglefuel.pistole</field>
+    <field name="arch" type="xml">
+        <tree string="Pistole">
+            <field name="number"/>
+            <field name="produit_servi_id"/>
+            <field name="description"/>
+            <field name="pompe_id"/>
+        </tree>
+    </field>
+</record>
+
+<record model="ir.actions.act_window" id="pistole_action">
+    <field name="name">Pistole</field>
+    <field name="res_model">eaglefuel.pistole</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem name="Pistole" id="sub_pistole_root" parent="station_root"/>
+<menuitem name="Pistole" id="sub_sub_pistole_root" parent="sub_pistole_root" action="pistole_action"/>
+
+
+<record model="ir.ui.view" id="compteur_form_view">
+    <field name="name">eaglefuel.compteur.form</field>
+    <field name="model">eaglefuel.compteur</field>
+    <field name="arch" type="xml">
+        <form string="Compteur">
+            <header></header>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="id"/>
+                        <field name="index"/>
+                        <field name="previous_index"/>
+                        <field name="pompe_id"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="compteur_tree_view">
+    <field name="name">eaglefuel.compteur.form</field>
+    <field name="model">eaglefuel.compteur</field>
+    <field name="arch" type="xml">
+        <tree string="Compteur">
+            <field name="id"/>
+            <field name="index"/>
+            <field name="previous_index"/>
+            <field name="pompe_id"/>
+        </tree>
+    </field>
+</record>
+
+<record model="ir.actions.act_window" id="compteur_action">
+    <field name="name">Pompe</field>
+    <field name="res_model">eaglefuel.compteur</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem name="Compteur" id="sub_compteur_root" parent="station_root"/>
+<menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>
+
+
+
 </odoo>

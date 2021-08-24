@@ -7,3 +7,11 @@ access_eaglefuel_ilo,Gas ilo Access Sales,model_eaglefuel_ilo,eaglefuel_group_ma
 
 access_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_group_manager,1,1,1,1
+
+access_eaglefuel_pistole,Gas Pistole Access Sales,model_eaglefuel_pistole,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_pistole,Gas Pistole Access Sales,model_eaglefuel_pistole,eaglefuel_group_manager,1,1,1,1
+
+access_eaglefuel_compteur,Gas Compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_compteur,Gas compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_manager,1,1,1,1
+
+
