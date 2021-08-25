@@ -10,6 +10,6 @@ class compteur(models.Model):
     index = fields.Integer("Index Compteur",  required=True)
     previous_index = fields.Integer()
     pompe_id = fields.Many2one("eaglefuel.pompe", "pompe parent")
-
+    date_releve = fields.Datetime("Date du releve")
 
 

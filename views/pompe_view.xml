@@ -10,6 +10,7 @@
                         <group>
                         <field name="pompe_number"/>
                         <field name="description"/>
+                        <field name="prix_initial"/>
                     </group>
                     </group>
                     <notebook>
@@ -38,6 +39,8 @@
                         <field name="ilo_id"/>
                         <field name="pistole_id"/>
                         <field name="compteur_id"/>
+                        <field name="prix_initial"/>
+
             </tree>
         </field>
     </record>

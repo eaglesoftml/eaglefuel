@@ -11,6 +11,8 @@
                             <field name="ref"/>
                             <field name="index"/>
                             <field name="previous_index"/>
+                            <field name="date_releve"/>
+
                         </group>
                     </group>
                     <notebook>
@@ -32,6 +34,8 @@
                 <field name="index"/>
                 <field name="previous_index"/>
                 <field name="pompe_id"/>
+                <field name="date_releve"/>
+
             </tree>
         </field>
     </record>
@@ -43,5 +47,5 @@
     </record>
 
     <menuitem name="Compteur" id="sub_compteur_root" parent="station_root"/>
-    <menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>
+    <menuitem name="Compteur" id="sub_sub_jauge_root" parent="sub_compteur_root" action="compteur_action"/>
 </odoo>

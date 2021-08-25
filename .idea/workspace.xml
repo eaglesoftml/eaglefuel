@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="branchb">
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="jauge modif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/cuve.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cuve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/jauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/jauge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cuve_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/cuve_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/eaglefuel_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/eaglefuel_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/compteur.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/compteur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pompe.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pompe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/compteur_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/compteur_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +59,14 @@
       <option name="presentableId" value="Default" />
       <updated>1629796052387</updated>
     </task>
+    <task id="LOCAL-00001" summary="jauge modif">
+      <created>1629889739743</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1629889739743</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +84,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="branc" />
     <MESSAGE value="branchb" />
-    <option name="LAST_COMMIT_MESSAGE" value="branchb" />
+    <MESSAGE value="jauge modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="jauge modif" />
   </component>
 </project>
