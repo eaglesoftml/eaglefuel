@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 from odoo import models, fields, api
 
 # class cuve(models.Model):
@@ -15,6 +17,7 @@ from odoo import models, fields, api
 #     volume = fields.Float("Volume", required=True)
 
 
+
 class cuve(models.Model):
     _name = 'eaglefuel.cuve'
     _description = 'Cuve'
@@ -26,9 +29,8 @@ class cuve(models.Model):
     width = fields.Float("Largeur", required=True)
     length = fields.Float("Longueur", required=True)
     height = fields.Float("Hauteur", required=True)
+    jauge_id = fields.One2many("eaglefuel.jauge", "cuve_id", string="jauge")
     # ratioRV = fields.Float("Ratio Régle/Volume", required=True)
     # position = fields.Char("Position", required=True)
     # weight = fields.Float("Weight", required=True)
 
-    
-    

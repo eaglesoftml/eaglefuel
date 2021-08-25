@@ -17,4 +17,7 @@ access_eaglefuel_compteur,Gas compteur Access Sales,model_eaglefuel_compteur,eag
 access_eaglefuel_cuve,Gas Cuve Access Sales,model_eaglefuel_cuve,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_cuve,Gas cuve Access Sales,model_eaglefuel_cuve,eaglefuel_group_manager,1,1,1,1
 
+access_eaglefuel_jauge,Gas Jauge Access Sales,model_eaglefuel_jauge,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_jauge,Gas jauge Access Sales,model_eaglefuel_jauge,eaglefuel_group_manager,1,1,1,1
+
 

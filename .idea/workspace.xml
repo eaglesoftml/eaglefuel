@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="branchb">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cuve.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cuve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/jauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/jauge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cuve_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/cuve_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/eaglefuel_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/eaglefuel_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
