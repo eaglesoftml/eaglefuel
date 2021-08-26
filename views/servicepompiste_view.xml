@@ -10,21 +10,20 @@
                         <group>
 <!--                            <field name="previous_index"/>-->
 <!--                            <field name="index"/>-->
+                            <field name="ref"/>
                             <field name="date"/>
                             <field name="temps_debut" widget="float_time"/>
                             <field name="temps_fin" widget="float_time"/>
                             <field name="duree" widget="float_time"/>
                     </group>
+                    <group>
+                       <field name="pompe_id"/>
+                       <field name="pompiste_id"/>
+                    </group>
                     </group>
                     <notebook>
                         <page string="Liste des QM responsable">
                             <field name="qm_id"/>
-                        </page>
-                        <page string="Pompiste responsable">
-                            <field name="pompiste_id"/>
-                        </page>
-                        <page string="Ilo utilise">
-                            <field name="ilo_id"/>
                         </page>
                         <page string="Les differentes versements">
                             <field name="versement_id"/>
@@ -40,13 +39,14 @@
         <field name="model">eaglefuel.servicepompiste</field>
         <field name="arch" type="xml">
             <tree string="Service pompiste">
+                <field name="ref"/>
                 <field name="date"/>
                 <field name="temps_debut"/>
                 <field name="temps_fin"/>
                 <field name="duree"/>
                 <field name="qm_id"/>
                 <field name="pompiste_id"/>
-                <field name="ilo_id"/>
+                <field name="pompe_id"/>
                 <field name="versement_id"/>
             </tree>
         </field>

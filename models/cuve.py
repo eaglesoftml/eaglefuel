@@ -22,6 +22,7 @@ class cuve(models.Model):
     _name = 'eaglefuel.cuve'
     _description = 'Cuve'
 
+    ref = fields.Char("reference")
     station_id = fields.Many2one("eaglefuel.station", string="station parent")
     longeur_regle = fields.Char("Taille max régle")
     # product_id = fields.Many2one("product.template", "Produit Stocké")

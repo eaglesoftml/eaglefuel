@@ -15,12 +15,12 @@ class ilo(models.Model):
     _name ="eaglefuel.ilo"
     _description = "ilo"
 
+    ref = fields.Char("reference")
     nom = fields.Char("Nom Ilo", required=True)
     number = fields.Integer("Reference Ilo")
     description = fields.Text()
 
-    station_id = fields.Many2one("eaglefuel.station", string="station parent")
+    station_id = fields.Many2one("eaglefuel.station", string="station id")
     pompe_id = fields.One2many("eaglefuel.pompe", "ilo_id", string="pompe")
-    servicepompiste_id = fields.One2many("eaglefuel.servicepompiste","ilo_id", string="services pompistes")
 
     

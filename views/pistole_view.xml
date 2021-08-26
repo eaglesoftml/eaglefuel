@@ -8,9 +8,10 @@
                 <sheet>
                     <group>
                         <group>
-                        <field name="number"/>
-                        <field name="produit_servi_id"/>
-                        <field name="description"/>
+                            <field name="ref"/>
+                            <field name="number"/>
+                            <field name="produit_servi_id"/>
+                            <field name="description"/>
                     </group>
                     </group>
                     <notebook>
@@ -28,6 +29,7 @@
         <field name="model">eaglefuel.pistole</field>
         <field name="arch" type="xml">
             <tree string="Pistole">
+                <field name="ref"/>
                 <field name="number"/>
                 <field name="produit_servi_id"/>
                 <field name="description"/>
