@@ -42,3 +42,7 @@ class station(models.Model):
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
     station_id = fields.Many2one("eaglefuel.station", string="Station")
+
+    servicepompiste_qm_id = fields.Many2many("eaglefuel.servicepompiste", "QM_responsable")
+    servicepompiste_pompiste_id = fields.One2many("eaglefuel.servicepompiste", "pompiste_id", "pompiste_responsable")
+
