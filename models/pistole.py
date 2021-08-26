@@ -5,6 +5,7 @@ class pistole(models.Model):
     _name = "eaglefuel.pistole"
     _description = "pistole"
 
+    ref = fields.Char("reference")
     #counter_index =fields.Integer("Index Compteur",  required=True)
     number = fields.Integer("Réference de Pistole")
     #date_releve = fields.Datetime("Date relevé", required=True)

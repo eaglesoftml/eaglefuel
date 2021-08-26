@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="restauration des fichiers endommage" />
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="restauration des fichiers endommage !">
+      <change afterPath="$PROJECT_DIR$/views/jauge_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/compteur.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/compteur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cuve.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cuve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ilo.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ilo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/jauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/jauge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pistole.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pistole.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pompe.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pompe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/servicepompiste.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/servicepompiste.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cuve_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/cuve_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/ilo_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/ilo_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pistole_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pistole_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/servicepompiste_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/servicepompiste_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/station_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/station_view.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629986671555</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="restauration des fichiers endommage !">
+      <created>1629986988848</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629986988848</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +123,7 @@
     <MESSAGE value="branchb" />
     <MESSAGE value="jauge modif" />
     <MESSAGE value="restauration des fichiers endommage" />
-    <option name="LAST_COMMIT_MESSAGE" value="restauration des fichiers endommage" />
+    <MESSAGE value="restauration des fichiers endommage !" />
+    <option name="LAST_COMMIT_MESSAGE" value="restauration des fichiers endommage !" />
   </component>
 </project>

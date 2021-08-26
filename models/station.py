@@ -28,6 +28,7 @@ class station(models.Model):
     _name = 'eaglefuel.station'
     _description = 'Gas station'
 
+    ref = fields.Char("reference")
     name = fields.Char("Nom de la station")
     adress = fields.Char("Adress de la station")
     description = fields.Text("description breve de station")
@@ -41,8 +42,8 @@ class station(models.Model):
 
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
-    station_id = fields.Many2one("eaglefuel.station", string="Station")
 
+    station_id = fields.Many2one("eaglefuel.station", string="Station")
     servicepompiste_qm_id = fields.Many2many("eaglefuel.servicepompiste", "QM_responsable")
     servicepompiste_pompiste_id = fields.One2many("eaglefuel.servicepompiste", "pompiste_id", "pompiste_responsable")
-
+    jauge_id = fields.Many2many("eaglefuel.jauge", "jauges")

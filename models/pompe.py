@@ -19,8 +19,8 @@ class pompe(models.Model):
     nom = fields.Char("Reference de la pompe")
     description = fields.Text()
 
-    ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo parent")
+    ref = fields.Char("reference")
+    ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo id")
     pistole_id = fields.One2many("eaglefuel.pistole", "pompe_id", string="pistole")
     compteur_id = fields.One2many("eaglefuel.compteur", "pompe_id", string="compteur")
-    prix_initial = fields.Float("Prix initial")
-    
+    servicepompiste_id = fields.One2many("eaglefuel.servicepompiste","pompe_id", string="services pompistes")

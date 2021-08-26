@@ -9,6 +9,7 @@
                      <sheet>
                          <group>
                           <group>
+                              <field name="ref"/>
                               <field name="number"/>
                               <field name="nom"/>
                               <field name="description"/>
@@ -32,6 +33,7 @@
          <field name="model">eaglefuel.ilo</field>
          <field name="arch" type="xml">
                  <tree string="Ilo">
+                     <field name="ref"/>
                      <field name="number"/>
                      <field name="nom"/>
                      <field name="description"/>

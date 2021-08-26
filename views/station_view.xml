@@ -18,8 +18,9 @@
                            </div>
                                 <group>
                                      <group>
-                                          <field name="adress" />
-                                          <field name="description" />
+                                         <field name="ref" />
+                                         <field name="adress" />
+                                         <field name="description" />
                                      </group>
                                 </group>
                                     <notebook>
@@ -43,10 +44,11 @@
          <field name="model">eaglefuel.station</field>
          <field name="arch" type="xml">
              <tree string="station">
-                <field name="name" />
-                <field name="adress" />
-                <field name="description" />
-                <field name="ilo_id" />
+                 <field name="ref" />
+                 <field name="name" />
+                 <field name="adress" />
+                 <field name="description" />
+                 <field name="ilo_id" />
             </tree>
          </field>
     </record>

@@ -1,0 +1,53 @@
+<odoo>
+    <!--view for jauge-->
+    <record model="ir.ui.view" id="jauge_list_view">
+        <field name="name">eaglefuel.jauge.list</field>
+        <field name="model">eaglefuel.jauge</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="mesure_regle"/>
+                <field name="cuve_id"/>
+                <field name="date_jauge"/>
+                <field name="litrage_jauge"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="jauge_form_view">
+        <field name="name">eaglefuel.jauge.form</field>
+        <field name="model">eaglefuel.jauge</field>
+        <field name="arch" type="xml">
+            <form>
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ref"/>
+                            <field name="mesure_regle"/>
+                            <field name="date_jauge"/>
+                            <field name="cuve_id"/>
+                            <field name="litrage_jauge"/>
+                        </group>
+                    </group>
+<!--                    <notebook>-->
+<!--                    <page string="Station parent">-->
+<!--                        <field name="station_id"/>-->
+<!--                    </page>-->
+<!--                </notebook>-->
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model='ir.actions.act_window' id='jauge_action'>
+           <field name="name">jauge</field>
+           <field name="res_model">eaglefuel.jauge</field>
+           <field name="view_mode">tree,form,kanban</field>
+           <field name="help" type ="html">
+                <p class="o_view_nocontent_smiling_face"></p>
+           </field>
+    </record>
+
+    <menuitem name="Jauge" id="sub_jauge_root" parent="station_root"/>
+    <menuitem name="Jauge" id="sub_sub_cuve_root" parent="sub_jauge_root" action="jauge_action"/>
+
+</odoo>
