@@ -17,12 +17,12 @@
                     </group>
                     </group>
                     <notebook>
-<!--                        <page string="Liste des QM responsable">-->
-<!--                            <field name="qm_id"/>-->
-<!--                        </page>-->
-<!--                        <page string="Pompiste responsable">-->
-<!--                            <field name="pompiste_id"/>-->
-<!--                        </page>-->
+                        <page string="Liste des QM responsable">
+                            <field name="qm_id"/>
+                        </page>
+                        <page string="Pompiste responsable">
+                            <field name="pompiste_id"/>
+                        </page>
                         <page string="Ilo utilise">
                             <field name="ilo_id"/>
                         </page>
@@ -44,8 +44,8 @@
                 <field name="temps_debut"/>
                 <field name="temps_fin"/>
                 <field name="duree"/>
-<!--                <field name="qm_id"/>-->
-<!--                <field name="pompiste_id"/>-->
+                <field name="qm_id"/>
+                <field name="pompiste_id"/>
                 <field name="ilo_id"/>
                 <field name="versement_id"/>
             </tree>

@@ -11,8 +11,8 @@ class servicepompiste(models.Model):
     temps_fin = fields.Float("Heure de fin")
     duree = fields.Float("Duree du service")
 
-    # qm_id = fields.Many2many("hr.employee", string="QM_responsables")
-    # pompiste_id = fields.Many2one("hr.employee", string="Pompiste responsable")
+    qm_id = fields.Many2many("hr.employee", string="QM_responsables")
+    pompiste_id = fields.Many2one("hr.employee", string="Pompiste responsable")
     ilo_id = fields.Many2one("eaglefuel.ilo", string="Ilo utilise")
     versement_id = fields.One2many("eaglefuel.versement", "servicepompiste_id", string="versement")
 
