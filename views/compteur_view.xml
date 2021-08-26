@@ -12,14 +12,11 @@
                             <field name="index"/>
                             <field name="previous_index"/>
                             <field name="date_releve"/>
-
+                        </group>
+                        <group>
+                            <field name="pompe_id"/>
                         </group>
                     </group>
-                    <notebook>
-                        <page string="pompe parent">
-                            <field name="pompe_id"/>
-                        </page>
-                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -41,7 +38,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="compteur_action">
-        <field name="name">Pompe</field>
+        <field name="name">Compteur</field>
         <field name="res_model">eaglefuel.compteur</field>
         <field name="view_mode">tree,form</field>
     </record>
