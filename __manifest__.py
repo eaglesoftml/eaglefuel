@@ -33,6 +33,7 @@
         'views/pistole_view.xml',
         'views/compteur_view.xml',
         'views/cuve_view.xml',
+        'views/servicepompiste_view.xml',
         #'views/views.xml',
         #'views/templates.xml',
     ],

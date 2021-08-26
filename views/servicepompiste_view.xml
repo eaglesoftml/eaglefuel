@@ -1,0 +1,63 @@
+<odoo>
+    <record model="ir.ui.view" id="servicepompiste_form_view">
+        <field name="name">eaglefuel.servicepompiste.form</field>
+        <field name="model">eaglefuel.servicepompiste</field>
+        <field name="arch" type="xml">
+            <form string="Service pompiste">
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+<!--                            <field name="previous_index"/>-->
+<!--                            <field name="index"/>-->
+                            <field name="date"/>
+                            <field name="temps_debut" widget="float_time"/>
+                            <field name="temps_fin" widget="float_time"/>
+                            <field name="duree" widget="float_time"/>
+                    </group>
+                    </group>
+                    <notebook>
+<!--                        <page string="Liste des QM responsable">-->
+<!--                            <field name="qm_id"/>-->
+<!--                        </page>-->
+<!--                        <page string="Pompiste responsable">-->
+<!--                            <field name="pompiste_id"/>-->
+<!--                        </page>-->
+                        <page string="Ilo utilise">
+                            <field name="ilo_id"/>
+                        </page>
+                        <page string="Les differentes versements">
+                            <field name="versement_id"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="servicepompiste_tree_view">
+        <field name="name">eaglefuel.servicepompiste.form</field>
+        <field name="model">eaglefuel.servicepompiste</field>
+        <field name="arch" type="xml">
+            <tree string="Service pompiste">
+                <field name="date"/>
+                <field name="temps_debut"/>
+                <field name="temps_fin"/>
+                <field name="duree"/>
+<!--                <field name="qm_id"/>-->
+<!--                <field name="pompiste_id"/>-->
+                <field name="ilo_id"/>
+                <field name="versement_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="servicepompiste_action">
+        <field name="name">service pompiste</field>
+        <field name="res_model">eaglefuel.servicepompiste</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Services pompistes" id="sub_servicepompiste_root" parent="station_root"/>
+    <menuitem name="service pompiste" id="sub_sub_servicepompiste_root" parent="sub_servicepompiste_root" action="servicepompiste_action"/>
+</odoo>

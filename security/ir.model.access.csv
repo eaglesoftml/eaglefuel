@@ -11,13 +11,17 @@ access_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_gr
 access_eaglefuel_pistole,Gas Pistole Access Sales,model_eaglefuel_pistole,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_pistole,Gas Pistole Access Sales,model_eaglefuel_pistole,eaglefuel_group_manager,1,1,1,1
 
-access_eaglefuel_compteur,Gas Compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_user,1,1,1,0
-access_eaglefuel_compteur,Gas compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_manager,1,1,1,1
-
 access_eaglefuel_cuve,Gas Cuve Access Sales,model_eaglefuel_cuve,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_cuve,Gas cuve Access Sales,model_eaglefuel_cuve,eaglefuel_group_manager,1,1,1,1
 
-access_eaglefuel_jauge,Gas Jauge Access Sales,model_eaglefuel_jauge,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_jauge,Gas jauge Access Sales,model_eaglefuel_jauge,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_jauge,Gas jauge Access Sales,model_eaglefuel_jauge,eaglefuel_group_manager,1,1,1,1
 
+access_eaglefuel_servicepompiste,Gas servicepompiste Access Sales,model_eaglefuel_servicepompiste,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_servicepompiste,Gas servicepompiste Access Sales,model_eaglefuel_servicepompiste,eaglefuel_group_manager,1,1,1,1
 
+access_eaglefuel_compteur,Gas Compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_compteur,Gas compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_manager,1,1,1,1
+
+access_eaglefuel_versement,Gas versement Access Sales,model_eaglefuel_versement,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_versement,Gas versement Access Sales,model_eaglefuel_versement,eaglefuel_group_manager,1,1,1,1

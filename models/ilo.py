@@ -21,4 +21,6 @@ class ilo(models.Model):
 
     station_id = fields.Many2one("eaglefuel.station", string="station parent")
     pompe_id = fields.One2many("eaglefuel.pompe", "ilo_id", string="pompe")
+    servicepompiste_id = fields.One2many("eaglefuel.servicepompiste","ilo_id", string="services pompistes")
+
     
