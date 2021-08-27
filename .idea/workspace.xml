@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="restauration des fichiers endommage !">
-      <change afterPath="$PROJECT_DIR$/views/jauge_view.xml" afterDir="false" />
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="restauration des fichiers endommage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/compteur.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/compteur.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/cuve.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cuve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ilo.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ilo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/jauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/jauge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/pistole.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pistole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/pompe.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pompe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/servicepompiste.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/servicepompiste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cuve_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/cuve_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/ilo_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/ilo_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pistole_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pistole_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/servicepompiste_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/servicepompiste_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/station_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/station_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +24,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="/opt/odoo13/odoo/odoo-bin" />
+    <property name="last_opened_file_path" value="/opt/odoo14/odoo/odoo-bin" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
@@ -51,12 +35,12 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.8" />
-      <option name="WORKING_DIRECTORY" value="/opt/odoo13/odoo" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="/opt/odoo14/odoo" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="/opt/odoo13/odoo/odoo-bin" />
+      <option name="SCRIPT_NAME" value="/opt/odoo14/odoo/odoo-bin" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
