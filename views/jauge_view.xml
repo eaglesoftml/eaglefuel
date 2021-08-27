@@ -48,6 +48,6 @@
     </record>
 
     <menuitem name="Jauge" id="sub_jauge_root" parent="station_root"/>
-    <menuitem name="Jauge" id="sub_sub_cuve_root" parent="sub_jauge_root" action="jauge_action"/>
+    <menuitem name="Jauge" id="sub_sub_jauge_root" parent="sub_jauge_root" action="jauge_action"/>
 
 </odoo>

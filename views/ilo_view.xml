@@ -53,7 +53,7 @@
     </record>
 
 
-    <menuitem name="ilo" id="sub_ilo_root" parent="station_root"/>
+    <menuitem name="ilos" id="sub_ilo_root" parent="station_root"/>
 
     <menuitem name="ilo" id="sub_sub_ilo_root" parent="sub_ilo_root" action="ilo_action"/>
 </odoo>
