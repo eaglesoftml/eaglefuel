@@ -3,6 +3,7 @@
 from odoo import models, fields, api
 
 class servicepompiste(models.Model):
+    _inherit = "eaglefuel.compteur"
     _name = "eaglefuel.servicepompiste"
     _description = "service pompiste"
 
@@ -11,26 +12,10 @@ class servicepompiste(models.Model):
     temps_debut = fields.Float("Heure de depart", required=True)
     temps_fin = fields.Float("Heure de fin")
     duree = fields.Float("Duree du service")
-
     qm_id = fields.Many2many("hr.employee", string="QM_responsables")
     pompiste_id = fields.Many2one("hr.employee", string="Pompiste responsable")
     pompe_id = fields.Many2one("eaglefuel.pompe", string="pompe utilise")
-
     versement_id = fields.One2many("eaglefuel.versement", "servicepompiste_id", string="versement")
-
-
-
-class versement(models.Model):
-    _name = "eaglefuel.versement"
-    _description = "versement"
-    _inherit = "eaglefuel.compteur"
-
-    ref = fields.Char("reference")
-    montant_versement = fields.Integer("Montant du versement")
-    heure_versement = fields.Float("Heure du versement", required=True)
-    nbre_versement = fields.Integer("Nombre de versement")
-    total_versement = fields.Integer("Total somme verse")
-    servicepompiste_id = fields.Many2one("eaglefuel.servicepompiste", string="service pompiste")
 
 
 

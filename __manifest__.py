@@ -35,8 +35,9 @@
         'views/cuve_view.xml',
         'views/servicepompiste_view.xml',
         'views/jauge_view.xml',
-        #'views/views.xml',
-        #'views/templates.xml',
+        'views/versement_view.xml',
+        # 'views/views.xml',
+        # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

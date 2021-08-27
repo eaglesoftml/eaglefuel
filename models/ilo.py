@@ -17,7 +17,7 @@ class ilo(models.Model):
 
     ref = fields.Char("reference")
     nom = fields.Char("Nom Ilo", required=True)
-    number = fields.Integer("Reference Ilo")
+    number = fields.Integer("Numero ilo")
     description = fields.Text()
 
     station_id = fields.Many2one("eaglefuel.station", string="station id")

@@ -32,10 +32,19 @@
                 <field name="previous_index"/>
                 <field name="pompe_id"/>
                 <field name="date_releve"/>
-
             </tree>
         </field>
     </record>
+<record id="cuve_graph_view" model="ir.ui.view">
+   <field name="name">eaglefuel.compteur.graph</field>
+   <field name="model">eaglefuel.compteur</field>
+   <field name="arch" type="xml">
+       <graph string="compteur pompe">
+           <field name="previous_index"/>
+           <field name="index" operator= "*"/>
+       </graph>
+   </field>
+</record>
 
     <record model="ir.actions.act_window" id="compteur_action">
         <field name="name">Compteur</field>
@@ -43,6 +52,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Compteur" id="sub_compteur_root" parent="station_root"/>
-    <menuitem name="Compteur" id="sub_sub_jauge_root" parent="sub_compteur_root" action="compteur_action"/>
+    <menuitem name="Compteurs" id="sub_compteur_root" parent="station_root"/>
+    <menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>
 </odoo>

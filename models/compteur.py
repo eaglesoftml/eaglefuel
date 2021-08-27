@@ -9,7 +9,14 @@ class compteur(models.Model):
     ref = fields.Char("reference")
     index = fields.Integer("Index Compteur",  required=True)
     previous_index = fields.Integer()
-    pompe_id = fields.Many2one("eaglefuel.pompe", "pompe parent")
     date_releve = fields.Datetime("Date du releve")
+    pompe_id = fields.Many2one("eaglefuel.pompe", "pompe id")
+
+    def name_get(self):
+        result = []
+        for compteur in self:
+            name = "[" + compteur.pompe_id +"]" + compteur.ref
+            result.append[compteur.id, name]
+        return result
 
 
