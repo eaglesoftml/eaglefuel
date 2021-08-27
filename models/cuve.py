@@ -21,9 +21,10 @@ from odoo import models, fields, api
 class cuve(models.Model):
     _name = 'eaglefuel.cuve'
     _description = 'Cuve'
+    rec_name = "ref"
 
     ref = fields.Char("reference")
-    station_id = fields.Many2one("eaglefuel.station", string="station parent")
+    station_id = fields.Many2one("eaglefuel.station", string="station id")
     longeur_regle = fields.Char("Taille max régle")
     diametre = fields.Float("Longueur", required=True)
     hauteur = fields.Float("Hauteur", required=True)

@@ -14,12 +14,10 @@
                             <field name="hauteur"/>
                             <field name="volume"/>
                         </group>
+                        <group>
+                            <field name="station_id"/>
+                        </group>
                     </group>
-                    <notebook>
-                    <page string="Station parent">
-                        <field name="station_id"/>
-                    </page>
-                </notebook>
                 </sheet>
             </form>
         </field>
