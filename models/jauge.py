@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class jauge(models.Model):
     _name = 'eaglefuel.jauge'
     _description = "jauge"
+    _rec_name = "ref"
 
     ref = fields.Char("reference")
     mesure_regle = fields.Float("mesure regle", required=True)

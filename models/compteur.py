@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class compteur(models.Model):
     _name = "eaglefuel.compteur"
     _description = "compteur"
-
+    _rec_name = "ref"
     ref = fields.Char("reference")
     index = fields.Integer("Index Compteur",  required=True)
     previous_index = fields.Integer()
