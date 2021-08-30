@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class compteur(models.Model):
     _name = "eaglefuel.compteur"
     _description = "compteur"
-    _rec_name = "ref"
+    # _rec_name = "ref"
     ref = fields.Char("reference")
     index = fields.Integer("Index Compteur",  required=True)
     previous_index = fields.Integer()
@@ -15,8 +15,8 @@ class compteur(models.Model):
     def name_get(self):
         result = []
         for compteur in self:
-            name = "[" + compteur.pompe_id +"]" + compteur.ref
-            result.append[compteur.id, name]
+            name = str("[") + str(compteur.pompe_id.ref) +str("]") + str(compteur.ref)
+            result.append((compteur.id, name))
         return result
 
 
