@@ -6,6 +6,7 @@ class servicepompiste(models.Model):
     _inherit = "eaglefuel.compteur"
     _name = "eaglefuel.servicepompiste"
     _description = "service pompiste"
+    _rec_name = "ref"
 
     ref = fields.Char("reference")
     date = fields.Datetime("Date du service", required=True)

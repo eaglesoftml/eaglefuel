@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class versement(models.Model):
     _name = "eaglefuel.versement"
     _description = "versement"
-    rec_name = "ref"
+    _rec_name = "ref"
 
     ref = fields.Char("reference")
     montant_versement = fields.Integer("Montant du versement")

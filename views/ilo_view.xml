@@ -14,11 +14,11 @@
                               <field name="nom"/>
                               <field name="description"/>
                           </group>
+                         <group>
+                             <field name="station_id"/>
+                         </group>
                       </group>
                          <notebook>
-                             <page string="Station parent">
-                               <field name="station_id"/>
-                             </page>
                              <page string="Liste des pompes">
                                  <field name="pompe_id"/>
                              </page>

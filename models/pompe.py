@@ -14,10 +14,10 @@ from odoo import models, fields, api
 class pompe(models.Model):
     _name = "eaglefuel.pompe"
     _description = "pompe"
-    rec_name = "ref"
+    _rec_name = "ref"
 
     pompe_number = fields.Integer("Numero de pompe", required=True)
-    nom = fields.Char("Reference de la pompe")
+    nom = fields.Char("nom de la pompe")
     description = fields.Text()
 
     ref = fields.Char("reference")

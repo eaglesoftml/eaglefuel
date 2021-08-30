@@ -27,7 +27,7 @@ from odoo import models, fields, api
 class station(models.Model):
     _name = 'eaglefuel.station'
     _description = 'Gas station'
-    rec_name = "ref"
+    _rec_name = "ref"
 
     ref = fields.Char("reference")
     name = fields.Char("Nom de la station")
