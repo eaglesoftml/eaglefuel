@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="finissons de l'ajout de la fonction name_get">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/servicepompiste.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/servicepompiste.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +145,28 @@
       <option name="project" value="LOCAL" />
       <updated>1630328747887</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="finissons de l'ajout de la fonction name_get">
+      <created>1630329560569</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1630329560569</updated>
+    </task>
+    <task id="LOCAL-00014" summary="finissons de l'ajout de la fonction name_get">
+      <created>1630329630359</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1630329630359</updated>
+    </task>
+    <task id="LOCAL-00015" summary="finissons de l'ajout de la fonction name_get">
+      <created>1630329691466</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1630329691466</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

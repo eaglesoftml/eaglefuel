@@ -20,6 +20,9 @@
                         <page string="Liste des pistoles">
                             <field name="pistole_id"/>
                         </page>
+                        <page string="Les services pompistes">
+                            <field name="servicepompiste_id"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
