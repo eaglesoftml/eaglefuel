@@ -24,7 +24,7 @@ class cuve(models.Model):
     _rec_name = "ref"
 
     ref = fields.Char("reference")
-    station_id = fields.Many2one("eaglefuel.station", string="station parent")
+    station_id = fields.Many2one("eaglefuel.station", string="station id")
     longeur_regle = fields.Char("Taille max régle")
     diametre = fields.Float("Longueur", required=True)
     hauteur = fields.Float("Hauteur", required=True)
