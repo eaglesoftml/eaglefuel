@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 class servicepompiste(models.Model):
-    _inherit = "eaglefuel.compteur"
+    # _inherit = "eaglefuel.compteur"
     _name = "eaglefuel.servicepompiste"
     _description = "service pompiste"
     _rec_name = "ref"
@@ -19,4 +19,9 @@ class servicepompiste(models.Model):
     versement_id = fields.One2many("eaglefuel.versement", "servicepompiste_id", string="versement")
 
 
-
+    def name_get(self):
+        result = []
+        for servicepompiste in self:
+            name = str("[") + str(servicepompiste.pompe_id.ilo_id.station_id.ref) +str("] ") + str(servicepompiste.ref)
+            result.append((servicepompiste.id, name))
+        return result

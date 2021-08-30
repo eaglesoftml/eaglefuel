@@ -24,4 +24,11 @@ class ilo(models.Model):
     station_id = fields.Many2one("eaglefuel.station", string="station id")
     pompe_id = fields.One2many("eaglefuel.pompe", "ilo_id", string="pompe")
 
+    def name_get(self):
+        result = []
+        for ilo in self:
+            name = str("[") + str(ilo.station_id.ref) +str("] ") + str(ilo.ref)
+            result.append((ilo.id, name))
+        return result
+
     

@@ -12,13 +12,12 @@
                             <field name="number"/>
                             <field name="produit_servi_id"/>
                             <field name="description"/>
-                    </group>
-                    </group>
-                    <notebook>
-                        <page string="Pompe parent">
+                        </group>
+                        <group>
+                            <field name="compteur_id"/>
                             <field name="pompe_id"/>
-                        </page>
-                    </notebook>
+                        </group>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -44,6 +43,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Pistole" id="sub_pistole_root" parent="station_root"/>
+    <menuitem name="Pistoles" id="sub_pistole_root" parent="station_root"/>
     <menuitem name="Pistole" id="sub_sub_pistole_root" parent="sub_pistole_root" action="pistole_action"/>
 </odoo>

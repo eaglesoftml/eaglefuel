@@ -8,10 +8,17 @@ class pistole(models.Model):
 
     ref = fields.Char("reference")
     #counter_index =fields.Integer("Index Compteur",  required=True)
-    number = fields.Integer("Réference de Pistole")
+    number = fields.Integer("Numero de Pistole")
     #date_releve = fields.Datetime("Date relevé", required=True)
     produit_servi_id= fields.Many2one("product.product", "Produit Servi")
     description = fields.Text()
-    pompe_id = fields.Many2one("eaglefuel.pompe", string="Pompe Parent")
+    pompe_id = fields.Many2one("eaglefuel.pompe", string="Pompe id")
+    compteur_id = fields.Many2one("eaglefuel.compteur", "compteur id")
 
-    
+
+    def name_get(self):
+        result = []
+        for pistole in self:
+            name = str("[") + str(pistole.pompe_id.ilo_id.station_id.ref) +str("] ") + "/" + str(pistole.pompe_id.ref) + "/" + str(pistole.ref)
+            result.append((pistole.id, name))
+        return result

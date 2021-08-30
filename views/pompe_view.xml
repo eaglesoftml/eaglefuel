@@ -20,9 +20,6 @@
                         <page string="Liste des pistoles">
                             <field name="pistole_id"/>
                         </page>
-                        <page string="Liste des compteurs">
-                            <field name="compteur_id"/>
-                        </page>
                     </notebook>
                 </sheet>
             </form>
@@ -39,7 +36,6 @@
                     <field name="description"/>
                     <field name="ilo_id"/>
                     <field name="pistole_id"/>
-                    <field name="compteur_id"/>
             </tree>
         </field>
     </record>

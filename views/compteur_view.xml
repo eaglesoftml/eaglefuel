@@ -14,7 +14,7 @@
                             <field name="date_releve"/>
                         </group>
                         <group>
-                            <field name="pompe_id"/>
+                            <field name="pistole_id"/>
                         </group>
                     </group>
                 </sheet>
@@ -30,7 +30,7 @@
                 <field name="ref"/>
                 <field name="index"/>
                 <field name="previous_index"/>
-                <field name="pompe_id"/>
+                <field name="pistole_id"/>
                 <field name="date_releve"/>
             </tree>
         </field>
