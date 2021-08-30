@@ -26,8 +26,16 @@ class cuve(models.Model):
     ref = fields.Char("reference")
     station_id = fields.Many2one("eaglefuel.station", string="station id")
     longeur_regle = fields.Char("Taille max régle")
-    diametre = fields.Float("Longueur", required=True)
+    diametre = fields.Float("Diametre", required=True)
     hauteur = fields.Float("Hauteur", required=True)
     volume = fields.Float("Volume") #pi*rcarre*h
     jauge_id = fields.One2many("eaglefuel.jauge", "cuve_id", string="jauge")
+
+
+    def name_get(self):
+        result = []
+        for cuve in self:
+            name = str("[") + str(cuve.station_id.ref) +str("] ") + str(cuve.ref)
+            result.append((cuve.id, name))
+        return result
 

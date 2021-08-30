@@ -14,7 +14,7 @@ from odoo import models, fields, api
 class pompe(models.Model):
     _name = "eaglefuel.pompe"
     _description = "pompe"
-    _rec_name = "ref"
+    # _rec_name = "ref"
 
     pompe_number = fields.Integer("Numero de pompe", required=True)
     nom = fields.Char("nom de la pompe")
@@ -23,5 +23,11 @@ class pompe(models.Model):
     ref = fields.Char("reference")
     ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo id")
     pistole_id = fields.One2many("eaglefuel.pistole", "pompe_id", string="pistole")
-    compteur_id = fields.One2many("eaglefuel.compteur", "pompe_id", string="compteur")
     servicepompiste_id = fields.One2many("eaglefuel.servicepompiste","pompe_id", string="services pompistes")
+
+    def name_get(self):
+        result = []
+        for pompe in self:
+            name = str("[") + str(pompe.ilo_id.station_id.ref) +str("] ") + str(pompe.ref)
+            result.append((pompe.id, name))
+        return result

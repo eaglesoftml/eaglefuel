@@ -13,3 +13,10 @@ class versement(models.Model):
     nbre_versement = fields.Integer("Nombre de versement")
     total_versement = fields.Integer("Total somme verse")
     servicepompiste_id = fields.Many2one("eaglefuel.servicepompiste", string="service pompiste")
+
+    def name_get(self):
+        result = []
+        for versement in self:
+            name = str("[") + str(versement.servicepompiste_id.pompe_id.ilo_id.station_id.ref) +str("] ") +str("/ ") + str(versement.servicepompiste_id.ref) + str(versement.ref)
+            result.append((versement.id, name))
+        return result
