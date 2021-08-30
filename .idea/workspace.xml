@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="fonction get name pour pouvoir nous montrer l'arboressence" />
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="finissons de l'ajout de la fonction name_get">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +24,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="/opt/odoo14/odoo/odoo-bin" />
+    <property name="last_opened_file_path" value="/opt/odoo13/odoo/odoo-bin" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
@@ -33,12 +35,12 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="/opt/odoo14/odoo" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="/usr/bin/python3.8" />
+      <option name="WORKING_DIRECTORY" value="/opt/odoo13/odoo" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="/opt/odoo14/odoo/odoo-bin" />
+      <option name="SCRIPT_NAME" value="/opt/odoo13/odoo/odoo-bin" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,21 +101,42 @@
       <option name="project" value="LOCAL" />
       <updated>1629994750298</updated>
     </task>
-    <task id="LOCAL-00007" summary="restauration des fichiers endommage">
-      <created>1630318139663</created>
+    <task id="LOCAL-00007" summary="restauration des fichiers endommage !">
+      <created>1630073222988</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1630318139663</updated>
+      <updated>1630073222988</updated>
     </task>
-    <task id="LOCAL-00008" summary="fonction get name pour pouvoir nous montrer l'arboressence">
-      <created>1630322915681</created>
+    <task id="LOCAL-00008" summary="restauration des fichiers endommage !">
+      <created>1630075202531</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1630322915681</updated>
+      <updated>1630075202531</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="restauration des fichiers endommage !!">
+      <created>1630077968622</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1630077968622</updated>
+    </task>
+    <task id="LOCAL-00010" summary="ajout de la fonction name_get au compteur">
+      <created>1630317909505</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1630317909505</updated>
+    </task>
+    <task id="LOCAL-00011" summary="finissons de l'ajout de la fonction name_get">
+      <created>1630328700318</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1630328700318</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,9 +155,11 @@
     <MESSAGE value="branc" />
     <MESSAGE value="branchb" />
     <MESSAGE value="jauge modif" />
-    <MESSAGE value="restauration des fichiers endommage !" />
     <MESSAGE value="restauration des fichiers endommage" />
-    <MESSAGE value="fonction get name pour pouvoir nous montrer l'arboressence" />
-    <option name="LAST_COMMIT_MESSAGE" value="fonction get name pour pouvoir nous montrer l'arboressence" />
+    <MESSAGE value="restauration des fichiers endommage !" />
+    <MESSAGE value="restauration des fichiers endommage !!" />
+    <MESSAGE value="ajout de la fonction name_get au compteur" />
+    <MESSAGE value="finissons de l'ajout de la fonction name_get" />
+    <option name="LAST_COMMIT_MESSAGE" value="finissons de l'ajout de la fonction name_get" />
   </component>
 </project>
