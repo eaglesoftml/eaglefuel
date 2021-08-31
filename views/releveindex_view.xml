@@ -1,0 +1,48 @@
+<odoo>
+    <record model="ir.ui.view" id="releveindex_form_view">
+        <field name="name">eaglefuel.releveindex.form</field>
+        <field name="model">eaglefuel.releveindex</field>
+        <field name="arch" type="xml">
+            <form string="releveindex">
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ref"/>
+                            <field name="index"/>
+<!--                            <field name="index_arrive"/>-->
+                            <field name="litrage_vendu"/>
+                            <field name="date_releve"/>
+                        </group>
+                        <group>
+                            <field name="compteur_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="releveindex_tree_view">
+        <field name="name">eaglefuel.releveindex.form</field>
+        <field name="model">eaglefuel.releveindex</field>
+        <field name="arch" type="xml">
+            <tree string="releveindex">
+                <field name="ref"/>
+                <field name="index"/>
+<!--                <field name="index_arrive"/>-->
+                <field name="litrage_vendu"/>
+                <field name="date_releve"/>
+                <field name="compteur_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="releveindex_action">
+        <field name="name">releveindex</field>
+        <field name="res_model">eaglefuel.releveindex</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="releveindex" id="sub_releveindex_root" parent="sub_compteur_root" action="releveindex_action"/>
+</odoo>
