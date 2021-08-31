@@ -21,7 +21,7 @@ from odoo import models, fields, api
 class cuve(models.Model):
     _name = 'eaglefuel.cuve'
     _description = 'Cuve'
-    _rec_name = "ref"
+    # _rec_name = "ref"
 
     ref = fields.Char("reference")
     station_id = fields.Many2one("eaglefuel.station", string="station id")

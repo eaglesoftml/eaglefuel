@@ -14,7 +14,7 @@ from odoo import models, fields, api
 class ilo(models.Model):
     _name ="eaglefuel.ilo"
     _description = "ilo"
-    _rec_name = "ref"
+    # _rec_name = "ref"
 
     ref = fields.Char("reference")
     nom = fields.Char("Nom Ilo", required=True)

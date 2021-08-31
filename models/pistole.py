@@ -4,7 +4,7 @@ from odoo import models, fields, api
 class pistole(models.Model):
     _name = "eaglefuel.pistole"
     _description = "pistole"
-    _rec_name = "ref"
+    # _rec_name = "ref"
 
     ref = fields.Char("reference")
     #counter_index =fields.Integer("Index Compteur",  required=True)

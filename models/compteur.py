@@ -7,11 +7,10 @@ class compteur(models.Model):
     _description = "compteur"
     # _rec_name = "ref"
 
-    ref = fields.Char("reference")
-    index = fields.Integer("Index Compteur",  required=True)
-    previous_index = fields.Integer()
-    date_releve = fields.Datetime("Date du releve")
-    pistole_id = fields.Many2one("eaglefuel.pistole", "pistole id")
+    ref = fields.Char("Reference")
+    numero = fields.Char("Numero")
+    pistole_id = fields.Many2one("eaglefuel.pistole", "Pistole id")
+    releveindex_id = fields.One2many("eaglefuel.releveindex", "compteur_id", string="Releve index")
 
     def name_get(self):
         result = []

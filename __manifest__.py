@@ -36,6 +36,7 @@
         'views/servicepompiste_view.xml',
         'views/jauge_view.xml',
         'views/versement_view.xml',
+        'views/releveindex_view.xml',
         # 'views/views.xml',
         # 'views/templates.xml',
     ],

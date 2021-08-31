@@ -9,14 +9,18 @@
                     <group>
                         <group>
                             <field name="ref"/>
-                            <field name="index"/>
-                            <field name="previous_index"/>
-                            <field name="date_releve"/>
-                        </group>
-                        <group>
+                            <field name="numero"/>
                             <field name="pistole_id"/>
+<!--                            <field name="index"/>-->
+<!--                            <field name="previous_index"/>-->
+<!--                            <field name="date_releve"/>-->
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Les releves index">
+                            <field name="releveindex_id"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -28,23 +32,25 @@
         <field name="arch" type="xml">
             <tree string="Compteur">
                 <field name="ref"/>
-                <field name="index"/>
-                <field name="previous_index"/>
+                <field name="numero"/>
+<!--                <field name="index"/>-->
+<!--                <field name="date_releve"/>-->
+<!--                <field name="previous_index"/>-->
                 <field name="pistole_id"/>
-                <field name="date_releve"/>
+                <field name="releveindex_id"/>
             </tree>
         </field>
     </record>
-<record id="cuve_graph_view" model="ir.ui.view">
-   <field name="name">eaglefuel.compteur.graph</field>
-   <field name="model">eaglefuel.compteur</field>
-   <field name="arch" type="xml">
-       <graph string="compteur pompe">
-           <field name="previous_index"/>
-           <field name="index" operator= "*"/>
-       </graph>
-   </field>
-</record>
+<!--<record id="cuve_graph_view" model="ir.ui.view">-->
+<!--   <field name="name">eaglefuel.compteur.graph</field>-->
+<!--   <field name="model">eaglefuel.compteur</field>-->
+<!--   <field name="arch" type="xml">-->
+<!--       <graph string="compteur pompe">-->
+<!--           <field name="previous_index"/>-->
+<!--           <field name="index" operator= "*"/>-->
+<!--       </graph>-->
+<!--   </field>-->
+<!--</record>-->
 
     <record model="ir.actions.act_window" id="compteur_action">
         <field name="name">Compteur</field>

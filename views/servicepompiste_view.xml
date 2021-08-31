@@ -12,30 +12,29 @@
 <!--                            <field name="index"/>-->
                             <field name="ref"/>
                             <field name="date"/>
-                            <field name="temps_debut" widget="float_time"/>
-                            <field name="temps_fin" widget="float_time"/>
-                            <field name="duree" widget="float_time"/>
-                            <field name="index_depart"/>
-                            <field name="index_arrive"/>
+<!--                            <field name="temps_debut" widget="float_time"/>-->
+<!--                            <field name="temps_fin" widget="float_time"/>-->
+<!--                            <field name="duree" widget="float_time"/>-->
+<!--                            <field name="index_depart"/>-->
+<!--                            <field name="index_arrive"/>-->
                     </group>
                     <group>
-                        <field name="litrage"/>
-                        <field name="montant_total_vendu"/>
-                        <field name="litrage_credit"/>
-                        <field name="montant_credit"/>
-                        <field name="montant_a_verse"/>
-                        <field name="montant_verse"/>
-                        <field name="ecart"/>
+<!--                        <field name="litrage"/>-->
+<!--                        <field name="montant_total_vendu"/>-->
+<!--                        <field name="litrage_credit"/>-->
+<!--                        <field name="montant_credit"/>-->
+<!--                        <field name="montant_a_verse"/>-->
+<!--                        <field name="montant_verse"/>-->
+<!--                        <field name="ecart"/>-->
                     </group>
                     <group>
                        <field name="pompe_id"/>
                        <field name="pompiste_id"/>
+                        <field name="qm_id"/>
+                        <field name="station_id"/>
                     </group>
                     </group>
                     <notebook>
-                        <page string="Liste des QM responsable">
-                            <field name="qm_id"/>
-                        </page>
                         <page string="Les differentes versements">
                             <field name="versement_id"/>
                         </page>
@@ -52,22 +51,22 @@
             <tree string="Service pompiste">
                 <field name="ref"/>
                 <field name="date"/>
-                <field name="temps_debut"/>
-                <field name="temps_fin"/>
-                <field name="duree"/>
+<!--                <field name="temps_debut"/>-->
+<!--                <field name="temps_fin"/>-->
+<!--                <field name="duree"/>-->
                 <field name="qm_id"/>
                 <field name="pompiste_id"/>
                 <field name="pompe_id"/>
                 <field name="versement_id"/>
-                <field name="index_depart"/>
-                <field name="index_arrive"/>
-                <field name="litrage"/>
-                <field name="montant_total_vendu"/>
-                <field name="litrage_credit"/>
-                <field name="montant_credit"/>
-                <field name="montant_a_verse"/>
-                <field name="montant_verse"/>
-                <field name="ecart"/>
+<!--                <field name="index_depart"/>-->
+<!--                <field name="index_arrive"/>-->
+<!--                <field name="litrage"/>-->
+<!--                <field name="montant_total_vendu"/>-->
+<!--                <field name="litrage_credit"/>-->
+<!--                <field name="montant_credit"/>-->
+<!--                <field name="montant_a_verse"/>-->
+<!--                <field name="montant_verse"/>-->
+<!--                <field name="ecart"/>-->
             </tree>
         </field>
     </record>
