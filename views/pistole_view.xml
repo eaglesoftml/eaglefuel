@@ -15,7 +15,7 @@
                         <group>
                             <field name="compteur_id"/>
                             <field name="pompe_id"/>
-                            <field name="produit_servi_id"/>
+                            <field name="produit_servi"/>
                         </group>
                     </group>
                 </sheet>
@@ -30,7 +30,7 @@
             <tree string="Pistole">
                 <field name="ref"/>
                 <field name="number"/>
-                <field name="produit_servi_id"/>
+                <field name="produit_servi"/>
                 <field name="description"/>
                 <field name="pompe_id"/>
             </tree>
