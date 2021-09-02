@@ -38,6 +38,9 @@
                         <page string="Les differentes versements">
                             <field name="versement_id"/>
                         </page>
+                         <page string="details des carburant vendus">
+                            <field name="detailventecarburant_id"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

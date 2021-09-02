@@ -18,11 +18,6 @@ from odoo import models, fields, api
 #  employee_ids=fields.One2many("hr.employee", "station_id", string="Pompistes")
 #  cuve_ids=fields.One2many("eaglefuel.cuve", "station_id", string="Cuves")
 #  product_ids=fields.One2many("product.product", "station_id", string="Produits")
-#
-# class ProductFuel(models.Model):
-#     _inherit = "product.product"
-#     station_id = fields.Many2one("eaglefuel.station", string="Station")
-#
 
 class station(models.Model):
     _name = 'eaglefuel.station'
@@ -40,6 +35,7 @@ class station(models.Model):
     ilo_id = fields.One2many("eaglefuel.ilo", "station_id", string="ilo")
     cuve_id = fields.One2many("eaglefuel.cuve", "station_id", string="cuve")
     employe_id= fields.One2many("hr.employee", "station_id", string="employe")
+    produit_id = fields.One2many("product.product", "station_id", string="Produit")
 
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
