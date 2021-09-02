@@ -28,3 +28,6 @@ access_eaglefuel_versement,Gas versement Access Sales,model_eaglefuel_versement,
 
 access_eaglefuel_releveindex,Gas releveindex Access Sales,model_eaglefuel_releveindex,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_releveindex,Gas releveindex Access Sales,model_eaglefuel_releveindex,eaglefuel_group_manager,1,1,1,1
+
+access_eaglefuel_detailventecarburant,Gas detailventecarburant Access Sales,model_eaglefuel_detailventecarburant,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_detailventecarburant,Gas detailventecarburant Access Sales,model_eaglefuel_detailventecarburant,eaglefuel_group_manager,1,1,1,1

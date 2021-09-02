@@ -1,0 +1,40 @@
+<odoo>
+    <record model="ir.ui.view" id="detailventecarburant_form_view">
+        <field name="name">eaglefuel.detailventecarburant.form</field>
+        <field name="model">eaglefuel.detailventecarburant</field>
+        <field name="arch" type="xml">
+            <form string="detailventecarburant">
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nom_carb"/>
+                            <field name="pu"/>
+                            <field name="servicepompiste_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="detailventecarburant_tree_view">
+        <field name="name">eaglefuel.detailventecarburant.form</field>
+        <field name="model">eaglefuel.detailventecarburant</field>
+        <field name="arch" type="xml">
+            <tree string="detailventecarburant">
+                <field name="nom_carb"/>
+                <field name="pu"/>
+                <field name="servicepompiste_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="detailventecarburant_action">
+        <field name="name">detailventecarburant</field>
+        <field name="res_model">eaglefuel.detailventecarburant</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="detail de vente carburant" id="sub_detailventecarburant_root" parent="sub_servicepompiste_root" action="detailventecarburant_action"/>
+</odoo>

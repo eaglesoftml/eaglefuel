@@ -40,4 +40,5 @@ class cuve(models.Model):
         return result
 
     def volume_cuve(self):
-        self.volume= ((self.diametre/2)**2)*self.hauteur*3.14
+        for line in self:
+            line.volume= ((line.diametre/2)**2)*line.hauteur*3.14

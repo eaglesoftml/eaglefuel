@@ -11,13 +11,18 @@
                             <field name="ref"/>
                             <field name="index"/>
 <!--                            <field name="index_arrive"/>-->
-                            <field name="litrage_vendu"/>
+                            <field name="litrage"/>
                             <field name="date_releve"/>
                         </group>
                         <group>
                             <field name="compteur_id"/>
                         </group>
                     </group>
+                    <notebook>
+<!--                        <page string="details des carburant vendus">-->
+<!--                            <field name="detailventecarburant_id"/>-->
+<!--                        </page>-->
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -31,7 +36,7 @@
                 <field name="ref"/>
                 <field name="index"/>
 <!--                <field name="index_arrive"/>-->
-                <field name="litrage_vendu"/>
+                <field name="litrage"/>
                 <field name="date_releve"/>
                 <field name="compteur_id"/>
             </tree>

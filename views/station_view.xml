@@ -33,6 +33,9 @@
                                         <page string="La liste des employes">
                                             <field name="employe_id" />
                                         </page>
+                                        <page string="Produits">
+                                            <field name="produit_id" />
+                                        </page>
                                      </notebook>
                       </sheet>
                  </form>
