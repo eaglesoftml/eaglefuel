@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="tr">
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="fct calculer du volume">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/cuve.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cuve.py" afterDir="false" />
     </list>
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630427047348</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fct calculer du volume">
+      <created>1630491436981</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1630491436982</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +175,7 @@
     <MESSAGE value="fonction get name pour pouvoir nous montrer l'arboressence" />
     <MESSAGE value="fonction get name pour pouvoir nous montrer tree" />
     <MESSAGE value="tr" />
-    <option name="LAST_COMMIT_MESSAGE" value="tr" />
+    <MESSAGE value="fct calculer du volume" />
+    <option name="LAST_COMMIT_MESSAGE" value="fct calculer du volume" />
   </component>
 </project>
