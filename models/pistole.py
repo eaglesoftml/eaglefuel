@@ -10,7 +10,7 @@ class pistole(models.Model):
     #counter_index =fields.Integer("Index Compteur",  required=True)
     number = fields.Integer("Numero de Pistole")
     #date_releve = fields.Datetime("Date relevé", required=True)
-    produit_servi_id= fields.Many2one("product.product", "Produit Servi")
+    produit_servi= fields.Selection(selection=[('a', 'Essence'),('b', 'Gasoile')])
     description = fields.Text()
     pompe_id = fields.Many2one("eaglefuel.pompe", string="Pompe id")
     compteur_id = fields.Many2one("eaglefuel.compteur", "compteur id")

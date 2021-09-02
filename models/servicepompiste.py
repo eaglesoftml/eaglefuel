@@ -43,13 +43,13 @@ class servicepompiste(models.Model):
         return result
 
 
-class detailventecarburant(models.Model):
-    _name = "eaglefuel.detailventecarburant"
-    _description = "detail des ventes du carburant"
-
-    nom_carb = fields.Char("Carburant")
-    servicepompiste_id = fields.Many2one("eaglefuel.servicepompiste",  string="releve index")
-
-    # def choisir_produit(self):
-    #     for line in self:
-    #         line.nom_carb = detailventecarburant.releveindex_id.
+# class detailventecarburant(models.Model):
+#     _name = "eaglefuel.detailventecarburant"
+#     _description = "detail des ventes du carburant"
+#
+#     nom_carb = fields.Char("Carburant")
+#     servicepompiste_id = fields.Many2one("eaglefuel.servicepompiste",  string="releve index")
+#
+#     # def choisir_produit(self):
+#     #     for line in self:
+#     #         line.nom_carb = detailventecarburant.releveindex_id.
