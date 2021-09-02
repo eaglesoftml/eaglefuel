@@ -14,10 +14,10 @@ class detailventecarburant(models.Model):
     def calcul_prix_unitaire(self):
         # prix_essence = 663
         # prix_gasoile = 593
-        # for line in self:
-        if self.nom_carb == "a":
-            self.pu = 663
-        elif self.nom_carb == "b":
-            self.pu = 593
-        else:
-            line.pu = 1
+         for line in self:
+            if line.nom_carb == "a":
+                line.pu = 663
+            elif line.nom_carb == "b":
+                line.pu = 593
+            else:
+                line.pu = 1
