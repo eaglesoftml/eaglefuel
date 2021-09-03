@@ -10,7 +10,7 @@ class releveindex(models.Model):
     index_matin = fields.Integer("Index matin", required=True)
     index_soir = fields.Integer("Index soir", required=True)
     litrage = fields.Integer("Litrage", compute="litrage_vendu")
-    carburant = fields.Many2one(related="compteur_id.pistole_id")
+    carburant = fields.Char(compute="nom_carb")
     date_releve = fields.Datetime("Date du releve", required=True)
     compteur_id = fields.Many2one("eaglefuel.compteur", string="Compteur id")
     servicepompiste_id = fields.Many2one("eaglesoft.servicepompiste", string="service pompiste id")
@@ -27,3 +27,9 @@ class releveindex(models.Model):
             result.append((releveindex.id, name))
         return result
 
+    def nom_carb(self):
+        for line in self:
+            if line.compteur_id.pistole_id.produit_servi == "e":
+                line.carburant = "Essence"
+            else:
+                line.carburant = "Gasoile"
