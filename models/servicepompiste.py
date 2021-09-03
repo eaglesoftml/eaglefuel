@@ -27,7 +27,7 @@ class servicepompiste(models.Model):
     montant_a_verse = fields.Integer()
     montant_verse = fields.Integer()
     ecart = fields.Integer()
-    # montant = fields.Integer("Montant", compute="montant_carb")
+    montant = fields.Integer("Montant", compute="montant_carb")
     qm_id = fields.Many2one("hr.employee", string="QM")
     pompiste_id = fields.Many2one("hr.employee", string="Pompiste")
     pompe_id = fields.Many2one("eaglefuel.pompe", string="pompe utilise")
@@ -43,14 +43,12 @@ class servicepompiste(models.Model):
             result.append((servicepompiste.id, name))
         return result
 
-    # def montant_carb(self):
-    #     for line in self:
-    #         if line.releveindex_id. == "e":
-    #             line.montant = 2
-    #         elif line.releveindex_id == "g":
-    #             line.montant = 1
-    #         else:
-    #             line.montant = 3
+    def montant_carb(self):
+        for line in self:
+            if line.releveindex_id.compteur_id.pistole_id.produit_servi == "e":
+                line.montant = "Essence"
+            else:
+                line.carburant = "Gasoile"
 
 # class detailventecarburant(models.Model):
 #     _name = "eaglefuel.detailventecarburant"
