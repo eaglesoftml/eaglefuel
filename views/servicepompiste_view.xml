@@ -12,6 +12,7 @@
 <!--                            <field name="index"/>-->
                             <field name="ref"/>
                             <field name="date"/>
+                            <field name="shift"/>
 <!--                            <field name="temps_debut" widget="float_time"/>-->
 <!--                            <field name="temps_fin" widget="float_time"/>-->
 <!--                            <field name="duree" widget="float_time"/>-->
@@ -42,6 +43,11 @@
                             <field name="detailventecarburant_id"/>
                         </page>
                     </notebook>
+                    <notebook>
+                        <page string="releve index">
+                            <field name="releveindex_id"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -54,6 +60,7 @@
             <tree string="Service pompiste">
                 <field name="ref"/>
                 <field name="date"/>
+                <field name="shift"/>
 <!--                <field name="temps_debut"/>-->
 <!--                <field name="temps_fin"/>-->
 <!--                <field name="duree"/>-->
@@ -61,6 +68,7 @@
                 <field name="pompiste_id"/>
                 <field name="pompe_id"/>
                 <field name="versement_id"/>
+                <field name="releveindex_id"/>
 <!--                <field name="index_depart"/>-->
 <!--                <field name="index_arrive"/>-->
 <!--                <field name="litrage"/>-->

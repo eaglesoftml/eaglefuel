@@ -10,6 +10,7 @@ class servicepompiste(models.Model):
 
     ref = fields.Char("Reference")
     date = fields.Datetime("Date du service", required=True)
+    shift = fields.Selection(selection=[('matin', 'Matin'),('soir', 'Soir')])
     # temps_debut = fields.Float("Heure de depart", required=True)
     # temps_fin = fields.Float("Heure de fin")
     # duree = fields.Float("Duree du service")
@@ -26,14 +27,14 @@ class servicepompiste(models.Model):
     montant_a_verse = fields.Integer()
     montant_verse = fields.Integer()
     ecart = fields.Integer()
-
+    # montant = fields.Integer("Montant", compute="montant_carb")
     qm_id = fields.Many2one("hr.employee", string="QM")
     pompiste_id = fields.Many2one("hr.employee", string="Pompiste")
     pompe_id = fields.Many2one("eaglefuel.pompe", string="pompe utilise")
     versement_id = fields.One2many("eaglefuel.versement", "servicepompiste_id", string="versement")
     station_id = fields.Many2one(related="pompe_id.ilo_id.station_id")
     detailventecarburant_id = fields.One2many("eaglefuel.detailventecarburant", "servicepompiste_id", string="detail su carburant vendus")
-
+    releveindex_id = fields.One2many("eaglefuel.releveindex", "servicepompiste_id", string="releve index")
 
     def name_get(self):
         result = []
@@ -42,6 +43,14 @@ class servicepompiste(models.Model):
             result.append((servicepompiste.id, name))
         return result
 
+    # def montant_carb(self):
+    #     for line in self:
+    #         if line.releveindex_id. == "e":
+    #             line.montant = 2
+    #         elif line.releveindex_id == "g":
+    #             line.montant = 1
+    #         else:
+    #             line.montant = 3
 
 # class detailventecarburant(models.Model):
 #     _name = "eaglefuel.detailventecarburant"
