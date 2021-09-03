@@ -8,11 +8,10 @@ class detailventecarburant(models.Model):
 
     nom_carb = fields.Selection(selection=[('a', 'Essence'),('b', 'Gasoile')])
     pu = fields.Integer("prix unitaire", compute="calcul_prix_unitaire")
-    montant = fields.Integer("Montant", compute="montant_carb")
-    # produit_id = fields.Many2one("product.product",  string="carburant")
+    # montant = fields.Integer("Montant", compute="montant_carb")
+    #produit_id = fields.Many2one("product.product",  string="carburant")
     servicepompiste_id = fields.Many2one("eaglefuel.servicepompiste", string="service pompiste")
 
-    @api.model
     def calcul_prix_unitaire(self):
         # prix_essence = 663
         # prix_gasoile = 593
@@ -23,11 +22,3 @@ class detailventecarburant(models.Model):
                 line.pu = 593
             else:
                 line.pu = 1
-
-    @api.model
-    def montant_carb(self):
-        for line in self:
-            if line.servicepompiste_id.pompe_id == "a":
-                line.montant = line.pu*10
-            else:
-                line.montant = line.pu*100

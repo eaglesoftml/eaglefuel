@@ -10,7 +10,7 @@
                         <group>
                             <field name="nom_carb"/>
                             <field name="pu"/>
-                            <field name="montant"/>
+<!--                            <field name="montant"/>-->
                             <field name="servicepompiste_id"/>
                         </group>
                     </group>
@@ -26,7 +26,7 @@
             <tree string="detailventecarburant">
                 <field name="nom_carb"/>
                 <field name="pu"/>
-                <field name="montant"/>
+<!--                <field name="montant"/>-->
                 <field name="servicepompiste_id"/>
             </tree>
         </field>

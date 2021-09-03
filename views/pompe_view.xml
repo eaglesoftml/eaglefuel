@@ -10,6 +10,7 @@
                         <group>
                             <field name="ref"/>
                             <field name="pompe_number"/>
+                            <field name="pompe_number"/>
                             <field name="description"/>
                         </group>
                         <group>
