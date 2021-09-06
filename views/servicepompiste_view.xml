@@ -13,12 +13,24 @@
                             <field name="ref"/>
                             <field name="date"/>
                             <field name="shift"/>
+                            <field name="pompe_id"/>
+                            <field name="pompiste_id"/>
+                            <field name="qm_id"/>
+                            <field name="station_id"/>
+<!--                            <field name="litrage_gasoile"/>-->
 <!--                            <field name="temps_debut" widget="float_time"/>-->
 <!--                            <field name="temps_fin" widget="float_time"/>-->
 <!--                            <field name="duree" widget="float_time"/>-->
 <!--                            <field name="index_depart"/>-->
 <!--                            <field name="index_arrive"/>-->
-                    </group>
+                         </group>
+
+                        <group>
+                            <field name="litrage_vendu"/>
+                            <field name="litres_essence_vendu"/>
+                            <field name="litres_gasoile_vendu"/>
+                            <field name="montant_total_vendu"/>
+                        </group>
                     <group>
 <!--                        <field name="litrage"/>-->
 <!--                        <field name="montant_total_vendu"/>-->
@@ -27,12 +39,6 @@
 <!--                        <field name="montant_a_verse"/>-->
 <!--                        <field name="montant_verse"/>-->
 <!--                        <field name="ecart"/>-->
-                    </group>
-                    <group>
-                       <field name="pompe_id"/>
-                       <field name="pompiste_id"/>
-                        <field name="qm_id"/>
-                        <field name="station_id"/>
                     </group>
                     </group>
                     <notebook>
@@ -45,7 +51,7 @@
                     </notebook>
                     <notebook>
                         <page string="releve index">
-                            <field name="releveindex_id"/>
+                            <field name="releveindex_id" />
                         </page>
                     </notebook>
                 </sheet>
@@ -61,6 +67,10 @@
                 <field name="ref"/>
                 <field name="date"/>
                 <field name="shift"/>
+                <field name="litrage_vendu"/>
+                <field name="litres_essence_vendu"/>
+                <field name="litres_gasoile_vendu"/>
+                <field name="montant_total_vendu"/>
 <!--                <field name="temps_debut"/>-->
 <!--                <field name="temps_fin"/>-->
 <!--                <field name="duree"/>-->
