@@ -35,6 +35,7 @@ class servicepompiste(models.Model):
     station_id = fields.Many2one(related="pompe_id.ilo_id.station_id")
     detailventecarburant_id = fields.One2many("eaglefuel.detailventecarburant", "servicepompiste_id", string="detail su carburant vendus")
     releveindex_id = fields.One2many("eaglefuel.releveindex", "servicepompiste_id", string="releve index")
+    paiement_id = fields.One2many("eaglefuel.paiement", 'servicepompiste_id',string="Paiement")
 
     def name_get(self):
         result = []

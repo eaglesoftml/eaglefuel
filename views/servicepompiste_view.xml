@@ -48,11 +48,20 @@
                          <page string="details des carburant vendus">
                             <field name="detailventecarburant_id"/>
                         </page>
+                        <page string="Paiement">
+                            <field name="paiement_id"/>
+<!--                            <tree create="true" delete="true" edit="true" editable="bottom">-->
+<!--                                <field name="ref"/>-->
+<!--                                <field name="type"/>-->
+<!--                                <field name="montant"/>-->
+<!--                            </tree>-->
+                        </page>
                     </notebook>
                     <notebook>
                         <page string="releve index">
                             <field name="releveindex_id" />
                         </page>
+
                     </notebook>
                 </sheet>
             </form>
