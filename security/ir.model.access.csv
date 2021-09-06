@@ -31,3 +31,6 @@ access_eaglefuel_releveindex,Gas releveindex Access Sales,model_eaglefuel_releve
 
 access_eaglefuel_detailventecarburant,Gas detailventecarburant Access Sales,model_eaglefuel_detailventecarburant,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_detailventecarburant,Gas detailventecarburant Access Sales,model_eaglefuel_detailventecarburant,eaglefuel_group_manager,1,1,1,1
+
+access_eaglefuel_paiement,Gas paiement Access Sales,model_eaglefuel_paiement,eaglefuel_group_user,1,1,1,0
+access_eaglefuel_paiement,Gas paiement Access Sales,model_eaglefuel_paiement,eaglefuel_group_manager,1,1,1,1

@@ -1,0 +1,47 @@
+<odoo>
+    <record model="ir.ui.view" id="paiement_form_view">
+         <field name="name">eaglefuel.paiement.form</field>
+         <field name="model">eaglefuel.paiement</field>
+         <field name="arch" type="xml">
+                 <form string="paiement">
+                      <header>
+                      </header>
+                     <sheet>
+                         <group>
+                          <group>
+                              <field name="ref"/>
+                              <field name="type"/>
+                              <field name="montant"/>
+                          </group>
+                      </group>
+
+                     </sheet>
+                 </form>
+         </field>
+    </record>
+
+    <record model="ir.ui.view" id="paiement_tree_view">
+         <field name="name">eaglefuel.paiement.form</field>
+         <field name="model">eaglefuel.paiement</field>
+         <field name="arch" type="xml">
+                 <tree string="Paiement">
+                     <field name="type"/>
+                     <field name="montant"/>
+                 </tree>
+         </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='paiement_action'>
+           <field name="name">paiement</field>
+           <field name="res_model">eaglefuel.paiement</field>
+           <field name="view_mode">tree,form,kanban</field>
+           <field name="help" type ="html">
+                <p class="o_view_nocontent_smiling_face"></p>
+           </field>
+    </record>
+
+
+<!--    <menuitem name="ilos" id="sub_ilo_root" parent="station_root"/>-->
+
+<!--    <menuitem name="ilo" id="sub_sub_ilo_root" parent="sub_ilo_root" action="ilo_action"/>-->
+</odoo>

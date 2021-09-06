@@ -12,7 +12,7 @@ from . import versement
 from . import  releveindex
 from . import  produit
 from . import  detailventecarburant
-
+from . import  paiement
 
 
 
