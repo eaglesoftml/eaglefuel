@@ -11,6 +11,8 @@
                             <field name="ref"/>
                             <field name="pompe_number"/>
                             <field name="pompe_number"/>
+<!--                            <field name="litrage_essence"/>-->
+<!--                            <field name="litrage_gasoile"/>-->
                             <field name="description"/>
                         </group>
                         <group>
@@ -37,6 +39,8 @@
             <tree string="Pompe">
                 <field name="ref"/>
                     <field name="pompe_number"/>
+<!--                    <field name="litrage_essence"/>-->
+<!--                    <field name="litrage_gasoile"/>-->
                     <field name="description"/>
                     <field name="ilo_id"/>
                     <field name="pistole_id"/>

@@ -16,18 +16,18 @@ class servicepompiste(models.Model):
     # duree = fields.Float("Duree du service")
     # index_depart = fields.Integer("Index de depart")
     # index_arrive = fields.Integer("Index d'arrive")
-    litrage = fields.Float()
+    litrage_vendu = fields.Float("litres", compute="litrage_totals")
     litrage_credit = fields.Float()
-    litage_gasoile = fields.Float()
-    litage_essence = fields.Float()
+    litres_gasoile_vendu = fields.Float("Gasoile vendu", compute="litrage_carb")
+    litres_essence_vendu = fields.Float("Essence vendu", compute="litrage_carb")
     montant_credit = fields.Float()
-    montant_total_vendu = fields.Integer()
-    montant_gasoile = fields.Integer()
-    montant_essence = fields.Integer()
+    montant_total_vendu = fields.Float("Montant", compute="montant_carb")
+    montant_gasoile = fields.Float()
+    montant_essence = fields.Float()
     montant_a_verse = fields.Integer()
     montant_verse = fields.Integer()
     ecart = fields.Integer()
-    montant = fields.Integer("Montant", compute="montant_carb")
+    montant = fields.Integer("Montant")
     qm_id = fields.Many2one("hr.employee", string="QM")
     pompiste_id = fields.Many2one("hr.employee", string="Pompiste")
     pompe_id = fields.Many2one("eaglefuel.pompe", string="pompe utilise")
@@ -44,12 +44,44 @@ class servicepompiste(models.Model):
             result.append((servicepompiste.id, name))
         return result
 
+    @api.depends('releveindex_id.litrage')
+    def litrage_totals(self):
+        for record in self:
+            litrage_vendu = 0
+            for line in record.releveindex_id:
+                litrage_vendu += line.litrage
+            record.update({'litrage_vendu': litrage_vendu})
+        return litrage_vendu
+
+    @api.depends('releveindex_id.litrage')
+    def litrage_carb(self):
+        for record in self:
+            litres_essence_vendu = 0
+            litres_gasoile_vendu = 0
+            for line in record.releveindex_id:
+                if line.carburant == "Essence":
+                    litres_essence_vendu += line.litrage
+                else:
+                    litres_gasoile_vendu += line.litrage
+            record.update({'litres_essence_vendu': litres_essence_vendu, 'litres_gasoile_vendu': litres_gasoile_vendu})
+        # return litres_essence_vendu
+
     def montant_carb(self):
         for line in self:
-            if line.releveindex_id.compteur_id.pistole_id.produit_servi == "e":
-                line.montant = "Essence"
-            else:
-                line.carburant = "Gasoile"
+            line.montant_total_vendu = line.litres_essence_vendu*663+line.litres_gasoile_vendu*593
+    # def litrage_gasoile(self):
+    #     for record in self:
+    #         litres_gasoile_vendu = 0
+    #         for line in record.releveindex_id:
+    #             if line.carburant == "Gasoile":
+    #                 litres_gasoile_vendu += line.litrage
+    #         record.update({'litres_gasoile_vendu': litres_gasoile_vendu})
+    #     return litres_gasoile_vendu
+
+        # if line.releveindex_id.compteur_id.pistole_id.produit_servi == "e":
+        #     line.litrage_essence = 10 #line.releveindex_id.litrage
+        # else:
+        #     line.litrage_gasoile = 100 #line.releveindex_id.litrage
 
 # class detailventecarburant(models.Model):
 #     _name = "eaglefuel.detailventecarburant"

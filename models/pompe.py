@@ -21,6 +21,8 @@ class pompe(models.Model):
     description = fields.Text()
 
     ref = fields.Char("reference")
+    # litrage_essence = fields.Integer("Litrage essence", compute="carb_vendu")
+    # litrage_gasoile = fields.Integer("Litrage essence", compute="carb_vendu")
     ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo id")
     pistole_id = fields.One2many("eaglefuel.pistole", "pompe_id", string="pistole")
     servicepompiste_id = fields.One2many("eaglefuel.servicepompiste","pompe_id", string="services pompistes")
@@ -31,3 +33,12 @@ class pompe(models.Model):
             name = str("[") + str(pompe.ilo_id.station_id.ref) +str("] ") + str(pompe.ref)
             result.append((pompe.id, name))
         return result
+
+    # def carb_vendu(self):
+    #     for line in self:
+    #         line.litrage_essence = 0
+    #         line.litrage_gasoile = 0
+    #         if line.pistole_id.produit_servi == "e":
+    #             line.litrage_essence += line.pistole_id.compteur_id.releveindex_id.litrage
+    #         else:
+    #             line.litrage_gasoile += line.pistole_id.compteur_id.releveindex_id.litrage
