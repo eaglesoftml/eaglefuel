@@ -7,7 +7,9 @@ class paiement(models.Model):
     _description = 'Paiement'
     # _rec_name = "ref"
 
-    ref = fields.Char("Paiement")
+    ref = fields.Char("Ref")
+    date = fields.Datetime("Date")
+    description = fields.Char("Description")
     type = fields.Selection(selection=[('a', 'Cash'),('b', 'Credit'),('c','Mobile')],required=True)
-    montant = fields.Integer('Montant',required=True)
+    montant = fields.Float('Montant',required=True)
     servicepompiste_id = fields.Many2one("eaglefuel.servicepompiste", string="services pompistes")
