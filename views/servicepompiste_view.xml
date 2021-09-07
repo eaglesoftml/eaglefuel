@@ -6,10 +6,10 @@
             <form string="Service pompiste">
                 <header></header>
                 <sheet>
+                    <group class="oe_right">
                     <group>
+<!--                        <div class="oe_right">-->
                         <group>
-<!--                            <field name="previous_index"/>-->
-<!--                            <field name="index"/>-->
                             <field name="ref"/>
                             <field name="date"/>
                             <field name="shift"/>
@@ -17,51 +17,34 @@
                             <field name="pompiste_id"/>
                             <field name="qm_id"/>
                             <field name="station_id"/>
-<!--                            <field name="litrage_gasoile"/>-->
-<!--                            <field name="temps_debut" widget="float_time"/>-->
-<!--                            <field name="temps_fin" widget="float_time"/>-->
-<!--                            <field name="duree" widget="float_time"/>-->
-<!--                            <field name="index_depart"/>-->
-<!--                            <field name="index_arrive"/>-->
                          </group>
-
+                    </group>
+                    <group>
                         <group>
                             <field name="litrage_vendu"/>
                             <field name="litres_essence_vendu"/>
                             <field name="litres_gasoile_vendu"/>
                             <field name="montant_total_vendu"/>
                         </group>
-                    <group>
-<!--                        <field name="litrage"/>-->
-<!--                        <field name="montant_total_vendu"/>-->
-<!--                        <field name="litrage_credit"/>-->
-<!--                        <field name="montant_credit"/>-->
-<!--                        <field name="montant_a_verse"/>-->
-<!--                        <field name="montant_verse"/>-->
-<!--                        <field name="ecart"/>-->
+                        <group>
+                            <field name="montant_verse"/>
+                            <field name="montant_credit"/>
+                            <field name="montant_mobile"/>
+                            <field name="ecart"/>
+                        </group>
                     </group>
+<!--                    </div>-->
                     </group>
                     <notebook>
-                        <page string="Les differentes versements">
-                            <field name="versement_id"/>
-                        </page>
-                         <page string="details des carburant vendus">
-                            <field name="detailventecarburant_id"/>
-                        </page>
+
                         <page string="Paiement">
                             <field name="paiement_id"/>
-<!--                            <tree create="true" delete="true" edit="true" editable="bottom">-->
-<!--                                <field name="ref"/>-->
-<!--                                <field name="type"/>-->
-<!--                                <field name="montant"/>-->
-<!--                            </tree>-->
                         </page>
                     </notebook>
                     <notebook>
-                        <page string="releve index">
+                        <page string="Releve index">
                             <field name="releveindex_id" />
                         </page>
-
                     </notebook>
                 </sheet>
             </form>

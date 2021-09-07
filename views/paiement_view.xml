@@ -12,6 +12,8 @@
                               <field name="ref"/>
                               <field name="type"/>
                               <field name="montant"/>
+                              <field name="description"/>
+                              <field name="date"/>
                           </group>
                       </group>
 
@@ -27,6 +29,8 @@
                  <tree string="Paiement">
                      <field name="type"/>
                      <field name="montant"/>
+                     <field name="description"/>
+                     <field name="date"/>
                  </tree>
          </field>
     </record>

@@ -8,10 +8,10 @@ class versement(models.Model):
     # _rec_name = "ref"
 
     ref = fields.Char("reference")
-    montant_versement = fields.Integer("Montant du versement")
+    montant_versement = fields.Float("Montant du versement")
     # heure_versement = fields.Float("Heure du versement", required=True)
     # nbre_versement = fields.Integer("Nombre de versement")
-    total_versement = fields.Integer("Total somme verse")
+    total_versement = fields.Float("Total somme verse")
     servicepompiste_id = fields.Many2one("eaglefuel.servicepompiste", string="service pompiste")
 
     def name_get(self):

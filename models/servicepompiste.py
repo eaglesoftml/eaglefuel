@@ -9,7 +9,7 @@ class servicepompiste(models.Model):
     # _rec_name = "ref"
 
     ref = fields.Char("Reference")
-    date = fields.Datetime("Date du service", required=True)
+    date = fields.Datetime("Date", required=True)
     shift = fields.Selection(selection=[('matin', 'Matin'),('soir', 'Soir')])
     # temps_debut = fields.Float("Heure de depart", required=True)
     # temps_fin = fields.Float("Heure de fin")
@@ -18,15 +18,16 @@ class servicepompiste(models.Model):
     # index_arrive = fields.Integer("Index d'arrive")
     litrage_vendu = fields.Float("litres", compute="litrage_totals")
     litrage_credit = fields.Float()
-    litres_gasoile_vendu = fields.Float("Gasoile vendu", compute="litrage_carb")
-    litres_essence_vendu = fields.Float("Essence vendu", compute="litrage_carb")
-    montant_credit = fields.Float()
+    litres_gasoile_vendu = fields.Float("Gasoile", compute="litrage_carb")
+    litres_essence_vendu = fields.Float("Essence", compute="litrage_carb")
+    montant_credit = fields.Float("Credit", compute="total_montant")
+    montant_mobile = fields.Float("Mobile", compute="total_montant")
     montant_total_vendu = fields.Float("Montant", compute="montant_carb")
     montant_gasoile = fields.Float()
     montant_essence = fields.Float()
     montant_a_verse = fields.Integer()
-    montant_verse = fields.Integer()
-    ecart = fields.Integer()
+    montant_verse = fields.Float("Montant verse", compute="total_montant")
+    ecart = fields.Float("Ecart", compute="ecart_compte")
     montant = fields.Integer("Montant")
     qm_id = fields.Many2one("hr.employee", string="QM")
     pompiste_id = fields.Many2one("hr.employee", string="Pompiste")
@@ -77,11 +78,43 @@ class servicepompiste(models.Model):
     #                 litres_gasoile_vendu += line.litrage
     #         record.update({'litres_gasoile_vendu': litres_gasoile_vendu})
     #     return litres_gasoile_vendu
+    #
+    #     if line.releveindex_id.compteur_id.pistole_id.produit_servi == "e":
+    #         line.litrage_essence = 10 #line.releveindex_id.litrage
+    #     else:
+    #         line.litrage_gasoile = 100 #line.releveindex_id.litrage
 
-        # if line.releveindex_id.compteur_id.pistole_id.produit_servi == "e":
-        #     line.litrage_essence = 10 #line.releveindex_id.litrage
-        # else:
-        #     line.litrage_gasoile = 100 #line.releveindex_id.litrage
+    @api.depends('versement_id.montant_versement')
+    def total_verse(self):
+        for record in self:
+            montant_verse = 0
+            for line in record.versement_id:
+                montant_verse += line.montant_versement
+            record.update({'montant_verse': montant_verse})
+        return montant_verse
+
+    @api.depends('paiement_id.montant')
+    def total_montant(self):
+        for record in self:
+            montant_credit = 0
+            montant_verse = 0
+            montant_mobile = 0
+            for line in record.paiement_id:
+                if line.type == 'b':
+                    montant_credit += line.montant
+                elif line.type == 'a':
+                    montant_verse += line.montant
+                elif line.type == 'c':
+                    montant_mobile += line.montant
+            record.update({'montant_credit': montant_credit,'montant_verse': montant_verse,'montant_mobile': montant_mobile})
+        #return montant_credit
+
+
+    def ecart_compte(self):
+        for line in self:
+            line.montant_a_verse = line.montant_total_vendu-line.montant_credit-line.montant_mobile
+            line.ecart = line.montant_a_verse-line.montant_verse
+
 
 # class detailventecarburant(models.Model):
 #     _name = "eaglefuel.detailventecarburant"
