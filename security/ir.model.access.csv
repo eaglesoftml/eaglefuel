@@ -23,14 +23,8 @@ access_eaglefuel_servicepompiste,Gas servicepompiste Access Sales,model_eaglefue
 access_eaglefuel_compteur,Gas Compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_compteur,Gas compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_manager,1,1,1,1
 
-access_eaglefuel_versement,Gas Versement Access Sales,model_eaglefuel_versement,eaglefuel_group_user,1,1,1,0
-access_eaglefuel_versement,Gas versement Access Sales,model_eaglefuel_versement,eaglefuel_group_manager,1,1,1,1
-
 access_eaglefuel_releveindex,Gas releveindex Access Sales,model_eaglefuel_releveindex,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_releveindex,Gas releveindex Access Sales,model_eaglefuel_releveindex,eaglefuel_group_manager,1,1,1,1
-
-access_eaglefuel_detailventecarburant,Gas detailventecarburant Access Sales,model_eaglefuel_detailventecarburant,eaglefuel_group_user,1,1,1,0
-access_eaglefuel_detailventecarburant,Gas detailventecarburant Access Sales,model_eaglefuel_detailventecarburant,eaglefuel_group_manager,1,1,1,1
 
 access_eaglefuel_paiement,Gas paiement Access Sales,model_eaglefuel_paiement,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_paiement,Gas paiement Access Sales,model_eaglefuel_paiement,eaglefuel_group_manager,1,1,1,1

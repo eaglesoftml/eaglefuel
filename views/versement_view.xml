@@ -9,7 +9,7 @@
                 <field name="montant_versement"/>
 <!--                <field name="heure_versement"/>-->
 <!--                <field name="nbre_versement"/>-->
-                <field name="servicepompiste_id"/>
+<!--                <field name="servicepompiste_id"/>-->
             </tree>
         </field>
     </record>
@@ -28,7 +28,7 @@
 <!--                            <field name="nbre_versement"/>-->
                         </group>
                         <group>
-                            <field name="servicepompiste_id"/>
+<!--                            <field name="servicepompiste_id"/>-->
                         </group>
                     </group>
                 </sheet>

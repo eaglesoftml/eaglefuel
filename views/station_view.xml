@@ -24,13 +24,13 @@
                                      </group>
                                 </group>
                                     <notebook>
-                                        <page string="La liste des ilos">
+                                        <page string="Ilos">
                                             <field name="ilo_id" />
                                         </page>
-                                        <page string="La liste des cuves">
+                                        <page string="Cuves">
                                             <field name="cuve_id" />
                                         </page>
-                                        <page string="La liste des employes">
+                                        <page string="Employes">
                                             <field name="employe_id" />
                                         </page>
                                         <page string="Produits">

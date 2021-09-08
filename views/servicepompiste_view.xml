@@ -67,7 +67,7 @@
                 <field name="qm_id"/>
                 <field name="pompiste_id"/>
                 <field name="pompe_id"/>
-                <field name="versement_id"/>
+<!--                <field name="versement_id"/>-->
                 <field name="releveindex_id"/>
 <!--                <field name="index_depart"/>-->
 <!--                <field name="index_arrive"/>-->

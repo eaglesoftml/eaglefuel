@@ -32,9 +32,9 @@ class servicepompiste(models.Model):
     qm_id = fields.Many2one("hr.employee", string="QM")
     pompiste_id = fields.Many2one("hr.employee", string="Pompiste")
     pompe_id = fields.Many2one("eaglefuel.pompe", string="pompe utilise")
-    versement_id = fields.One2many("eaglefuel.versement", "servicepompiste_id", string="versement")
+    # versement_id = fields.One2many("eaglefuel.versement", "servicepompiste_id", string="versement")
     station_id = fields.Many2one(related="pompe_id.ilo_id.station_id")
-    detailventecarburant_id = fields.One2many("eaglefuel.detailventecarburant", "servicepompiste_id", string="detail su carburant vendus")
+    # detailventecarburant_id = fields.One2many("eaglefuel.detailventecarburant", "servicepompiste_id", string="detail su carburant vendus")
     releveindex_id = fields.One2many("eaglefuel.releveindex", "servicepompiste_id", string="releve index")
     paiement_id = fields.One2many("eaglefuel.paiement", 'servicepompiste_id',string="Paiement")
 

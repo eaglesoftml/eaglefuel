@@ -20,10 +20,10 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Liste des pistoles">
+                        <page string="Pistoles">
                             <field name="pistole_id"/>
                         </page>
-                        <page string="Les services pompistes">
+                        <page string="Pompistes">
                             <field name="servicepompiste_id"/>
                         </page>
                     </notebook>

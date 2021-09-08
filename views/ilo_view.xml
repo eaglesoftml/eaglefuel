@@ -19,7 +19,7 @@
                          </group>
                       </group>
                          <notebook>
-                             <page string="Liste des pompes">
+                             <page string="Pompes">
                                  <field name="pompe_id"/>
                              </page>
                          </notebook>
