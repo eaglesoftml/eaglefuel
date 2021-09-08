@@ -6,42 +6,40 @@
             <form string="Service pompiste">
                 <header></header>
                 <sheet>
-                    <group class="oe_right">
-                    <group>
-<!--                        <div class="oe_right">-->
+                    <group style="display:flex;flex-direction:row">
+<!--                        <group>-->
+    <!--                        <div class="oe_right">-->
+                            <group>
+                                <field name="ref"/>
+                                <field name="date"/>
+                                <field name="shift"/>
+                                <field name="pompe_id"/>
+                                <field name="pompiste_id"/>
+                                <field name="qm_id"/>
+                                <field name="station_id"/>
+                             </group>
+    <!--                    </group>-->
+<!--                        <group>-->
+                            <group>
+                                <field name="litrage_vendu"/>
+                                <field name="litres_essence_vendu"/>
+                                <field name="litres_gasoile_vendu"/>
+                                <field name="montant_total_vendu"/>
+                            </group>
                         <group>
-                            <field name="ref"/>
-                            <field name="date"/>
-                            <field name="shift"/>
-                            <field name="pompe_id"/>
-                            <field name="pompiste_id"/>
-                            <field name="qm_id"/>
-                            <field name="station_id"/>
-                         </group>
-                    </group>
-                    <group>
-                        <group>
-                            <field name="litrage_vendu"/>
-                            <field name="litres_essence_vendu"/>
-                            <field name="litres_gasoile_vendu"/>
-                            <field name="montant_total_vendu"/>
+                                <field name="montant_verse"/>
+                                <field name="montant_credit"/>
+                                <field name="montant_mobile"/>
+                                <field name="ecart"/>
                         </group>
-                        <group>
-                            <field name="montant_verse"/>
-                            <field name="montant_credit"/>
-                            <field name="montant_mobile"/>
-                            <field name="ecart"/>
-                        </group>
-                    </group>
-<!--                    </div>-->
+<!--                        </group>-->
+    <!--                    </div>-->
                     </group>
                     <notebook>
 
                         <page string="Paiement">
                             <field name="paiement_id"/>
                         </page>
-                    </notebook>
-                    <notebook>
                         <page string="Releve index">
                             <field name="releveindex_id" />
                         </page>
