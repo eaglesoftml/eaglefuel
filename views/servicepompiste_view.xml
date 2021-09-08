@@ -40,8 +40,6 @@
                         <page string="Paiement">
                             <field name="paiement_id"/>
                         </page>
-                    </notebook>
-                    <notebook>
                         <page string="Releve index">
                             <field name="releveindex_id" />
                         </page>
