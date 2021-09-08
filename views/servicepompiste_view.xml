@@ -41,7 +41,7 @@
                             <field name="paiement_id"/>
                         </page>
                         <page string="Releve index">
-                            <field name="releveindex_id" />
+                            <field name="releveindex_id"/>
                         </page>
                     </notebook>
                 </sheet>
@@ -82,10 +82,20 @@
         </field>
     </record>
 
+    <record id= "servicepompiste_graph_view" model="ir.ui.view">
+       <field name="name">eaglefuel.servicepompiste.graph</field>
+       <field name="model">eaglefuel.servicepompiste</field>
+       <field name="arch" type="xml">
+           <graph string="Litrage/Montant">
+               <field name="litrage_vendu"/>
+               <field name="montant_total_vendu" operator= "*"/>
+           </graph>
+       </field>
+    </record>
     <record model="ir.actions.act_window" id="servicepompiste_action">
         <field name="name">service pompiste</field>
         <field name="res_model">eaglefuel.servicepompiste</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,graph</field>
     </record>
 
     <menuitem name="Services pompistes" id="sub_servicepompiste_root" parent="station_root"/>
