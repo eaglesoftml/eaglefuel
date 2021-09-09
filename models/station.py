@@ -35,7 +35,7 @@ class station(models.Model):
     # ilo_id = fields.One2many("eaglefuel.ilo", "station_id", string="ilo")
     pompe_id = fields.One2many("eaglefuel.pompe", "station_id", string="Pompes")
     cuve_id = fields.One2many("eaglefuel.cuve", "station_id", string="cuve")
-    employe_id= fields.One2many("hr.employee", "station_id", string="employe")
+    employe_id = fields.One2many("hr.employee", "station_id", string="employe")
     produit_id = fields.One2many("product.product", "station_id", string="Produit")
 
 class HrEmployee(models.Model):
