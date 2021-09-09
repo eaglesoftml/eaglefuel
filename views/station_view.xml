@@ -24,8 +24,8 @@
                                      </group>
                                 </group>
                                     <notebook>
-                                        <page string="Ilos">
-                                            <field name="ilo_id" />
+                                        <page string="Pompes">
+                                            <field name="pompe_id" />
                                         </page>
                                         <page string="Cuves">
                                             <field name="cuve_id" />
@@ -51,7 +51,7 @@
                  <field name="name" />
                  <field name="adress" />
                  <field name="description" />
-                 <field name="ilo_id" />
+                 <field name="pompe_id" />
             </tree>
          </field>
     </record>

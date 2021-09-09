@@ -23,14 +23,15 @@ class pompe(models.Model):
     ref = fields.Char("reference")
     # litrage_essence = fields.Integer("Litrage essence", compute="carb_vendu")
     # litrage_gasoile = fields.Integer("Litrage essence", compute="carb_vendu")
-    ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo id")
+    # ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo id")
+    station_id = fields.Many2one("eaglefuel.station", string="station id")
     pistole_id = fields.One2many("eaglefuel.pistole", "pompe_id", string="pistole")
     servicepompiste_id = fields.One2many("eaglefuel.servicepompiste","pompe_id", string="services pompistes")
 
     def name_get(self):
         result = []
         for pompe in self:
-            name = str("[") + str(pompe.ilo_id.station_id.ref) +str("] ") + str(pompe.ref)
+            name = str("[") + str(pompe.station_id.ref) +str("] ") + str(pompe.ref)
             result.append((pompe.id, name))
         return result
 

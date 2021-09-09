@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import station
-from . import ilo
+# from . import ilo
 from . import pompe
 from . import pistole
 from . import compteur

@@ -19,6 +19,6 @@ class pistole(models.Model):
     def name_get(self):
         result = []
         for pistole in self:
-            name = str("[") + str(pistole.pompe_id.ilo_id.station_id.ref) +str("] ") + "/" + str(pistole.pompe_id.ref) + "/" + str(pistole.ref)
+            name = str("[") + str(pistole.pompe_id.station_id.ref) +str("] ") + "/" + str(pistole.pompe_id.ref) + "/" + str(pistole.ref)
             result.append((pistole.id, name))
         return result

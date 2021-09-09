@@ -15,12 +15,12 @@
                               <field name="description"/>
                           </group>
                          <group>
-                             <field name="station_id"/>
+<!--                             <field name="station_id"/>-->
                          </group>
                       </group>
                          <notebook>
                              <page string="Pompes">
-                                 <field name="pompe_id"/>
+<!--                                 <field name="pompe_id"/>-->
                              </page>
                          </notebook>
                      </sheet>
@@ -37,8 +37,8 @@
                      <field name="number"/>
                      <field name="nom"/>
                      <field name="description"/>
-                     <field name="station_id"/>
-                     <field name="pompe_id"/>
+<!--                     <field name="station_id"/>-->
+<!--                     <field name="pompe_id"/>-->
                  </tree>
          </field>
     </record>

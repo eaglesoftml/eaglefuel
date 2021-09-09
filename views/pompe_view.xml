@@ -16,7 +16,7 @@
                             <field name="description"/>
                         </group>
                         <group>
-                            <field name="ilo_id"/>
+                            <field name="station_id"/>
                         </group>
                     </group>
                     <notebook>
@@ -42,7 +42,7 @@
 <!--                    <field name="litrage_essence"/>-->
 <!--                    <field name="litrage_gasoile"/>-->
                     <field name="description"/>
-                    <field name="ilo_id"/>
+                    <field name="station_id"/>
                     <field name="pistole_id"/>
             </tree>
         </field>

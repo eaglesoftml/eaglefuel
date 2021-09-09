@@ -28,7 +28,7 @@
         'security/ir.model.access.csv',
         'views/eaglefuel_view.xml',
         'views/station_view.xml',
-        'views/ilo_view.xml',
+        # 'views/ilo_view.xml',
         'views/pompe_view.xml',
         'views/pistole_view.xml',
         'views/compteur_view.xml',

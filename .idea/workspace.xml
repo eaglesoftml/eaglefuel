@@ -4,22 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="amelioration de la classe service pompiste">
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="suppression des classes detaileventecarburant et versement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/detailventecarburant.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ilo.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ilo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pistole.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pistole.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pompe.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pompe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/releveindex.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/releveindex.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/servicepompiste.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/servicepompiste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/versement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/compteur_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/compteur_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/detailventecarburant_view.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/ilo_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/ilo_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/servicepompiste_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/servicepompiste_view.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/station_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/station_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/versement_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/versement_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631093075181</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="suppression des classes detaileventecarburant et versement">
+      <created>1631115886592</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1631115886592</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,6 +329,7 @@
     <MESSAGE value="ajout de la fonction name_get au compteur" />
     <MESSAGE value="finissons de l'ajout de la fonction name_get" />
     <MESSAGE value="amelioration de la classe service pompiste" />
-    <option name="LAST_COMMIT_MESSAGE" value="amelioration de la classe service pompiste" />
+    <MESSAGE value="suppression des classes detaileventecarburant et versement" />
+    <option name="LAST_COMMIT_MESSAGE" value="suppression des classes detaileventecarburant et versement" />
   </component>
 </project>

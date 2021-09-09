@@ -2,9 +2,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_eaglefuel_station,Gas Station Access Sales,model_eaglefuel_station,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_station,Gas Station Access Sales,model_eaglefuel_station,eaglefuel_group_manager,1,1,1,1
 
-access_eaglefuel_ilo,Gas ilo Access Sales,model_eaglefuel_ilo,eaglefuel_group_user,1,1,1,0
-access_eaglefuel_ilo,Gas ilo Access Sales,model_eaglefuel_ilo,eaglefuel_group_manager,1,1,1,1
-
 access_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_group_manager,1,1,1,1
 

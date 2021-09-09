@@ -23,7 +23,7 @@ class releveindex(models.Model):
     def name_get(self):
         result = []
         for releveindex in self:
-            name = str("[") + str(releveindex.compteur_id.pistole_id.pompe_id.ilo_id.station_id.ref) +str("] ") + str(releveindex.ref)
+            name = str("[") + str(releveindex.compteur_id.pistole_id.pompe_id.station_id.ref) +str("] ") + str(releveindex.ref)
             result.append((releveindex.id, name))
         return result
 
