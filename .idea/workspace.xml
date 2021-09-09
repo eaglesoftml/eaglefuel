@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="suppression des classes detaileventecarburant et versement">
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="suppression de la classe ilo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ilo.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/ilo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/pistole.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pistole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/pompe.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pompe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/releveindex.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/releveindex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/servicepompiste.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/servicepompiste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/ilo_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/ilo_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/station_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/station_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631115886592</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="suppression de la classe ilo">
+      <created>1631179330682</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1631179330683</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -330,6 +325,7 @@
     <MESSAGE value="finissons de l'ajout de la fonction name_get" />
     <MESSAGE value="amelioration de la classe service pompiste" />
     <MESSAGE value="suppression des classes detaileventecarburant et versement" />
-    <option name="LAST_COMMIT_MESSAGE" value="suppression des classes detaileventecarburant et versement" />
+    <MESSAGE value="suppression de la classe ilo" />
+    <option name="LAST_COMMIT_MESSAGE" value="suppression de la classe ilo" />
   </component>
 </project>
