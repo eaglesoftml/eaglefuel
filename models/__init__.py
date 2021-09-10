@@ -9,10 +9,10 @@ from . import cuve
 from . import jauge
 from . import servicepompiste
 from . import versement
-from . import  releveindex
-from . import  produit
-from . import  detailventecarburant
-from . import  paiement
+from . import releveindex
+from . import produit
+from . import detailventecarburant
+from . import paiement
 
 
 
