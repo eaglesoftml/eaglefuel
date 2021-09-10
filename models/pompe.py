@@ -21,8 +21,10 @@ class pompe(models.Model):
     description = fields.Text()
 
     ref = fields.Char("reference")
-    # litrage_essence = fields.Integer("Litrage essence", compute="carb_vendu")
-    # litrage_gasoile = fields.Integer("Litrage essence", compute="carb_vendu")
+    litrage_essence = fields.Integer("Litrage essence", compute="qte_carb_vendu")
+    litrage_gasoile = fields.Integer("Litrage Gasoile", compute="qte_carb_vendu")
+    total_litres  = fields.Float("Litrage vendu", compute="qte_carb_vendu")
+    date = fields.Date("La date")
     # ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo id")
     station_id = fields.Many2one("eaglefuel.station", string="station id")
     pistole_id = fields.One2many("eaglefuel.pistole", "pompe_id", string="pistole")
@@ -35,11 +37,14 @@ class pompe(models.Model):
             result.append((pompe.id, name))
         return result
 
-    # def carb_vendu(self):
-    #     for line in self:
-    #         line.litrage_essence = 0
-    #         line.litrage_gasoile = 0
-    #         if line.pistole_id.produit_servi == "e":
-    #             line.litrage_essence += line.pistole_id.compteur_id.releveindex_id.litrage
-    #         else:
-    #             line.litrage_gasoile += line.pistole_id.compteur_id.releveindex_id.litrage
+    @api.depends('servicepompiste_id.litres_essence_vendu','servicepompiste_id.litres_gasoile_vendu','servicepompiste_id.litrage_vendu')
+    def qte_carb_vendu(self):
+        for record in self:
+            litrage_essence = 0
+            litrage_gasoile = 0
+            total_litres = 0
+            for line in record.servicepompiste_id:
+                litrage_essence += line.litres_essence_vendu
+                litrage_gasoile += line.litres_gasoile_vendu
+                total_litres += line.litrage_vendu
+            record.update({'litrage_essence': litrage_essence, 'litrage_gasoile': litrage_gasoile,'total_litres':total_litres})
