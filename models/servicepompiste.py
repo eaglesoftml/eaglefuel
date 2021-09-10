@@ -9,7 +9,7 @@ class servicepompiste(models.Model):
     # _rec_name = "ref"
 
     ref = fields.Char("Reference")
-    date = fields.Datetime("Date", required=True)
+    date = fields.Date("Date", required=True)
     shift = fields.Selection(selection=[('matin', 'Matin'),('soir', 'Soir')])
     # temps_debut = fields.Float("Heure de depart", required=True)
     # temps_fin = fields.Float("Heure de fin")

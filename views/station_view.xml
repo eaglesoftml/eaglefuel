@@ -22,6 +22,11 @@
                                          <field name="adress" />
                                          <field name="description" />
                                      </group>
+                                    <group>
+                                         <field name="litres_essence_vendu_station" />
+                                         <field name="litres_gasoile_vendu_station" />
+                                         <field name="litres_total_vendu_station" />
+                                     </group>
                                 </group>
                                     <notebook>
                                         <page string="Pompes">

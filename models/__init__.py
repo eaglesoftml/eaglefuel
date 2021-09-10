@@ -10,6 +10,7 @@ from . import servicepompiste
 from . import releveindex
 from . import produit
 from . import paiement
+from . import rapportjournalier
 
 
 
