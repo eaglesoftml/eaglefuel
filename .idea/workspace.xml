@@ -4,22 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="paiement" />
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="suppression de la classe ilo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1xARklShKZ7pL5aqCefANWu3jZL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -30,15 +34,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/views" />
-      <recent name="$PROJECT_DIR$/models" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="odoo-bin" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -48,12 +46,12 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="/opt/odoo14/odoo" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="/usr/bin/python3.8" />
+      <option name="WORKING_DIRECTORY" value="/opt/odoo13/odoo" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="/opt/odoo14/odoo/odoo-bin" />
+      <option name="SCRIPT_NAME" value="/opt/odoo13/odoo/odoo-bin" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -234,69 +232,97 @@
       <updated>1630574905631</updated>
     </task>
     <task id="LOCAL-00024" summary="amelioration de la classe service pompiste">
-      <created>1630667330512</created>
+      <created>1630584084032</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1630667330512</updated>
+      <updated>1630584084032</updated>
     </task>
     <task id="LOCAL-00025" summary="amelioration de la classe service pompiste">
-      <created>1630675820842</created>
+      <created>1630667313194</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1630675820842</updated>
+      <updated>1630667313194</updated>
     </task>
-    <task id="LOCAL-00026" summary="paiement">
-      <created>1630925917120</created>
+    <task id="LOCAL-00026" summary="amelioration de la classe service pompiste">
+      <created>1630675682172</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1630925917120</updated>
+      <updated>1630675682172</updated>
     </task>
-    <task id="LOCAL-00027" summary="paiement">
-      <created>1631010647931</created>
+    <task id="LOCAL-00027" summary="amelioration de la classe service pompiste">
+      <created>1630945412973</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1631010647931</updated>
+      <updated>1630945412973</updated>
     </task>
-    <task id="LOCAL-00028" summary="paiement">
-      <created>1631109017059</created>
+    <task id="LOCAL-00028" summary="amelioration de la classe service pompiste">
+      <created>1630945493222</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1631109017059</updated>
+      <updated>1630945493222</updated>
     </task>
-    <task id="LOCAL-00029" summary="paiement">
-      <created>1631265010930</created>
+    <task id="LOCAL-00029" summary="amelioration de la classe service pompiste">
+      <created>1631028010771</created>
       <option name="number" value="00029" />
       <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1631265010930</updated>
+      <updated>1631028010771</updated>
     </task>
-    <task id="LOCAL-00030" summary="paiement">
-      <created>1631266691203</created>
+    <task id="LOCAL-00030" summary="amelioration de la classe service pompiste">
+      <created>1631090785324</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1631266691203</updated>
+      <updated>1631090785324</updated>
     </task>
-    <task id="LOCAL-00031" summary="paiement">
-      <created>1631266742672</created>
+    <task id="LOCAL-00031" summary="amelioration de la classe service pompiste">
+      <created>1631093075181</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1631266742672</updated>
+      <updated>1631093075181</updated>
     </task>
-    <task id="LOCAL-00032" summary="paiement">
-      <created>1631266828796</created>
+    <task id="LOCAL-00032" summary="suppression des classes detaileventecarburant et versement">
+      <created>1631115886592</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1631266828796</updated>
+      <updated>1631115886592</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="suppression de la classe ilo">
+      <created>1631179330682</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1631179330683</updated>
+    </task>
+    <task id="LOCAL-00034" summary="suppression de la classe ilo">
+      <created>1631181047671</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1631181047671</updated>
+    </task>
+    <task id="LOCAL-00035" summary="suppression de la classe ilo">
+      <created>1631181757588</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1631181757588</updated>
+    </task>
+    <task id="LOCAL-00036" summary="suppression de la classe ilo">
+      <created>1631264854037</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1631264854037</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -321,7 +347,8 @@
     <MESSAGE value="ajout de la fonction name_get au compteur" />
     <MESSAGE value="finissons de l'ajout de la fonction name_get" />
     <MESSAGE value="amelioration de la classe service pompiste" />
-    <MESSAGE value="paiement" />
-    <option name="LAST_COMMIT_MESSAGE" value="paiement" />
+    <MESSAGE value="suppression des classes detaileventecarburant et versement" />
+    <MESSAGE value="suppression de la classe ilo" />
+    <option name="LAST_COMMIT_MESSAGE" value="suppression de la classe ilo" />
   </component>
 </project>

@@ -38,6 +38,23 @@ class station(models.Model):
     employe_id = fields.One2many("hr.employee", "station_id", string="employe")
     produit_id = fields.One2many("product.product", "station_id", string="Produit")
 
+
+    # @api.depends('pompe_id.litrage_essence','pompe_id.litrage_gasoile','pompe_id.total_litres')
+    # def qte_carb_vendu(self):
+    #     for record in self:
+    #         litrage_essence = 0
+    #         litrage_gasoile = 0
+    #         total_litres = 0
+    #         for line in record.servicepompiste_id:
+    #             litrage_essence += line.litres_essence_vendu
+    #             litrage_gasoile += line.litres_gasoile_vendu
+    #             total_litres += line.litrage_vendu
+    #         record.update(
+    #             {'litrage_essence': litrage_essence, 'litrage_gasoile': litrage_gasoile, 'total_litres': total_litres})
+    #
+    #
+
+
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
 
