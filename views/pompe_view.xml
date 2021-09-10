@@ -35,13 +35,13 @@
         </field>
     </record>
 
-    <record id= "pompe_graph_view" model="ir.ui.view">
-       <field name="name">eaglefuel.pompe.graph</field>
+    <record id= "pompe_pivot_view" model="ir.ui.view">
+       <field name="name">eaglefuel.pompe.pivot</field>
        <field name="model">eaglefuel.pompe</field>
        <field name="arch" type="xml">
            <graph string="Essence/Date">
-               <field name="ref" type="measure"/>
-               <field name="litrage_essence" type="measure"/>
+               <field name="date" type ="row"/>
+               <field name="litrage_essence"/>
            </graph>
        </field>
     </record>
@@ -65,7 +65,7 @@
     <record model="ir.actions.act_window" id="pompe_action">
         <field name="name">Pompe</field>
         <field name="res_model">eaglefuel.pompe</field>
-        <field name="view_mode">tree,form,graph</field>
+        <field name="view_mode">tree,form,graph,pivot</field>
     </record>
 
     <menuitem name="Pompes" id="sub_pompe_root" parent="station_root"/>
