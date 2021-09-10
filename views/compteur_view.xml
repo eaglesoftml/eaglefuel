@@ -17,7 +17,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Les releves index">
+                        <page string="Releves index">
                             <field name="releveindex_id"/>
                         </page>
                     </notebook>

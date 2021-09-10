@@ -32,16 +32,14 @@ class servicepompiste(models.Model):
     qm_id = fields.Many2one("hr.employee", string="QM")
     pompiste_id = fields.Many2one("hr.employee", string="Pompiste")
     pompe_id = fields.Many2one("eaglefuel.pompe", string="pompe utilise")
-    versement_id = fields.One2many("eaglefuel.versement", "servicepompiste_id", string="versement")
-    station_id = fields.Many2one(related="pompe_id.ilo_id.station_id")
-    detailventecarburant_id = fields.One2many("eaglefuel.detailventecarburant", "servicepompiste_id", string="detail su carburant vendus")
+    station_id = fields.Many2one(string="Station",related="pompe_id.station_id")
     releveindex_id = fields.One2many("eaglefuel.releveindex", "servicepompiste_id", string="releve index")
     paiement_id = fields.One2many("eaglefuel.paiement", 'servicepompiste_id',string="Paiement")
 
     def name_get(self):
         result = []
         for servicepompiste in self:
-            name = str("[") + str(servicepompiste.pompe_id.ilo_id.station_id.ref) +str("] ") + str(servicepompiste.ref)
+            name = str("[") + str(servicepompiste.pompe_id.station_id.ref) +str("] ") + str(servicepompiste.ref)
             result.append((servicepompiste.id, name))
         return result
 

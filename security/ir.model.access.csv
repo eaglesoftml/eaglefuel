@@ -2,9 +2,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_eaglefuel_station,Gas Station Access Sales,model_eaglefuel_station,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_station,Gas Station Access Sales,model_eaglefuel_station,eaglefuel_group_manager,1,1,1,1
 
-access_eaglefuel_ilo,Gas ilo Access Sales,model_eaglefuel_ilo,eaglefuel_group_user,1,1,1,0
-access_eaglefuel_ilo,Gas ilo Access Sales,model_eaglefuel_ilo,eaglefuel_group_manager,1,1,1,1
-
 access_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_pompe,Gas pompe Access Sales,model_eaglefuel_pompe,eaglefuel_group_manager,1,1,1,1
 
@@ -23,14 +20,8 @@ access_eaglefuel_servicepompiste,Gas servicepompiste Access Sales,model_eaglefue
 access_eaglefuel_compteur,Gas Compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_compteur,Gas compteur Access Sales,model_eaglefuel_compteur,eaglefuel_group_manager,1,1,1,1
 
-access_eaglefuel_versement,Gas Versement Access Sales,model_eaglefuel_versement,eaglefuel_group_user,1,1,1,0
-access_eaglefuel_versement,Gas versement Access Sales,model_eaglefuel_versement,eaglefuel_group_manager,1,1,1,1
-
 access_eaglefuel_releveindex,Gas releveindex Access Sales,model_eaglefuel_releveindex,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_releveindex,Gas releveindex Access Sales,model_eaglefuel_releveindex,eaglefuel_group_manager,1,1,1,1
-
-access_eaglefuel_detailventecarburant,Gas detailventecarburant Access Sales,model_eaglefuel_detailventecarburant,eaglefuel_group_user,1,1,1,0
-access_eaglefuel_detailventecarburant,Gas detailventecarburant Access Sales,model_eaglefuel_detailventecarburant,eaglefuel_group_manager,1,1,1,1
 
 access_eaglefuel_paiement,Gas paiement Access Sales,model_eaglefuel_paiement,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_paiement,Gas paiement Access Sales,model_eaglefuel_paiement,eaglefuel_group_manager,1,1,1,1

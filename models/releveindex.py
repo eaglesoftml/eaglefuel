@@ -7,8 +7,8 @@ class releveindex(models.Model):
     _description = "releveindex"
 
     ref = fields.Char("Reference")
-    index_matin = fields.Integer("Index matin", required=True)
-    index_soir = fields.Integer("Index soir", required=True)
+    index_matin = fields.Integer("Index depart", required=True)
+    index_soir = fields.Integer("Index arrive", required=True)
     litrage = fields.Float("Litrage", compute="litrage_vendu")
     carburant = fields.Char(compute="nom_carb")
     date_releve = fields.Datetime("Date du releve", required=True)
@@ -23,7 +23,7 @@ class releveindex(models.Model):
     def name_get(self):
         result = []
         for releveindex in self:
-            name = str("[") + str(releveindex.compteur_id.pistole_id.pompe_id.ilo_id.station_id.ref) +str("] ") + str(releveindex.ref)
+            name = str("[") + str(releveindex.compteur_id.pistole_id.pompe_id.station_id.ref) +str("] ") + str(releveindex.ref)
             result.append((releveindex.id, name))
         return result
 

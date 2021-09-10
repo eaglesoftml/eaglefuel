@@ -24,13 +24,13 @@
                                      </group>
                                 </group>
                                     <notebook>
-                                        <page string="La liste des ilos">
-                                            <field name="ilo_id" />
+                                        <page string="Pompes">
+                                            <field name="pompe_id" />
                                         </page>
-                                        <page string="La liste des cuves">
+                                        <page string="Cuves">
                                             <field name="cuve_id" />
                                         </page>
-                                        <page string="La liste des employes">
+                                        <page string="Employes">
                                             <field name="employe_id" />
                                         </page>
                                         <page string="Produits">
@@ -51,7 +51,7 @@
                  <field name="name" />
                  <field name="adress" />
                  <field name="description" />
-                 <field name="ilo_id" />
+                 <field name="pompe_id" />
             </tree>
          </field>
     </record>

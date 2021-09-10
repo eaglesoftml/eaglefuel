@@ -10,26 +10,40 @@
                         <group>
                             <field name="ref"/>
                             <field name="pompe_number"/>
-                            <field name="pompe_number"/>
+                            <field name="nom"/>
 <!--                            <field name="litrage_essence"/>-->
 <!--                            <field name="litrage_gasoile"/>-->
                             <field name="description"/>
                         </group>
                         <group>
-                            <field name="ilo_id"/>
+                            <field name="station_id"/>
+                            <field name="litrage_essence"/>
+                            <field name="litrage_gasoile"/>
+                            <field name="total_litres"/>
                         </group>
                     </group>
                     <notebook>
-                        <page string="Liste des pistoles">
+                        <page string="Pistoles">
                             <field name="pistole_id"/>
                         </page>
-                        <page string="Les services pompistes">
+                        <page string="Pompistes">
                             <field name="servicepompiste_id"/>
                         </page>
                     </notebook>
                 </sheet>
             </form>
         </field>
+    </record>
+
+    <record id= "pompe_graph_view" model="ir.ui.view">
+       <field name="name">eaglefuel.pompe.graph</field>
+       <field name="model">eaglefuel.pompe</field>
+       <field name="arch" type="xml">
+           <graph string="Essence/Date">
+               <field name="ref" type="measure"/>
+               <field name="litrage_essence" type="measure"/>
+           </graph>
+       </field>
     </record>
 
     <record model="ir.ui.view" id="pompe_tree_view">
@@ -42,7 +56,7 @@
 <!--                    <field name="litrage_essence"/>-->
 <!--                    <field name="litrage_gasoile"/>-->
                     <field name="description"/>
-                    <field name="ilo_id"/>
+                    <field name="station_id"/>
                     <field name="pistole_id"/>
             </tree>
         </field>
@@ -51,7 +65,7 @@
     <record model="ir.actions.act_window" id="pompe_action">
         <field name="name">Pompe</field>
         <field name="res_model">eaglefuel.pompe</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,graph</field>
     </record>
 
     <menuitem name="Pompes" id="sub_pompe_root" parent="station_root"/>

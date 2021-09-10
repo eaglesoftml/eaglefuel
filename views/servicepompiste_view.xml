@@ -14,26 +14,20 @@
                                 <field name="date"/>
                                 <field name="shift"/>
                                 <field name="pompe_id"/>
-                                <field name="pompiste_id"/>
-                                <field name="qm_id"/>
-                                <field name="station_id"/>
                              </group>
-    <!--                    </group>-->
-<!--                        <group>-->
                             <group>
-                                <field name="litrage_vendu"/>
-                                <field name="litres_essence_vendu"/>
-                                <field name="litres_gasoile_vendu"/>
-                                <field name="montant_total_vendu"/>
+                                <field name="station_id"/>
+                                <field name="qm_id"/>
+                                <field name="pompiste_id"/>
                             </group>
-                        <group>
-                                <field name="montant_verse"/>
-                                <field name="montant_credit"/>
-                                <field name="montant_mobile"/>
-                                <field name="ecart"/>
-                        </group>
-<!--                        </group>-->
-    <!--                    </div>-->
+<!--                            <group class="oe_title oe_left" style="margin-top:60px">-->
+<!--                                <div class="oe_edit_only">-->
+<!--                                     <label for="station_id" string="Nom"/>-->
+<!--                                </div>-->
+<!--                                <h1>-->
+<!--                                     <field name="station_id"/>-->
+<!--                                </h1>-->
+<!--                            </group>-->
                     </group>
                     <notebook>
 
@@ -42,6 +36,24 @@
                         </page>
                         <page string="Releve index">
                             <field name="releveindex_id"/>
+                        </page>
+                    </notebook>
+                    <notebook>
+                        <page string="Details">
+                            <group>
+                                <group>
+                                    <field name="litrage_vendu"/>
+                                    <field name="litres_essence_vendu"/>
+                                    <field name="litres_gasoile_vendu"/>
+                                    <field name="montant_total_vendu"/>
+                                </group>
+                                <group>
+                                    <field name="montant_verse"/>
+                                    <field name="montant_credit"/>
+                                    <field name="montant_mobile"/>
+                                    <field name="ecart"/>
+                                </group>
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
@@ -67,7 +79,7 @@
                 <field name="qm_id"/>
                 <field name="pompiste_id"/>
                 <field name="pompe_id"/>
-                <field name="versement_id"/>
+<!--                <field name="versement_id"/>-->
                 <field name="releveindex_id"/>
 <!--                <field name="index_depart"/>-->
 <!--                <field name="index_arrive"/>-->
