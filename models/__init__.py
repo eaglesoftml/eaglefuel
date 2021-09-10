@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from . import station
-
- . import pompe
+from . import ilo
+from . import pompe
 from . import pistole
 from . import compteur
 from . import cuve
