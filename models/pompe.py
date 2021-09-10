@@ -25,6 +25,7 @@ class pompe(models.Model):
     litrage_gasoile = fields.Integer("Litrage Gasoile", compute="qte_carb_vendu")
     total_litres  = fields.Float("Litrage vendu", compute="qte_carb_vendu")
     date = fields.Date("La date")
+    date_jour = fields.Date("Date", compute="date_service")
     # ilo_id = fields.Many2one("eaglefuel.ilo", "Ilo id")
     station_id = fields.Many2one("eaglefuel.station", string="station id")
     pistole_id = fields.One2many("eaglefuel.pistole", "pompe_id", string="pistole")

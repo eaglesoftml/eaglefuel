@@ -98,9 +98,13 @@
        <field name="name">eaglefuel.servicepompiste.graph</field>
        <field name="model">eaglefuel.servicepompiste</field>
        <field name="arch" type="xml">
-           <graph string="Litrage/Montant">
-               <field name="litrage_vendu"/>
-               <field name="montant_total_vendu" operator= "*"/>
+           <graph string="Litrage/Montant" >
+               <field name="date" type="row"/>
+               <field name="litrage_vendu" type="measure"/>
+               <field name="montant_total_vendu" type="measure"/>
+               <field name="montant_a_verse" type="measure"/>
+               <field name="montant" type="measure"/>
+
            </graph>
        </field>
     </record>
