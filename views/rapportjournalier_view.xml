@@ -1,0 +1,61 @@
+<odoo>
+    <record model="ir.ui.view" id="rapportjournalier_form_view">
+        <field name="name">eaglefuel.rapportjournalier.form</field>
+        <field name="model">eaglefuel.rapportjournalier</field>
+        <field name="arch" type="xml">
+            <form string="rapportjournalier">
+                <header></header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date"/>
+                            <field name="essence"/>
+                            <field name="gasoile"/>
+                            <field name="total"/>
+                            <field name="station_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+<!--                        <page string="details des carburant vendus">-->
+<!--                            <field name="detailventecarburant_id"/>-->
+<!--                        </page>-->
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+        <record id= "rapportjournalier_graph_view" model="ir.ui.view">
+       <field name="name">eaglefuel.rapportjournalier.graph</field>
+       <field name="model">eaglefuel.rapportjournalier</field>
+       <field name="arch" type="xml">
+           <graph string="Essence/Date">
+               <field name="date" type="row"/>
+               <field name="essence" type="measure"/>
+           </graph>
+       </field>
+    </record>
+
+    <record model="ir.ui.view" id="rapportjournalier_tree_view">
+        <field name="name">eaglefuel.rapportjournalier.form</field>
+        <field name="model">eaglefuel.rapportjournalier</field>
+        <field name="arch" type="xml">
+            <tree string="rapportjournalier">
+                <field name="date"/>
+                <field name="essence"/>
+                <field name="gasoile"/>
+                <field name="total"/>
+                <field name="station_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="rapportjournalier_action">
+        <field name="name">rapportjournalier</field>
+        <field name="res_model">eaglefuel.rapportjournalier</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+
+    <menuitem name="rapportjournalier" id="sub_rapportjournalier_root" parent="sub_station_root" action="rapportjournalier_action"/>
+</odoo>

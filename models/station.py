@@ -31,28 +31,32 @@ class station(models.Model):
     image = fields.Binary(string="Image", help="Sectionner une image")
     gps = fields.Char()
     code = fields.Integer()
+    litres_essence_vendu_station = fields.Float(compute="qte_carb_vendu")
+    litres_gasoile_vendu_station = fields.Float(compute="qte_carb_vendu")
+    litres_total_vendu_station = fields.Float(compute="qte_carb_vendu")
 
     # ilo_id = fields.One2many("eaglefuel.ilo", "station_id", string="ilo")
     pompe_id = fields.One2many("eaglefuel.pompe", "station_id", string="Pompes")
     cuve_id = fields.One2many("eaglefuel.cuve", "station_id", string="cuve")
     employe_id = fields.One2many("hr.employee", "station_id", string="employe")
     produit_id = fields.One2many("product.product", "station_id", string="Produit")
+    rapportjournalier_id = fields.One2many("eaglefuel.rapportjournalier", "station_id", "rapport journalier")
 
 
-    # @api.depends('pompe_id.litrage_essence','pompe_id.litrage_gasoile','pompe_id.total_litres')
-    # def qte_carb_vendu(self):
-    #     for record in self:
-    #         litrage_essence = 0
-    #         litrage_gasoile = 0
-    #         total_litres = 0
-    #         for line in record.servicepompiste_id:
-    #             litrage_essence += line.litres_essence_vendu
-    #             litrage_gasoile += line.litres_gasoile_vendu
-    #             total_litres += line.litrage_vendu
-    #         record.update(
-    #             {'litrage_essence': litrage_essence, 'litrage_gasoile': litrage_gasoile, 'total_litres': total_litres})
-    #
-    #
+    @api.depends('pompe_id.litrage_essence','pompe_id.litrage_gasoile','pompe_id.total_litres')
+    def qte_carb_vendu(self):
+        for record in self:
+            litres_essence_vendu_station = 0
+            litres_gasoile_vendu_station = 0
+            litres_total_vendu_station = 0
+            for line in record.pompe_id:
+                litres_essence_vendu_station += line.litrage_essence
+                litres_gasoile_vendu_station += line.litrage_gasoile
+                litres_total_vendu_station += line.total_litres
+            record.update(
+                {'litres_essence_vendu_station': litres_essence_vendu_station, 'litres_gasoile_vendu_station': litres_gasoile_vendu_station, 'litres_total_vendu_station': litres_total_vendu_station})
+
+
 
 
 class HrEmployee(models.Model):
