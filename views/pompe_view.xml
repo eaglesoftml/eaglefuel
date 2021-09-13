@@ -56,8 +56,8 @@
        <field name="model">eaglefuel.pompe</field>
        <field name="arch" type="xml">
            <graph string="Litrage/Montant">
-               <field name="date" type="row"/>
-               <field name="total_litres" type="measure"/>
+<!--               <field name="date" type="row"/>-->
+<!--               <field name="total_litres" type="measure"/>-->
 <!--               <field name="total_litres" type="measure"/>-->
 <!--               <field name="total_litres" type="measure"/>-->
            </graph>
