@@ -70,16 +70,14 @@
            </field>
     </record>
 <!--    view employe-->
-    <record model="ir.ui.view" id="hr_employee_form">
-        <field name="name">hr.employee.form</field>
+    <record model="ir.ui.view" id="hr_employee_tree">
+        <field name="name">hr.employee.tree</field>
         <field name="model">hr.employee</field>
         <field name="type">tree</field>
         <field name="inherit_id" ref='hr.view_employee_tree'/>
         <field name="arch" type="xml">
-            <xpath expr = "//field[@name='department_id']" position = "after">
+            <xpath expr = "//field[@name='department_id']" position = "before">
                 <field name="station_id"/>
-                <field name="servicepompiste_qm_id"/>
-                <field name="servicepompiste_pompiste_id"/>
             </xpath>
         </field>
     </record>
