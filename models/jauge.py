@@ -13,6 +13,8 @@ class jauge(models.Model):
     litrage_jauge = fields.Integer("Litrage jauge")
     cuve_id = fields.Many2one("eaglefuel.cuve", string="cuve")
     employe_id= fields.Many2many("hr.employee", string="QM responsable")
+    shift = fields.Selection(selection=[('matin', 'Matin'),('soir', 'Soir')])
+
 
     def name_get(self):
         result = []

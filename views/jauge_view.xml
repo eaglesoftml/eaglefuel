@@ -10,6 +10,7 @@
                 <field name="cuve_id"/>
                 <field name="date_jauge"/>
                 <field name="litrage_jauge"/>
+                <field name="shift"/>
             </tree>
         </field>
     </record>
@@ -27,6 +28,7 @@
                             <field name="date_jauge"/>
                             <field name="cuve_id"/>
                             <field name="litrage_jauge"/>
+                            <field name="shift"/>
                         </group>
                     </group>
 <!--                    <notebook>-->

@@ -28,3 +28,7 @@ access_eaglefuel_paiement,Gas paiement Access Sales,model_eaglefuel_paiement,eag
 
 access_eaglefuel_rapportjournalier,Gas rapportjournalier Access Sales,model_eaglefuel_rapportjournalier,eaglefuel_group_user,1,1,1,0
 access_eaglefuel_rapportjournalier,Gas rapportjournalier Access Sales,model_eaglefuel_rapportjournalier,eaglefuel_group_manager,1,1,1,1
+
+access_hr_employee,access.hr_employee,model_hr_employee,base.group_user,1,1,1,0
+access_hr_employee,access.hr_employee,model_hr_employee,eaglefuel_group_user,1,1,1,0
+access_hr_employee,access.hr_employee,model_hr_employee,eaglefuel_group_manager,1,1,1,1
