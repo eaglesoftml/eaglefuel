@@ -11,13 +11,15 @@
                             <field name="ref"/>
                             <field name="pompe_number"/>
                             <field name="nom"/>
+<!--                            <field name="current_date"/>-->
 <!--                            <field name="litrage_essence"/>-->
 <!--                            <field name="litrage_gasoile"/>-->
                             <field name="description"/>
+                            <field name="station_id"/>
 <!--                            <field name="date_jour"/>-->
                         </group>
                         <group>
-                            <field name="station_id"/>
+                            <field name="current_date"/>
                             <field name="litrage_essence"/>
                             <field name="litrage_gasoile"/>
                             <field name="total_litres"/>

@@ -11,7 +11,7 @@ class releveindex(models.Model):
     index_soir = fields.Integer("Index arrive", required=True)
     litrage = fields.Float("Litrage", compute="litrage_vendu")
     carburant = fields.Char(compute="nom_carb")
-    date_releve = fields.Datetime("Date du releve", required=True)
+    date_releve = fields.Date("Date du releve", required=True)
     compteur_id = fields.Many2one("eaglefuel.compteur", string="Compteur id")
     servicepompiste_id = fields.Many2one("eaglefuel.servicepompiste", string="service pompiste id")
 

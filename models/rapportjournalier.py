@@ -10,6 +10,9 @@ class rapportjournalier(models.Model):
     essence = fields.Float(compute="litrage_vendu")
     gasoile = fields.Float(compute="litrage_vendu")
     total = fields.Float(compute="litrage_vendu")
+    essence_pompe = fields.Float(compute="litrage_vendu_pompe")
+    gasoile_pompe = fields.Float(compute="litrage_vendu_pompe")
+    total_pompe = fields.Float(compute="litrage_vendu_pompe")
     station_id = fields.Many2one("eaglefuel.station", "Station id")
 
     @api.depends('station_id.pompe_id.servicepompiste_id.litres_essence_vendu','station_id.pompe_id.servicepompiste_id.litres_gasoile_vendu','station_id.pompe_id.servicepompiste_id.litrage_vendu')
@@ -26,3 +29,17 @@ class rapportjournalier(models.Model):
             record.update({'essence': essence,'gasoile':gasoile,'total':total})
         # return essence
 
+
+    @api.depends('station_id.pompe_id.servicepompiste_id.releveindex_id.date_releve','station_id.pompe_id.servicepompiste_id.releveindex_id.litrage')
+    def litrage_vendu_pompe(self):
+        for record in self:
+            total_pompe = 0
+            for line in record.station_id.pompe_id.servicepompiste_id.releveindex_id:
+                if record.date == line.date_releve:
+                    total_pompe += line.litrage
+        record.update({'total_pompe':total_pompe})
+
+    # def aujourdhui(self):
+    #     for line in self:
+    #         line.ensure_one()
+    #         line.date = fields.Datetime.now().strftime('%Y-%m-%d')

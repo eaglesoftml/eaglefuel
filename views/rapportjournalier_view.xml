@@ -13,6 +13,7 @@
                             <field name="gasoile"/>
                             <field name="total"/>
                             <field name="station_id"/>
+                            <field name="total_pompe"/>
                         </group>
                     </group>
                     <notebook>
