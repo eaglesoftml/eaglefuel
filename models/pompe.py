@@ -29,6 +29,18 @@ class pompe(models.Model):
     station_id = fields.Many2one("eaglefuel.station", string="station id")
     pistole_id = fields.One2many("eaglefuel.pistole", "pompe_id", string="pistole")
     servicepompiste_id = fields.One2many("eaglefuel.servicepompiste","pompe_id", string="services pompistes")
+    is_active = fields.Boolean(string='Is Active', required=True, default=True)
+    status = fields.Selection([('active', 'Active'), ('down', 'Under Maintenance')],
+                              string='Status', compute='set_status', readonly=True)
+
+    @api.depends('is_active')
+    def set_status(self):
+        for rec in self:
+            if rec.is_active is True:
+                rec.status = 'active'
+            elif rec.is_active is False:
+                rec.status = 'down'
+
 
     def name_get(self):
         result = []
@@ -52,8 +64,9 @@ class pompe(models.Model):
 
 
     def date_service(self):
-        self.ensure_one()
-        self.current_date = fields.Datetime.now().strftime('%Y-%m-%d')
+        for line in self:
+            line.ensure_one()
+            line.current_date = fields.Datetime.now().strftime('%Y-%m-%d')
 
 
 

@@ -101,9 +101,8 @@
            <graph string="Litrage/Montant" >
                <field name="date" type="row"/>
                <field name="litrage_vendu" type="measure"/>
-               <field name="montant_total_vendu" type="measure"/>
-               <field name="montant_a_verse" type="measure"/>
-               <field name="montant" type="measure"/>
+               <field name="litres_essence_vendu" type="measure"/>
+               <field name="litres_gasoile_vendu" type="measure"/>
 
            </graph>
        </field>

@@ -8,12 +8,12 @@
                 <sheet>
                     <group>
                         <group>
+                            <field name="ref"/>
+                            <field name="station_id"/>
                             <field name="date"/>
                             <field name="essence"/>
                             <field name="gasoile"/>
                             <field name="total"/>
-                            <field name="station_id"/>
-                            <field name="total_pompe"/>
                         </group>
                     </group>
                     <notebook>

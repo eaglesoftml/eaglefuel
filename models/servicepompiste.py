@@ -17,20 +17,20 @@ class servicepompiste(models.Model):
     # index_depart = fields.Integer("Index de depart")
     # index_arrive = fields.Integer("Index d'arrive")
     litrage_vendu = fields.Float("litres", compute="litrage_totals")
-    litrage_credit = fields.Float()
+    # litrage_credit = fields.Float()
     litres_gasoile_vendu = fields.Float("Gasoile", compute="litrage_carb")
     litres_essence_vendu = fields.Float("Essence", compute="litrage_carb")
     montant_credit = fields.Float("Credit", compute="total_montant")
     montant_mobile = fields.Float("Mobile", compute="total_montant")
     montant_total_vendu = fields.Float("Montant", compute="montant_carb")
-    montant_gasoile = fields.Float()
-    montant_essence = fields.Float()
+    # montant_gasoile = fields.Float()
+    # montant_essence = fields.Float()
     montant_a_verse = fields.Integer()
     montant_verse = fields.Float("Montant verse", compute="total_montant")
     ecart = fields.Float("Ecart", compute="ecart_compte")
     montant = fields.Integer("Montant")
-    qm_id = fields.Many2one("hr.employee", string="QM")
-    pompiste_id = fields.Many2one("hr.employee", string="Pompiste")
+    qm_id = fields.Many2one("hr.employee", string="QM",  domain=[('job_title', '=', "QM")])
+    pompiste_id = fields.Many2one("hr.employee", string="Pompiste", domain=[('job_title', '=', "Pompiste")])
     pompe_id = fields.Many2one("eaglefuel.pompe", string="pompe utilise")
     station_id = fields.Many2one(string="Station",related="pompe_id.station_id")
     releveindex_id = fields.One2many("eaglefuel.releveindex", "servicepompiste_id", string="releve index")
@@ -42,6 +42,12 @@ class servicepompiste(models.Model):
             name = str("[") + str(servicepompiste.pompe_id.station_id.ref) +str("] ") + str(servicepompiste.ref)
             result.append((servicepompiste.id, name))
         return result
+
+    @api.onchange('releveindex_id')
+    def onchange_releve(self):
+        for rec in self:
+            rec.update({'releveindex_id': rec.releveindex_id})
+
 
     @api.depends('releveindex_id.litrage')
     def litrage_totals(self):
