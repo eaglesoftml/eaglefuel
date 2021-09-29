@@ -23,7 +23,7 @@ class cuve(models.Model):
     _description = 'Cuve'
     # _rec_name = "ref"
 
-    ref = fields.Char("reference")
+    ref = fields.Char("reference", default="New")
     station_id = fields.Many2one("eaglefuel.station", string="station id")
     longeur_regle = fields.Char("Taille max régle")
     diametre = fields.Float("Diametre", required=True)
@@ -42,3 +42,14 @@ class cuve(models.Model):
     def volume_cuve(self):
         for line in self:
             line.volume= ((line.diametre/2)**2)*line.hauteur*3.14
+
+    @api.model
+    def create(self, values):
+        res = super(cuve, self).create(values)
+        res.write({ref: f'{station_id}/{res.id}'})
+        return res
+
+    @api.model
+    def create(self, values):
+        values['ref'] = self.env['ir.sequence'].next_by_code('seq.cuve.ref') or _('New')
+        return super(cuve, self).create(values)

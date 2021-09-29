@@ -18,7 +18,7 @@
                            </div>
                                 <group>
                                      <group>
-                                         <field name="ref" />
+                                         <field name="ref" readonly="1"/>
                                          <field name="adress" />
                                          <field name="description" />
                                      </group>
@@ -43,9 +43,21 @@
                                         </page>
                                      </notebook>
                       </sheet>
-                 </form>
+                      <div class="oe_chatter">
+                          <field name="message_follower_ids" widget="mail_followers"></field>
+                          <field name="message_ids" widget="mail_thread"></field>
+                      </div>
+                </form>
          </field>
     </record>
+
+    <record id="seq_station_ref" model="ir.sequence">
+        <field name="name">reference station sequence</field>
+        <field name="code">seq.station.ref</field>
+        <field name="prefix">yara</field>
+        <field name="padding">5</field>
+    </record>
+
 
     <record model="ir.ui.view" id="station_tree_view">
          <field name="name">eaglefuel.station.form</field>

@@ -8,7 +8,7 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="ref"/>
+                            <field name="ref" readonly="1"/>
                             <field name="numero"/>
                             <field name="pistole_id"/>
 <!--                            <field name="index"/>-->
@@ -24,6 +24,13 @@
                 </sheet>
             </form>
         </field>
+    </record>
+
+    <record id="seq_compteur_ref" model="ir.sequence">
+        <field name="name">reference compteur sequence</field>
+        <field name="code">seq.compteur.ref</field>
+        <field name="prefix">compteur</field>
+        <field name="padding">5</field>
     </record>
 
     <record model="ir.ui.view" id="compteur_tree_view">
@@ -58,6 +65,6 @@
         <field name="view_mode">tree,form,graph</field>
     </record>
 
-    <menuitem name="Compteurs" id="sub_compteur_root" parent="station_root"/>
-    <menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>
+<!--    <menuitem name="Compteurs" id="sub_compteur_root" parent="station_root"/>-->
+<!--    <menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>-->
 </odoo>

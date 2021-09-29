@@ -4,9 +4,10 @@ from odoo import models, fields, api
 
 class rapportjournalier(models.Model):
     _name = "eaglefuel.rapportjournalier"
+    _inherit = "mail.thread"
     _description = "rapport journalier desventes carburant"
 
-    ref = fields.Char("Reference")
+    ref = fields.Char("Reference", default="New")
     date = fields.Date("date")
     essence = fields.Float(compute="litrage_vendu")
     gasoile = fields.Float(compute="litrage_vendu")
@@ -37,6 +38,17 @@ class rapportjournalier(models.Model):
                     total += line.litrage_vendu
             record.update({'essence': essence,'gasoile':gasoile,'total':total})
         # return essence
+
+    @api.model
+    def create(self, values):
+        res = super(rapportjournalier, self).create(values)
+        res.write({ref: f'{station_id}/{res.id}'})
+        return res
+
+    @api.model
+    def create(self, values):
+        values['ref'] = self.env['ir.sequence'].next_by_code('seq.rapportjournalier.ref') or _('New')
+        return super(rapportjournalier, self).create(values)
 
 
     # @api.depends('station_id.pompe_id.servicepompiste_id.releveindex_id.date_releve','station_id.pompe_id.servicepompiste_id.releveindex_id.litrage')

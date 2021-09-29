@@ -19,4 +19,15 @@ class compteur(models.Model):
             result.append((compteur.id, name))
         return result
 
+    @api.model
+    def create(self, values):
+        res = super(compteur, self).create(values)
+        res.write({ref: f'{pistole_id}/{res.id}'})
+        return res
+
+    @api.model
+    def create(self, values):
+        values['ref'] = self.env['ir.sequence'].next_by_code('seq.compteur.ref') or _('New')
+        return super(compteur, self).create(values)
+
 

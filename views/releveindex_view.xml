@@ -34,7 +34,7 @@
         <field name="model">eaglefuel.releveindex</field>
         <field name="arch" type="xml">
             <tree string="releveindex">
-                <field name="ref"/>
+                <field name="ref" readonly="1"/>
                 <field name="index_matin"/>
                 <field name="index_soir"/>
                 <field name="litrage"/>
@@ -45,11 +45,18 @@
         </field>
     </record>
 
+    <record id="seq_releveindex_ref" model="ir.sequence">
+        <field name="name">reference releveindex sequence</field>
+        <field name="code">seq.releveindex.ref</field>
+        <field name="prefix">rlvindex</field>
+        <field name="padding">5</field>
+    </record>
+
     <record model="ir.actions.act_window" id="releveindex_action">
         <field name="name">releveindex</field>
         <field name="res_model">eaglefuel.releveindex</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="releveindex" id="sub_releveindex_root" parent="sub_compteur_root" action="releveindex_action"/>
+<!--    <menuitem name="releveindex" id="sub_releveindex_root" parent="sub_compteur_root" action="releveindex_action"/>-->
 </odoo>

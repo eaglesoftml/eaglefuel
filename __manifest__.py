@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr', 'stock', 'sale', 'account','product'],
+    'depends': ['base', 'hr', 'stock', 'sale', 'account','product','mail'],
 
     # always loaded
     'data': [

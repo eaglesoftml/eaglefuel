@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="ajout des domain" />
+    <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="ajout des domain">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/compteur.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/compteur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cuve.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/cuve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/jauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/jauge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/paiement.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/paiement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pistole.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pistole.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pompe.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pompe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/rapportjournalier.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/rapportjournalier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/releveindex.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/releveindex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/servicepompiste.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/servicepompiste.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/compteur_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/compteur_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cuve_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/cuve_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/jauge_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/jauge_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/paiement_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/paiement_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pistole_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pistole_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/rapportjournalier_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/rapportjournalier_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/releveindex_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/releveindex_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/servicepompiste_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/servicepompiste_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/station_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/station_view.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
     <configuration name="odoo-bin" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">

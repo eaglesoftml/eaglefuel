@@ -5,7 +5,7 @@
         <field name="model">eaglefuel.jauge</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="ref"/>
+                <field name="ref" readonly="1"/>
                 <field name="mesure_regle"/>
                 <field name="cuve_id"/>
                 <field name="date_jauge"/>
@@ -14,6 +14,14 @@
             </tree>
         </field>
     </record>
+
+    <record id="seq_jauge_ref" model="ir.sequence">
+        <field name="name">reference jauge sequence</field>
+        <field name="code">seq.jauge.ref</field>
+        <field name="prefix">jauge</field>
+        <field name="padding">5</field>
+    </record>
+
     <record model="ir.ui.view" id="jauge_form_view">
         <field name="name">eaglefuel.jauge.form</field>
         <field name="model">eaglefuel.jauge</field>
@@ -50,6 +58,6 @@
     </record>
 
 <!--    <menuitem name="Jauges" id="sub_jauge_root" parent="station_root"/>-->
-    <menuitem name="Jauge" id="sub_jauge_root" parent="sub_cuve_root" action="jauge_action"/>
+<!--    <menuitem name="Jauge" id="sub_jauge_root" parent="sub_cuve_root" action="jauge_action"/>-->
 
 </odoo>

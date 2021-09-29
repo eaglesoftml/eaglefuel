@@ -1,14 +1,16 @@
 #-*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class servicepompiste(models.Model):
     # _inherit = "eaglefuel.compteur"
     _name = "eaglefuel.servicepompiste"
+    _inherit = "mail.thread"
     _description = "service pompiste"
     # _rec_name = "ref"
 
-    ref = fields.Char("Reference")
+    ref = fields.Char("Reference", default="New")
     date = fields.Date("Date", required=True)
     shift = fields.Selection(selection=[('matin', 'Matin'),('soir', 'Soir')])
     # temps_debut = fields.Float("Heure de depart", required=True)
@@ -25,6 +27,9 @@ class servicepompiste(models.Model):
     montant_total_vendu = fields.Float("Montant", compute="montant_carb")
     # montant_gasoile = fields.Float()
     # montant_essence = fields.Float()
+
+    state = fields.Selection([('enc','En cours'),('ter','Terminé'),('val','Validé')],default="enc")
+
     montant_a_verse = fields.Integer()
     montant_verse = fields.Float("Montant verse", compute="total_montant")
     ecart = fields.Float("Ecart", compute="ecart_compte")
@@ -118,6 +123,29 @@ class servicepompiste(models.Model):
         for line in self:
             line.montant_a_verse = line.montant_total_vendu-line.montant_credit-line.montant_mobile
             line.ecart = line.montant_a_verse-line.montant_verse
+
+    @api.model
+    def create(self, values):
+        res = super(servicepompiste, self).create(values)
+        res.write({ref: f'{station_id}/{res.id}'})
+        return res
+
+    @api.model
+    def create(self, values):
+        values['ref'] = self.env['ir.sequence'].next_by_code('seq.servicepompiste.ref') or _('New')
+        return super(servicepompiste, self).create(values)
+
+
+    def next_level(self):
+        for line in self:
+            # if line.state == False:
+            #     return line.write({'state':'enc'})
+            if line.state == 'enc':
+                return line.write({'state':'ter'})
+            elif line.state == 'ter':
+                return line.write({'state':'val'})
+            else:
+                raise ValidationError("Ce service est déjà validé")
 
 
 # class detailventecarburant(models.Model):

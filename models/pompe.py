@@ -20,7 +20,7 @@ class pompe(models.Model):
     nom = fields.Char("nom de la pompe")
     description = fields.Text()
 
-    ref = fields.Char("reference")
+    ref = fields.Char("reference", default="New")
     litrage_essence = fields.Integer("Litrage essence", compute="qte_carb_vendu")
     litrage_gasoile = fields.Integer("Litrage Gasoile", compute="qte_carb_vendu")
     total_litres = fields.Float("Litrage vendu", compute="qte_carb_vendu")
@@ -48,6 +48,17 @@ class pompe(models.Model):
             name = str("[") + str(pompe.station_id.ref) +str("] ") + str(pompe.ref)
             result.append((pompe.id, name))
         return result
+
+    @api.model
+    def create(self, values):
+        res = super(pompe, self).create(values)
+        res.write({ref: f'{station_id}/{res.id}'})
+        return res
+
+    @api.model
+    def create(self, values):
+        values['ref'] = self.env['ir.sequence'].next_by_code('seq.pompe.ref') or _('New')
+        return super(pompe, self).create(values)
 
     @api.depends('servicepompiste_id.litres_essence_vendu', 'servicepompiste_id.date','servicepompiste_id.litres_gasoile_vendu','servicepompiste_id.litrage_vendu')
     def qte_carb_vendu(self):
