@@ -147,6 +147,16 @@ class servicepompiste(models.Model):
             else:
                 raise ValidationError("Ce service est déjà validé")
 
+    def previous_level(self):
+        for line in self:
+            line.ensure_one()
+            if line.state == 'val':
+                return line.write({'state':'ter'})
+            elif line.state == 'ter':
+                return line.write({'state':'enc'})
+            else:
+                raise ValidationError("C'est la toute première étape")
+
 
 # class detailventecarburant(models.Model):
 #     _name = "eaglefuel.detailventecarburant"

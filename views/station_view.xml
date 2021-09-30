@@ -76,7 +76,7 @@
     <record model='ir.actions.act_window' id='station_action'>
            <field name="name">Stations</field>
            <field name="res_model">eaglefuel.station</field>
-           <field name="view_mode">tree,form,kanban</field>
+           <field name="view_mode">tree,form,kanban,pivot</field>
            <field name="help" type ="html">
                 <p class="o_view_nocontent_smiling_face"></p>
            </field>
@@ -108,6 +108,32 @@
             </xpath>
         </field>
     </record>
+
+<!--    <record id="base.main_partner" model="res.partner">-->
+<!--        <field name="name">EAGLESOFT</field>-->
+<!--        <field name="image" type="base64" file="eaglefuel/static/description/icon.png"/>-->
+<!--        &lt;!&ndash; you can edit any field too in the related partner&ndash;&gt;-->
+<!--        <field name="street"> Badalabougou Est, Rue 17</field>-->
+<!--        <field name="city">Bamako</field>-->
+<!--        <field name="zip">16000</field>-->
+<!--        <field name="phone">82 64 46 06</field>-->
+<!--        <field name="email">kmahamadou858@gmail.com</field>-->
+<!--        <field name="website">http://eaglesoftconsulting.com/</field>-->
+<!--    </record>-->
+
+<!--    <record id="station_pivot_view" model="ir.ui.view">-->
+<!--         <field name="name">eaglefuel.station.form</field>-->
+<!--         <field name="model">eaglefuel.station</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <pivot string="Station" disable_linking="True">-->
+<!--                <field name="litres_essence_vendu_station" type="row"/>-->
+<!--                <field name="litres_gasoile_vendu_station" type="col" interval="month"/>-->
+<!--                <field name="litres_total_vendu_station" type="measure"/>-->
+<!--            </pivot>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <menuitem id="custom_menu_id" name="Custom Menu" web_icon="custom_addon,static/description/icon.png"/>
 
     <menuitem name="Gas Station" id="station_root" sequence="7"/>
     <menuitem name="Stations" id="sub_station_root" parent="station_root"/>

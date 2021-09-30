@@ -1,0 +1,5 @@
+<template id="eaglefuel_layout" inherit_id="website.layout" name="MYSITE layout" priority="17">
+    <xpath expr="//head//link" position="after">
+        <link rel="shortcut icon" href="/eaglefuel/static/src/img/favicon.ico" type="image/x-icon"/>
+    </xpath>
+</template>
