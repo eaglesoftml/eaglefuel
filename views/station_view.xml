@@ -121,17 +121,17 @@
 <!--        <field name="website">http://eaglesoftconsulting.com/</field>-->
 <!--    </record>-->
 
-<!--    <record id="station_pivot_view" model="ir.ui.view">-->
-<!--         <field name="name">eaglefuel.station.form</field>-->
-<!--         <field name="model">eaglefuel.station</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <pivot string="Station" disable_linking="True">-->
-<!--                <field name="litres_essence_vendu_station" type="row"/>-->
-<!--                <field name="litres_gasoile_vendu_station" type="col" interval="month"/>-->
-<!--                <field name="litres_total_vendu_station" type="measure"/>-->
-<!--            </pivot>-->
-<!--        </field>-->
-<!--    </record>-->
+    <record id="station_pivot_view" model="ir.ui.view">
+        <field name="name">eaglefuel.servicepompiste.form</field>
+        <field name="model">eaglefuel.servicepompiste</field>
+        <field name="arch" type="xml">
+            <pivot string="Station" disable_linking="True">
+                <field name="station_id" type="row"/>
+                <field name="montant" type="col" interval="month"/>
+                <field name="releveindex_id" type="measure"/>
+            </pivot>
+        </field>
+    </record>
 
     <menuitem id="custom_menu_id" name="Custom Menu" web_icon="custom_addon,static/description/icon.png"/>
 

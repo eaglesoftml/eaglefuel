@@ -66,7 +66,20 @@
     <record model="ir.actions.act_window" id="rapportjournalier_action">
         <field name="name">rapportjournalier</field>
         <field name="res_model">eaglefuel.rapportjournalier</field>
-        <field name="view_mode">tree,form,graph</field>
+        <field name="view_mode">tree,form,graph,pivot</field>
+    </record>
+
+    <record id="station_pivot_view" model="ir.ui.view">
+        <field name="name">eaglefuel.rapportjournalier.form</field>
+        <field name="model">eaglefuel.rapportjournalier</field>
+        <field name="arch" type="xml">
+            <pivot string="Station" disable_linking="True">
+                <field name="station_id" type="row"/>
+                <field name="date" type="col" interval="month"/>
+                <field name="essence" type="measure"/>
+                <field name="gasoile" type="measure"/>
+            </pivot>
+        </field>
     </record>
 
     <menuitem name="rapportjournalier" id="sub_rapportjournalier_root" parent="sub_station_root" action="rapportjournalier_action"/>
