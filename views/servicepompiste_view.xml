@@ -129,6 +129,23 @@
         <field name="view_mode">tree,form,graph</field>
     </record>
 
+<!--    <record id="servicepompiste_search" model="ir.ui.view">                                -->
+<!--      <field name="name">res.partner.search</field>                                -->
+<!--      <field name="model">res.partner</field>                                -->
+<!--      <field name="arch" type="xml">                                    -->
+<!--        <search string="Search contacts">                                        -->
+<!--          <field name="name"></field>                                        -->
+<!--          <filter string="Has VAT number" domain="[('vat', '!=', '')]" name="has_vat"></filter>                                        -->
+<!--          <filter string="Has tags" domain="[('category_id', '!=', False)]" name="has_tags"></filter>                                        -->
+<!--          <group expand="0" string="Group By">                                            -->
+<!--            <filter string="Company" name="parent_id" context="{'group_by': 'parent_id'}"></filter>                                            -->
+<!--            <filter string="Country" name="country_id" context="{'group_by': 'country_id'}"></filter>                                            -->
+<!--            <filter string="Sales person" name="salesperson_id" context="{'group_by': 'user_id'}"></filter>                                        -->
+<!--          </group>                                    -->
+<!--        </search>                                -->
+<!--      </field>                            -->
+<!--    </record>-->
+
     <menuitem name="Services pompistes" id="sub_servicepompiste_root" parent="station_root"/>
     <menuitem name="service pompiste" id="sub_sub_servicepompiste_root" parent="sub_servicepompiste_root" action="servicepompiste_action"/>
 </odoo>

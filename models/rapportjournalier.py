@@ -9,9 +9,9 @@ class rapportjournalier(models.Model):
 
     ref = fields.Char("Reference", default="New")
     date = fields.Date("date")
-    essence = fields.Float(compute="litrage_vendu")
-    gasoile = fields.Float(compute="litrage_vendu")
-    total = fields.Float(compute="litrage_vendu")
+    essence = fields.Float(compute="litrage_vendu", store= True)
+    gasoile = fields.Float(compute="litrage_vendu", store= True)
+    total = fields.Float(compute="litrage_vendu", store= True)
     # essence_pompe = fields.Float(compute="litrage_vendu_pompe")
     # gasoile_pompe = fields.Float(compute="litrage_vendu_pompe")
     # total_pompe = fields.Float(compute="litrage_vendu_pompe")
