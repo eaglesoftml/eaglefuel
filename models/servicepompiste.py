@@ -146,26 +146,21 @@ class servicepompiste(models.Model):
             elif line.state == 'ter':
                 return line.write({'state':'val'})
             elif line.state == 'val':
-                rslt = line.env['account.move'].create({
-                    'partner_id': line.station_id,
-                    'currency_id': line.ref,
-                    'name': 'customer invoice',
+                invoice = self.env['account.move'].create({
                     'type': 'out_invoice',
-                    'date_move': line.date,
-                    'account_id': line.ref,
+                    # 'journal_id': journal.id,
+                    # 'partner_id': product_id.id,
+                    # 'invoice_date': date_invoice,
+                    # 'date': date_invoice,
                     'invoice_line_ids': [(0, 0, {
-                        'name': 'test line',
-                        'origin': line.station_id,
-                        'account_id': line.ref,
-                        'price_unit': line.montant,
-                        'quantity': 1.0,
-                        'discount': 0.0,
-                        'uom_id': line.station_id,
-                        'product_id': line.station_id,
-                        'sale_line_ids': [(6, 0, [line.ref for line in line.station_id])],
-                    })],
+                        # 'product_id': product_id.id,
+                        'quantity': 40.0,
+                        'name': 'product test 1',
+                        'discount': 10.00,
+                        'price_unit': 2.27,
+                    })]
                 })
-                return rslt
+                return invoice
             else:
                 raise ValidationError("Ce service est déjà validé")
 
