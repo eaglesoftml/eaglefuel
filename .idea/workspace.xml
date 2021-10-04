@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/servicepompiste.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/servicepompiste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/servicepompiste_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/servicepompiste_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,13 +70,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629796052387</updated>
-    </task>
-    <task id="LOCAL-00001" summary="jauge modif">
-      <created>1629889739743</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1629889739743</updated>
     </task>
     <task id="LOCAL-00002" summary="restauration des fichiers endommage">
       <created>1629984923823</created>
@@ -414,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633095318096</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="ajout de vues de search à service pompiste">
+      <created>1633347683132</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1633347683133</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

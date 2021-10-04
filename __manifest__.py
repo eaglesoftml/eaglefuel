@@ -41,7 +41,7 @@
         'views/paiement_view.xml',
         'views/rapportjournalier_view.xml',
         # 'views/website_templates.xml',
-        'views/website_favicon.xml',
+        # 'views/website_favicon.xml',
         # 'views/views.xml',
         # 'views/templates.xml',
     ],
