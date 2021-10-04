@@ -8,6 +8,7 @@
                     <button name="previous_level" type="object" class="oe_highlight" string="Etat précedent"></button>
                     <button name="next_level" type="object" class="oe_highlight" string="Etat suivant"></button>
                     <field name="state" widget="statusbar" nolabel="1"></field>
+<!--                    <button name="facture" type="object" class="oe_highlight" string="créer facture"></button>-->
                 </header>
                 <sheet>
                     <group style="display:flex;flex-direction:row">

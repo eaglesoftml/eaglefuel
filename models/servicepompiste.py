@@ -6,7 +6,7 @@ from odoo.exceptions import ValidationError
 class servicepompiste(models.Model):
     # _inherit = "eaglefuel.compteur"
     _name = "eaglefuel.servicepompiste"
-    _inherit = "mail.thread"
+    _inherit = ['mail.thread']
     _description = "service pompiste"
     # _rec_name = "ref"
 
@@ -28,7 +28,7 @@ class servicepompiste(models.Model):
     # montant_gasoile = fields.Float()
     # montant_essence = fields.Float()
 
-    state = fields.Selection([('enc','En cours'),('ter','Terminé'),('val','Validé')],default="enc")
+    state = fields.Selection([('enc','En cours'),('ter','Terminé'),('val','Validé'),('fct','Facture')],default="enc")
 
     montant_a_verse = fields.Integer()
     montant_verse = fields.Float("Montant verse", compute="total_montant")
@@ -40,6 +40,7 @@ class servicepompiste(models.Model):
     station_id = fields.Many2one(string="Station",related="pompe_id.station_id")
     releveindex_id = fields.One2many("eaglefuel.releveindex", "servicepompiste_id", string="releve index")
     paiement_id = fields.One2many("eaglefuel.paiement", 'servicepompiste_id',string="Paiement")
+
 
     def name_get(self):
         result = []
@@ -144,6 +145,27 @@ class servicepompiste(models.Model):
                 return line.write({'state':'ter'})
             elif line.state == 'ter':
                 return line.write({'state':'val'})
+            elif line.state == 'val':
+                rslt = line.env['account.invoice'].create({
+                    'partner_id': self.test_partner.id,
+                    'currency_id': self.currency_two.id,
+                    'name': 'customer invoice',
+                    'type': 'out_invoice',
+                    'date_invoice': date,
+                    'account_id': self.account_receivable.id,
+                    'invoice_line_ids': [(0, 0, {
+                        'name': 'test line',
+                        'origin': sale_order.name,
+                        'account_id': self.account_income.id,
+                        'price_unit': self.product_price_unit,
+                        'quantity': 1.0,
+                        'discount': 0.0,
+                        'uom_id': product.uom_id.id,
+                        'product_id': product.id,
+                        'sale_line_ids': [(6, 0, [line.id for line in sale_order.order_line])],
+                    })],
+                })
+                return rslt
             else:
                 raise ValidationError("Ce service est déjà validé")
 
@@ -156,6 +178,7 @@ class servicepompiste(models.Model):
                 return line.write({'state':'enc'})
             else:
                 raise ValidationError("C'est la toute première étape")
+
 
 
 # class detailventecarburant(models.Model):
