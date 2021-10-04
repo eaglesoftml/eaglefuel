@@ -146,23 +146,23 @@ class servicepompiste(models.Model):
             elif line.state == 'ter':
                 return line.write({'state':'val'})
             elif line.state == 'val':
-                rslt = line.env['account.invoice'].create({
-                    'partner_id': line.test_partner.id,
-                    'currency_id': line.currency_two.id,
+                rslt = line.env['account.move'].create({
+                    'partner_id': line.station_id,
+                    'currency_id': line.ref,
                     'name': 'customer invoice',
                     'type': 'out_invoice',
-                    'date_invoice': date,
-                    'account_id': line.account_receivable.id,
+                    'date_invoice': line.date,
+                    'account_id': line.ref,
                     'invoice_line_ids': [(0, 0, {
                         'name': 'test line',
-                        'origin': sale_order.name,
-                        'account_id': line.account_income.id,
-                        'price_unit': line.product_price_unit,
+                        'origin': line.station_id,
+                        'account_id': line.ref,
+                        'price_unit': line.montant,
                         'quantity': 1.0,
                         'discount': 0.0,
-                        'uom_id': product.uom_id.id,
-                        'product_id': product.id,
-                        'sale_line_ids': [(6, 0, [line.id for line in sale_order.order_line])],
+                        'uom_id': line.station_id,
+                        'product_id': line.station_id,
+                        'sale_line_ids': [(6, 0, [line.ref for line in line.station_id])],
                     })],
                 })
                 return rslt

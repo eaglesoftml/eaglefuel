@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/servicepompiste.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/servicepompiste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,20 +69,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629796052387</updated>
-    </task>
-    <task id="LOCAL-00002" summary="restauration des fichiers endommage">
-      <created>1629984923823</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1629984923823</updated>
-    </task>
-    <task id="LOCAL-00003" summary="restauration des fichiers endommage">
-      <created>1629986671555</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1629986671555</updated>
     </task>
     <task id="LOCAL-00004" summary="restauration des fichiers endommage !">
       <created>1629986988848</created>
@@ -414,7 +399,21 @@
       <option name="project" value="LOCAL" />
       <updated>1633347683133</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="ajout de la facturation">
+      <created>1633348167069</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1633348167069</updated>
+    </task>
+    <task id="LOCAL-00052" summary="ajout de la facturation">
+      <created>1633348227240</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1633348227240</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,6 +445,7 @@
     <MESSAGE value="ajout des etats et des chatter" />
     <MESSAGE value="changement des icones" />
     <MESSAGE value="ajout de vues de search à service pompiste" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de vues de search à service pompiste" />
+    <MESSAGE value="ajout de la facturation" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de la facturation" />
   </component>
 </project>
