@@ -160,6 +160,7 @@ class servicepompiste(models.Model):
                         'price_unit': 2.27,
                     })]
                 })
+                line.write({'state': 'fct'})
                 return invoice
             else:
                 raise ValidationError("Ce service est déjà validé")
