@@ -151,7 +151,7 @@ class servicepompiste(models.Model):
                     'currency_id': line.ref,
                     'name': 'customer invoice',
                     'type': 'out_invoice',
-                    'date_invoice': line.date,
+                    'date_move': line.date,
                     'account_id': line.ref,
                     'invoice_line_ids': [(0, 0, {
                         'name': 'test line',
