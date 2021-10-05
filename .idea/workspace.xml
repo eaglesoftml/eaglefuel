@@ -70,13 +70,6 @@
       <option name="presentableId" value="Default" />
       <updated>1629796052387</updated>
     </task>
-    <task id="LOCAL-00016" summary="finissons de l'ajout de la fonction name_get">
-      <created>1630334296633</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1630334296633</updated>
-    </task>
     <task id="LOCAL-00017" summary="finissons de l'ajout de la fonction name_get">
       <created>1630334423204</created>
       <option name="number" value="00017" />
@@ -413,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633437272126</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="ajout de la facturation">
+      <created>1633437884428</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1633437884428</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
