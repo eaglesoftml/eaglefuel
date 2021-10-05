@@ -153,14 +153,14 @@ class servicepompiste(models.Model):
                     # 'invoice_date': date_invoice,
                     # 'date': date_invoice,
                     'invoice_line_ids': [(0, 0, {
-                        'product_id': "cbess",
+                        'product_id': station_id.product_id.id,
                         'quantity': line.litres_essence_vendu,
                         'name': 'Essence',
                         # 'discount': 10.00,
                         'price_unit': 663,
                     }),
                                     (0, 0, {
-                        'product_id': "cbgas",
+                        'product_id': station_id.product_id.id,
                         'quantity': line.litres_gasoile_vendu,
                         'name': 'Gasoile',
                         # 'discount': 10.00,
