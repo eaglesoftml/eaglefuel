@@ -158,14 +158,23 @@ class servicepompiste(models.Model):
                         'name': 'product test 1',
                         'discount': 10.00,
                         'price_unit': 2.27,
-                    })],
-                    'invoice_line_ids': [(0, 0, {
-                        # 'product_id': product_id.id,
-                        'quantity': 40.0,
-                        'name': 'product test 1',
-                        'discount': 10.00,
-                        'price_unit': 2.27,
-                    })]
+                    },
+                    {
+                    # 'product_id': product_id.id,
+                    'quantity': 40.0,
+                    'name': 'product test 1',
+                    'discount': 10.00,
+                    'price_unit': 2.27,
+                     }
+
+                    )],
+                    # 'invoice_line_ids': [(0, 0, {
+                    #     # 'product_id': product_id.id,
+                    #     'quantity': 30.0,
+                    #     'name': 'product test 2',
+                    #     'discount': 10.00,
+                    #     'price_unit': 2.27,
+                    # })]
                 })
                 line.write({'state': 'fct'})
                 return invoice
