@@ -148,6 +148,7 @@ class servicepompiste(models.Model):
             elif line.state == 'val':
                 invoice = self.env['account.move'].create({
                     'type': 'out_invoice',
+                    'create_uid': line.qm_id,
                     # 'journal_id': journal.id,
                     # 'partner_id': product_id.id,
                     # 'invoice_date': date_invoice,
@@ -157,7 +158,7 @@ class servicepompiste(models.Model):
                         'quantity': line.litres_essence_vendu,
                         'name': 'Essence',
                         'state': 'draft',
-                        'invoice_user_id': line.qm_id,
+                        # 'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
                         'price_unit': 663,
                     }),
@@ -165,7 +166,7 @@ class servicepompiste(models.Model):
                         'product_id': 2,
                         'quantity': line.litres_gasoile_vendu,
                         'name': 'Gasoile',
-                        'invoice_user_id': line.qm_id,
+                        # 'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
                         'state': 'draft',
                         'price_unit': 593,
