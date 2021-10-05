@@ -28,7 +28,7 @@ class servicepompiste(models.Model):
     # montant_gasoile = fields.Float()
     # montant_essence = fields.Float()
 
-    state = fields.Selection([('enc','En cours'),('ter','Terminé'),('val','Validé'),('fct','Facture')],default="enc")
+    state = fields.Selection([('enc','En cours'),('ter','Terminé'),('val','Validé'),('fct','Facturé')],default="enc")
 
     montant_a_verse = fields.Integer()
     montant_verse = fields.Float("Montant verse", compute="total_montant")
@@ -158,12 +158,19 @@ class servicepompiste(models.Model):
                         'name': 'product test 1',
                         'discount': 10.00,
                         'price_unit': 2.27,
+                    })],
+                    'invoice_line_ids': [(0, 0, {
+                        # 'product_id': product_id.id,
+                        'quantity': 40.0,
+                        'name': 'product test 1',
+                        'discount': 10.00,
+                        'price_unit': 2.27,
                     })]
                 })
                 line.write({'state': 'fct'})
                 return invoice
             else:
-                raise ValidationError("Ce service est déjà validé")
+                raise ValidationError("Ce service est déjà Facturé")
 
     def previous_level(self):
         for line in self:
