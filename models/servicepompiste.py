@@ -153,17 +153,21 @@ class servicepompiste(models.Model):
                     # 'invoice_date': date_invoice,
                     # 'date': date_invoice,
                     'invoice_line_ids': [(0, 0, {
-                        # 'product_id': station_id.product_id.id,
+                        'product_id': 1,
                         'quantity': line.litres_essence_vendu,
                         'name': 'Essence',
+                        'state': 'draft',
+                        'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
                         'price_unit': 663,
                     }),
                                     (0, 0, {
-                        # 'product_id': station_id.product_id.id,
+                        'product_id': 2,
                         'quantity': line.litres_gasoile_vendu,
                         'name': 'Gasoile',
+                        'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
+                        'state': 'draft',
                         'price_unit': 593,
                      })],
                     # 'invoice_line_ids': [(0, 0, {
