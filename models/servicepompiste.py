@@ -157,7 +157,7 @@ class servicepompiste(models.Model):
                         # 'product_id': cbess,
                         'quantity': line.litres_essence_vendu,
                         'name': 'Essence',
-                        'state': draft,
+                        'state': 'Invoiced',
                         # 'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
                         'price_unit': 663,
@@ -168,7 +168,7 @@ class servicepompiste(models.Model):
                         'name': 'Gasoile',
                         # 'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
-                        'state': draft,
+                        'state': 'Invoiced',
                         'price_unit': 593,
                      })],
                     # 'invoice_line_ids': [(0, 0, {
