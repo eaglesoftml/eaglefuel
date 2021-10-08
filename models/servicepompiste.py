@@ -38,7 +38,7 @@ class servicepompiste(models.Model):
     pompiste_id = fields.Many2one("hr.employee", string="Pompiste", domain=[('job_title', '=', "Pompiste")])
     pompe_id = fields.Many2one("eaglefuel.pompe", string="pompe utilise")
     station_id = fields.Many2one(string="Station",related="pompe_id.station_id")
-    releveindex_id = fields.One2many("eaglefuel.releveindex", "servicepompiste_id", string="releve index")
+    releveindex_id = fields.Many2many("eaglefuel.releveindex", "servicepompiste_id", string="releve index")
     paiement_id = fields.One2many("eaglefuel.paiement", 'servicepompiste_id',string="Paiement")
 
 
@@ -53,6 +53,12 @@ class servicepompiste(models.Model):
     def onchange_releve(self):
         for rec in self:
             rec.update({'releveindex_id': rec.releveindex_id})
+
+    @api.constrains('montant_verse', 'montant_a_verse')
+    def check_versement(self):
+        for line in self:
+            if line.montant_a_verse == 0 and line.montant_verse > 0:
+                raise ValidationError("Impossible de faire un paiemenet avant les releves index")
 
 
     @api.depends('releveindex_id.litrage')
@@ -149,26 +155,30 @@ class servicepompiste(models.Model):
                 invoice = self.env['account.move'].create({
                     'type': 'out_invoice',
                     'create_uid': line.qm_id,
+                    'partner_id': 1,
                     # 'journal_id': journal.id,
                     # 'partner_id': product_id.id,
                     # 'invoice_date': date_invoice,
                     # 'date': date_invoice,
+                    # 'activity_state': 'Invoiced',
+                    'state': 'draft',
+                    # 'auto_post': 1,
                     'invoice_line_ids': [(0, 0, {
-                        # 'product_id': cbess,
+                        'product_id': 30,
                         'quantity': line.litres_essence_vendu,
                         'name': 'Essence',
-                        'state': 'Invoiced',
+                        # 'state': 'Invoiced',
                         # 'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
                         'price_unit': 663,
                     }),
                                     (0, 0, {
-                        # 'product_id': cbgas,
+                        'product_id': 31,
                         'quantity': line.litres_gasoile_vendu,
                         'name': 'Gasoile',
                         # 'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
-                        'state': 'Invoiced',
+                        # 'state': 'Invoiced',
                         'price_unit': 593,
                      })],
                     # 'invoice_line_ids': [(0, 0, {
