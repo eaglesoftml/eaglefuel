@@ -37,7 +37,7 @@ class station(models.Model):
     litres_total_vendu_station = fields.Float(compute="qte_carb_vendu")
 
     # ilo_id = fields.One2many("eaglefuel.ilo", "station_id", string="ilo")
-    pompe_id = fields.Many2many("eaglefuel.pompe", "station_id", string="Pompes")
+    pompe_id = fields.One2many("eaglefuel.pompe", "station_id", string="Pompes")
     cuve_id = fields.One2many("eaglefuel.cuve", "station_id", string="cuve")
     employe_id = fields.One2many("hr.employee", "station_id", string="employe")
     produit_id = fields.One2many("product.product", "station_id", string="Produit")
