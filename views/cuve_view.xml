@@ -9,6 +9,7 @@
                     <group>
                         <group>
                             <field name="ref" readonly="1"/>
+                            <field name="nom"/>
                             <field name="longeur_regle"/>
                             <field name="diametre"/>
                             <field name="hauteur"/>
@@ -45,6 +46,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref"/>
+                <field name="nom"/>
                 <field name="longeur_regle"/>
                 <field name="diametre"/>
                 <field name="hauteur"/>
@@ -62,6 +64,6 @@
            </field>
     </record>
 
-<!--    <menuitem name="Cuves" id="sub_cuve_root" parent="station_root"/>-->
-<!--    <menuitem name="Cuve" id="sub_sub_cuve_root" parent="sub_cuve_root" action="cuve_action"/>-->
+    <menuitem name="Cuves" id="sub_cuve_root" parent="station_root"/>
+    <menuitem name="Cuve" id="sub_sub_cuve_root" parent="sub_cuve_root" action="cuve_action"/>
 </odoo>

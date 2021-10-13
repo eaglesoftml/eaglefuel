@@ -16,6 +16,7 @@
     <!--                        <div class="oe_right">-->
                             <group>
                                 <field name="ref" readonly="1"/>
+                                <field name="nom"/>
                                 <field name="date"/>
                                 <field name="shift"/>
                                 <field name="pompe_id"/>
@@ -84,6 +85,7 @@
         <field name="arch" type="xml">
             <tree string="Service pompiste">
                 <field name="ref"/>
+                <field name="nom"/>
                 <field name="date"/>
                 <field name="shift"/>
                 <field name="litrage_vendu"/>
@@ -151,5 +153,5 @@
     </record>
 
     <menuitem name="Services pompistes" id="sub_servicepompiste_root" parent="station_root"/>
-    <menuitem name="service pompiste" id="sub_sub_servicepompiste_root" parent="sub_servicepompiste_root" action="servicepompiste_action"/>
+    <menuitem name="service pompiste" id="sub_sub_servicepompiste_root" parent="sub_pompe_root" action="servicepompiste_action"/>
 </odoo>

@@ -83,6 +83,6 @@
         <field name="view_mode">tree,form,graph</field>
     </record>
 
-<!--    <menuitem name="Pompes" id="sub_pompe_root" parent="station_root"/>-->
-<!--    <menuitem name="Pompes" id="sub_sub_pompe_root" parent="sub_pompe_root" action="pompe_action"/>-->
+    <menuitem name="Pompes" id="sub_pompe_root" parent="station_root"/>
+    <menuitem name="Pompes" id="sub_sub_pompe_root" parent="sub_pompe_root" action="pompe_action"/>
 </odoo>

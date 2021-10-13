@@ -7,6 +7,7 @@ class pistole(models.Model):
     # _rec_name = "ref"
 
     ref = fields.Char("reference", default="New")
+    nom = fields.Char("Nom")
     #counter_index =fields.Integer("Index Compteur",  required=True)
     number = fields.Integer("Numero de Pistole")
     #date_releve = fields.Datetime("Date relevé", required=True)
@@ -19,7 +20,7 @@ class pistole(models.Model):
     def name_get(self):
         result = []
         for pistole in self:
-            name = str("[") + str(pistole.pompe_id.station_id.ref) +str("] ") + "/" + str(pistole.pompe_id.ref) + "/" + str(pistole.ref)
+            name = str("[") + str(pistole.pompe_id.station_id.name) +str("] ") + "/" + str(pistole.pompe_id.nom) + "/" + str(pistole.nom)
             result.append((pistole.id, name))
         return result
 

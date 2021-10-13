@@ -11,6 +11,7 @@ class servicepompiste(models.Model):
     # _rec_name = "ref"
 
     ref = fields.Char("Reference", default="New")
+    nom = fields.Char("Nom")
     date = fields.Date("Date", required=True)
     shift = fields.Selection(selection=[('matin', 'Matin'),('soir', 'Soir')])
     # temps_debut = fields.Float("Heure de depart", required=True)
@@ -45,7 +46,7 @@ class servicepompiste(models.Model):
     def name_get(self):
         result = []
         for servicepompiste in self:
-            name = str("[") + str(servicepompiste.pompe_id.station_id.ref) +str("] ") + str(servicepompiste.ref)
+            name = str("[") + str(servicepompiste.pompe_id.station_id.name) +str("] ") +str(servicepompiste.date) + str("/") +str(servicepompiste.nom)
             result.append((servicepompiste.id, name))
         return result
 

@@ -10,6 +10,7 @@
                         <group>
                             <field name="ref" readonly="1"/>
                             <field name="number"/>
+                            <field name="nom"/>
                             <field name="description"/>
                         </group>
                         <group>
@@ -37,6 +38,7 @@
             <tree string="Pistole">
                 <field name="ref"/>
                 <field name="number"/>
+                <field name="nom"/>
                 <field name="produit_servi"/>
                 <field name="description"/>
                 <field name="pompe_id"/>
@@ -50,6 +52,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-<!--    <menuitem name="Pistoles" id="sub_pistole_root" parent="station_root"/>-->
-<!--    <menuitem name="Pistole" id="sub_sub_pistole_root" parent="sub_pistole_root" action="pistole_action"/>-->
+    <menuitem name="Pistoles" id="sub_pistole_root" parent="station_root"/>
+    <menuitem name="Pistole" id="sub_sub_pistole_root" parent="sub_pistole_root" action="pistole_action"/>
 </odoo>

@@ -10,6 +10,7 @@
                          <group>
                           <group>
                               <field name="ref" readonly="1"/>
+                              <field name="nom"/>
                               <field name="type"/>
                               <field name="montant"/>
                               <field name="description"/>
@@ -27,6 +28,8 @@
          <field name="model">eaglefuel.paiement</field>
          <field name="arch" type="xml">
                  <tree string="Paiement">
+                     <field name="ref"/>
+                     <field name="nom"/>
                      <field name="type"/>
                      <field name="montant"/>
                      <field name="description"/>
@@ -52,7 +55,5 @@
     </record>
 
 
-<!--    <menuitem name="ilos" id="sub_ilo_root" parent="station_root"/>-->
-
-<!--    <menuitem name="ilo" id="sub_sub_ilo_root" parent="sub_ilo_root" action="ilo_action"/>-->
+    <menuitem name="Paiement" id="sub_paiement_root" parent="sub_station_root" action="paiement_action"/>
 </odoo>

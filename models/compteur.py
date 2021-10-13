@@ -9,13 +9,14 @@ class compteur(models.Model):
 
     ref = fields.Char("Reference")
     numero = fields.Char("Numero")
+    nom = fields.Char("Nom")
     pistole_id = fields.Many2one("eaglefuel.pistole", "Pistole id")
     releveindex_id = fields.One2many("eaglefuel.releveindex", "compteur_id", string="Releve index")
 
     def name_get(self):
         result = []
         for compteur in self:
-            name = str("[") + str(compteur.pistole_id.pompe_id.ref) +str("] ") + str(compteur.ref)
+            name = str("[") + str(compteur.pistole_id.pompe_id.nom) +str("] ") + str(compteur.nom)
             result.append((compteur.id, name))
         return result
 

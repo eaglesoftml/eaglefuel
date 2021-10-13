@@ -8,7 +8,8 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="ref"/>
+                            <field name="ref" readonly="1"/>
+                            <field name="nom"/>
                             <field name="index_matin"/>
                             <field name="index_soir"/>
                             <field name="litrage"/>
@@ -34,7 +35,8 @@
         <field name="model">eaglefuel.releveindex</field>
         <field name="arch" type="xml">
             <tree string="releveindex">
-                <field name="ref" readonly="1"/>
+                <field name="ref"/>
+                <field name="nom"/>
                 <field name="index_matin"/>
                 <field name="index_soir"/>
                 <field name="litrage"/>
@@ -58,5 +60,5 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-<!--    <menuitem name="releveindex" id="sub_releveindex_root" parent="sub_compteur_root" action="releveindex_action"/>-->
+    <menuitem name="releveindex" id="sub_releveindex_root" parent="sub_compteur_root" action="releveindex_action"/>
 </odoo>

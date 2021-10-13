@@ -10,6 +10,7 @@
                         <group>
                             <field name="ref" readonly="1"/>
                             <field name="numero"/>
+                            <field name="nom"/>
                             <field name="pistole_id"/>
 <!--                            <field name="index"/>-->
 <!--                            <field name="previous_index"/>-->
@@ -40,6 +41,7 @@
             <tree string="Compteur">
                 <field name="ref"/>
                 <field name="numero"/>
+                <field name="nom"/>
 <!--                <field name="index"/>-->
 <!--                <field name="date_releve"/>-->
 <!--                <field name="previous_index"/>-->
@@ -65,6 +67,6 @@
         <field name="view_mode">tree,form,graph</field>
     </record>
 
-<!--    <menuitem name="Compteurs" id="sub_compteur_root" parent="station_root"/>-->
-<!--    <menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>-->
+    <menuitem name="Compteurs" id="sub_compteur_root" parent="station_root"/>
+    <menuitem name="Compteur" id="sub_sub_compteur_root" parent="sub_compteur_root" action="compteur_action"/>
 </odoo>

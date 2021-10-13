@@ -8,6 +8,7 @@ class jauge(models.Model):
     # _rec_name = "ref"
 
     ref = fields.Char("reference", default="New")
+    nom = fields.Char("Nom")
     mesure_regle = fields.Float("mesure regle", required=True)
     date_jauge = fields.Datetime("Date du jauge", required=True)
     litrage_jauge = fields.Integer("Litrage jauge", compute="_litrage_jauge")
@@ -19,7 +20,7 @@ class jauge(models.Model):
     def name_get(self):
         result = []
         for jauge in self:
-            name = str("[") + str(jauge.cuve_id.station_id.ref) +str("] ") + str(jauge.ref)
+            name = str("[") + str(jauge.cuve_id.station_id.name) +str("] ") + str(jauge.nom)
             result.append((jauge.id, name))
         return result
 

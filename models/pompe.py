@@ -45,7 +45,7 @@ class pompe(models.Model):
     def name_get(self):
         result = []
         for pompe in self:
-            name = str("[") + str(pompe.station_id.ref) +str("] ") + str(pompe.ref)
+            name = str("[") + str(pompe.station_id.name) +str("] ") + str(pompe.nom)
             result.append((pompe.id, name))
         return result
 

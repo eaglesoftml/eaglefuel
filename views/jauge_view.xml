@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="ref" readonly="1"/>
+                <field name="nom"/>
                 <field name="mesure_regle"/>
                 <field name="cuve_id"/>
                 <field name="date_jauge"/>
@@ -32,6 +33,7 @@
                     <group>
                         <group>
                             <field name="ref"/>
+                            <field name="nom"/>
                             <field name="mesure_regle"/>
                             <field name="date_jauge"/>
                             <field name="cuve_id"/>
@@ -57,7 +59,7 @@
            </field>
     </record>
 
-<!--    <menuitem name="Jauges" id="sub_jauge_root" parent="station_root"/>-->
-<!--    <menuitem name="Jauge" id="sub_jauge_root" parent="sub_cuve_root" action="jauge_action"/>-->
+    <menuitem name="Jauges" id="sub_jauge_root" parent="station_root"/>
+    <menuitem name="Jauge" id="sub_jauge_root" parent="sub_cuve_root" action="jauge_action"/>
 
 </odoo>
