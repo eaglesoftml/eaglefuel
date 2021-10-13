@@ -16,7 +16,7 @@ class compteur(models.Model):
     def name_get(self):
         result = []
         for compteur in self:
-            name = str("[") + str(compteur.pistole_id.pompe_id.nom) +str("] ") + str(compteur.nom)
+            name = str("[") + str(compteur.pistole_id.pompe_id.station_id.name) + str("] ") +str(compteur.pistole_id.pompe_id.nom) + str("/") +str(compteur.pistole_id.nom) + str("/") + str(compteur.nom)
             result.append((compteur.id, name))
         return result
 
