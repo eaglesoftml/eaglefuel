@@ -157,7 +157,7 @@ class servicepompiste(models.Model):
                     'type': 'out_invoice',
                     'create_uid': line.qm_id,
                     'partner_id': 1,
-                    'date': line.date.datetime.now().date(),
+                    # 'date': line.date.datetime.now().date(),
                     "state": "draft",
                     # 'auto_post': 1,
                     # "state": "posted",
