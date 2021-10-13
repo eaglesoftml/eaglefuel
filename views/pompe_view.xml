@@ -48,12 +48,13 @@
         <field name="arch" type="xml">
             <tree string="Pompe">
                 <field name="ref"/>
-                    <field name="pompe_number"/>
+                <field name="nom"/>
+                <field name="pompe_number"/>
 <!--                    <field name="litrage_essence"/>-->
 <!--                    <field name="litrage_gasoile"/>-->
-                    <field name="description"/>
-                    <field name="station_id"/>
-                    <field name="pistole_id"/>
+                <field name="description"/>
+                <field name="station_id"/>
+                <field name="pistole_id"/>
             </tree>
         </field>
     </record>
