@@ -23,4 +23,4 @@ class paiement(models.Model):
     @api.model
     def create(self, values):
         values['ref'] = self.env['ir.sequence'].next_by_code('seq.paiement.ref') or _('New')
-        return super(pistole, self).create(values)
+        return super(paiement, self).create(values)

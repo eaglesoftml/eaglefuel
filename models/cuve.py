@@ -30,6 +30,9 @@ class cuve(models.Model):
     hauteur = fields.Float("Hauteur", required=True)
     volume = fields.Float("Volume", compute='volume_cuve') #pi*rcarre*h
     jauge_id = fields.One2many("eaglefuel.jauge", "cuve_id", string="jauge")
+    mesure = fields.Float("mesure", required=True)
+    litres = fields.Float("litres", required=True)
+    # echelle = fields.Float("Echelle",compute="_echelle")
 
 
     def name_get(self):

@@ -129,7 +129,7 @@ class servicepompiste(models.Model):
     def ecart_compte(self):
         for line in self:
             line.montant_a_verse = line.montant_total_vendu-line.montant_credit-line.montant_mobile
-            line.ecart = line.montant_a_verse-line.montant_verse
+            line.ecart = line.montant_verse - line.montant_a_verse
 
     @api.model
     def create(self, values):
@@ -156,29 +156,24 @@ class servicepompiste(models.Model):
                     'type': 'out_invoice',
                     'create_uid': line.qm_id,
                     'partner_id': 1,
-                    # 'journal_id': journal.id,
-                    # 'partner_id': product_id.id,
-                    # 'invoice_date': date_invoice,
-                    # 'date': date_invoice,
-                    # 'activity_state': 'Invoiced',
-                    'state': 'draft',
+                    'date': line.date.datetime.now().date(),
+                    "state": "draft",
                     # 'auto_post': 1,
+                    # "state": "posted",
+                    'ref': "fct"+line.ref,
+
                     'invoice_line_ids': [(0, 0, {
-                        'product_id': 30,
+                        # 'product_id': 5,
                         'quantity': line.litres_essence_vendu,
                         'name': 'Essence',
-                        # 'state': 'Invoiced',
-                        # 'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
                         'price_unit': 663,
                     }),
                                     (0, 0, {
-                        'product_id': 31,
+                        # 'product_id': 4,
                         'quantity': line.litres_gasoile_vendu,
                         'name': 'Gasoile',
-                        # 'invoice_user_id': line.qm_id,
                         # 'discount': 10.00,
-                        # 'state': 'Invoiced',
                         'price_unit': 593,
                      })],
                     # 'invoice_line_ids': [(0, 0, {
@@ -191,6 +186,22 @@ class servicepompiste(models.Model):
                 })
                 line.write({'state': 'fct'})
                 return invoice
+            # elif line.state == "fct":
+            #     Payment = self.env['account.payment'].with_context(default_invoice_ids=[(4, active_model='account.move', False)])
+            #     payment = Payment.create({
+            #         'payment_date': time.strftime('%Y') + '-07-15',
+            #         'payment_method_id': self.inbound_payment_method.id,
+            #         'payment_type': 'inbound',
+            #         'partner_type': 'customer',
+            #         'partner_id': inv1.partner_id.id,
+            #         'amount': 314.07,
+            #         'journal_id': self.bank_journal_euro.id,
+            #         'company_id': company.id,
+            #         'currency_id': self.currency_euro_id,
+            #         'payment_difference_handling': 'reconcile',
+            #         'writeoff_account_id': self.diff_income_account.id,
+            #     })
+            #     payment.post()
             else:
                 raise ValidationError("Ce service est déjà Facturé")
 

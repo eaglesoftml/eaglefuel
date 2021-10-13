@@ -17,7 +17,16 @@
                         <group>
                             <field name="station_id"/>
                         </group>
+                        <group string="Echelle">
+                            <field name="mesure"/>
+                            <field name="litres"/>
+                        </group>
                     </group>
+                    <notebook>
+                        <page string="Jauge ID">
+                            <field name="jauge_id"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

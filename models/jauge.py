@@ -10,7 +10,7 @@ class jauge(models.Model):
     ref = fields.Char("reference", default="New")
     mesure_regle = fields.Float("mesure regle", required=True)
     date_jauge = fields.Datetime("Date du jauge", required=True)
-    litrage_jauge = fields.Integer("Litrage jauge")
+    litrage_jauge = fields.Integer("Litrage jauge", compute="_litrage_jauge")
     cuve_id = fields.Many2one("eaglefuel.cuve", string="cuve")
     employe_id= fields.Many2many("hr.employee", string="QM responsable")
     shift = fields.Selection(selection=[('matin', 'Matin'),('soir', 'Soir')])
@@ -22,6 +22,11 @@ class jauge(models.Model):
             name = str("[") + str(jauge.cuve_id.station_id.ref) +str("] ") + str(jauge.ref)
             result.append((jauge.id, name))
         return result
+
+    def _litrage_jauge(self):
+        for line in self:
+            line.litrage_jauge = (line.cuve_id.litres * line.mesure_regle) / line.cuve_id.mesure
+
 
     @api.model
     def create(self, values):
