@@ -37,7 +37,7 @@
         'views/jauge_view.xml',
         # 'views/versement_view.xml',
         'views/releveindex_view.xml',
-        'views/produit_view.xml',
+        # 'views/produit_view.xml',
         # 'views/detailventecarburant_view.xml',
         'views/paiement_view.xml',
         'views/rapportjournalier_view.xml',
