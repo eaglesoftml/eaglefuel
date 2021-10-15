@@ -1,6 +1,9 @@
 #-*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+import qrcode
+import base64
+from io import BytesIO
 
 
 # class station(models.Model):

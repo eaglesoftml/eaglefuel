@@ -33,7 +33,7 @@
                         <page string="Pistoles">
                             <field name="pistole_id"/>
                         </page>
-                        <page string="Pompistes">
+                        <page string="Services pompistes">
                             <field name="servicepompiste_id"/>
                         </page>
                     </notebook>
