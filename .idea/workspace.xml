@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bdd1bbdd-b6b6-4a72-827c-0c7a8612cfe5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/produit.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/produit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/station.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pompe_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/pompe_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/produit_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/produit_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/station_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/station_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,13 +68,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629796052387</updated>
-    </task>
-    <task id="LOCAL-00027" summary="amelioration de la classe service pompiste">
-      <created>1630945412973</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1630945412973</updated>
     </task>
     <task id="LOCAL-00028" summary="amelioration de la classe service pompiste">
       <created>1630945493222</created>
@@ -418,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634135716729</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="ajout de la facturation et calcul du jauges">
+      <created>1634289419421</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1634289419421</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
